@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: FPSArms_Bind.ma
-//Last modified: Mon, Aug 21, 2023 11:01:52 AM
+//Last modified: Sun, Aug 27, 2023 01:28:36 AM
 //Codeset: 1252
 file -rdi 1 -ns "FPSArms_Model" -rfn "FPSArms_ModelRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/Ben Rushby/Documents/BloodReaverART/BloodReaver_ART//scenes/Characters/1.Models/FPSArms_Model.ma";
@@ -8,20 +8,20 @@ file -r -ns "FPSArms_Model" -dr 1 -rfn "FPSArms_ModelRN" -op "v=0;" -typ "mayaAs
 		 "C:/Users/Ben Rushby/Documents/BloodReaverART/BloodReaver_ART//scenes/Characters/1.Models/FPSArms_Model.ma";
 requires maya "2023";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.2.0";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.2.1.1";
 currentUnit -l meter -a degree -t ntsc;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
-fileInfo "cutIdentifier" "202208031415-1dee56799d";
-fileInfo "osv" "Windows 10 Education v2009 (Build: 19045)";
-fileInfo "UUID" "842EAA49-4253-82E9-8161-C2A3C875440B";
+fileInfo "cutIdentifier" "202211021031-847a9f9623";
+fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
+fileInfo "UUID" "CD9EC3FB-47B5-5CC6-3FEE-79906F644B28";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "F7A8AB51-4093-FDF2-F7C1-EE92A0C13BF0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.014642761063942996 1.8322349805865903 0.80714521023671804 ;
-	setAttr ".r" -type "double3" -18.538381520364137 8.7993899707971153 -0.00016852697796159588 ;
+	setAttr ".t" -type "double3" 2.1183008979439704 2.7145651608974068 2.6426407944992207 ;
+	setAttr ".r" -type "double3" -23.338493629352516 759.59939024413438 -0.00021628025705756708 ;
 	setAttr ".rp" -type "double3" 0 0 -1.4210854715202004e-16 ;
 	setAttr ".rpt" -type "double3" 5.5822900207146796e-17 -1.1632070354966742e-16 7.7526044704832639e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -31,12 +31,12 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.001;
 	setAttr ".fcp" 100;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 1.6162067071870163;
+	setAttr ".coi" 3.6949059778042246;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 75.735395405114943 118.01353016295161 34.946734742695206 ;
+	setAttr ".tp" -type "double3" -75.893339677095383 111.57145038554938 27.160068210384217 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "B907D21C-4BBC-9E30-ABFD-8FBEEE535DBE";
@@ -102,14 +102,14 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode joint -n "Root_JNT";
 	rename -uid "5AC23A39-4C7C-D672-E51A-59A5F78F0D2B";
-	setAttr ".t" -type "double3" 0 1.5164845390941151 0 ;
+	setAttr ".t" -type "double3" 0 1.4900840092833769 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 4;
 createNode joint -n "Clavical_R_JNT" -p "Root_JNT";
 	rename -uid "859B385E-4572-1CE1-EF16-FE8A653F5376";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" -0.13472209257940987 0.06420103829846284 0 ;
+	setAttr ".t" -type "double3" -0.092460889930089968 0.09060156810920092 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 155.83611802215606 0 1;
@@ -118,7 +118,7 @@ createNode joint -n "Shoulder_R_JNT" -p "Clavical_R_JNT";
 	rename -uid "369D720E-481E-861C-A31D-8C87437F7FB3";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".oc" 1;
-	setAttr ".t" -type "double3" -0.089995688106689245 1.0016829321557453e-08 -0.013919576837468146 ;
+	setAttr ".t" -type "double3" -0.13225689075600916 1.0016829322288524e-08 -0.013919576837468146 ;
 	setAttr ".r" -type "double3" 0.021063159485203143 191.76664808687397 37.858723345571718 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -149,6 +149,178 @@ createNode joint -n "Wrist_R_JNT" -p "Elbow_R_JNT";
 		 -0.61377572137153813 0.78948035715237919 -0.00035989637357893017 0 -0.36352823807093609 -0.28302696849628783 -0.88754884667202527 0
 		 -67.482646478408924 123.08462351298455 19.304414850540926 1;
 	setAttr ".radi" 3;
+createNode joint -n "Middle_L_JNT_1" -p "Wrist_R_JNT";
+	rename -uid "37D11EDF-4E22-4E0F-D64A-5782B44DF48A";
+	setAttr ".t" -type "double3" 0.041077611134217859 0.0054817531960412681 -0.0017946223277869678 ;
+	setAttr ".r" -type "double3" 0.87424438812789351 -29.817643055485483 -37.914432247006722 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634608 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_2" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1";
+	rename -uid "177F5BB1-4509-374F-F7B6-0CB52AAB0CE7";
+	setAttr ".t" -type "double3" -0.099997804841378518 -2.3914013362968946e-06 -1.0894031474961707e-06 ;
+	setAttr ".r" -type "double3" 0 0 -9.9841290794509785 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_3" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2";
+	rename -uid "84604121-4661-3BA9-A751-E0B70214C9FA";
+	setAttr ".t" -type "double3" -0.050179620724299843 -7.0394589755551353e-07 -6.8546972268990199e-07 ;
+	setAttr ".r" -type "double3" 0 0 -18.388217728914043 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_4" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3";
+	rename -uid "6BFF7C53-49B3-9CFE-DC91-67B4BAC75A8E";
+	setAttr ".t" -type "double3" -0.048735955811595344 2.0858765773823505e-06 1.6671414203983659e-06 ;
+	setAttr ".r" -type "double3" 0 0 -5.7438083302082861 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_END" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4";
+	rename -uid "4B4965E3-4357-EB24-6070-72846D292AD0";
+	setAttr ".t" -type "double3" -0.030257203571871116 -1.6956594996031527e-06 -1.4611949200116214e-06 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159366e-07 7.1090935932164462e-23 1.421818745126727e-22 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_1" -p "Wrist_R_JNT";
+	rename -uid "4E743DD5-430C-CB6E-EDFA-70AE4949D44F";
+	setAttr ".t" -type "double3" 0.038944403119198438 0.0073244322504027086 -0.020956903858629552 ;
+	setAttr ".r" -type "double3" 7.4250289767747333 -43.937336247334564 -47.768167844085745 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634608 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_2" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1";
+	rename -uid "BEE079DF-4966-B1A8-3593-A89A7B99C8A7";
+	setAttr ".t" -type "double3" -0.096707506260840501 -0.00057818035828432817 0.0069116783260482961 ;
+	setAttr ".r" -type "double3" 1.4822519739415689 -5.7624991930694121 -21.889692648879077 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_3" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2";
+	rename -uid "B97CE0B3-45CA-CE27-AB9B-2390F8C952EF";
+	setAttr ".t" -type "double3" -0.041118566846441669 -0.0030808874687326695 -4.2308033658855497e-06 ;
+	setAttr ".r" -type "double3" 0 0 -22.125350813254162 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_4" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3";
+	rename -uid "51FF5E3B-41BE-7182-9238-7DAC99452879";
+	setAttr ".t" -type "double3" -0.04420053095294918 -0.00045454336932039042 3.7152110965976703e-06 ;
+	setAttr ".r" -type "double3" 0 0 1.8148715609730295 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_END" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4";
+	rename -uid "303D7B0F-421B-CE2E-6B1B-CB896CE8CA6F";
+	setAttr ".t" -type "double3" -0.030261454120974349 3.1041055876812606e-07 6.2274836938769344e-07 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_1" -p "Wrist_R_JNT";
+	rename -uid "19662B10-4C07-C37F-E1C2-63BC76406A12";
+	setAttr ".t" -type "double3" 0.041846272961727514 0.0057621387166207688 0.016658482558783837 ;
+	setAttr ".r" -type "double3" -17.018905173388248 -17.995198996504818 -45.142466231884605 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634608 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_2" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1";
+	rename -uid "24EDC76F-40F6-920A-149A-0E96A49F214B";
+	setAttr ".t" -type "double3" -0.09690167825373952 -0.0005435273846113376 0.00017290052324568707 ;
+	setAttr ".r" -type "double3" -2.8042013166300555 8.1389732153747261 -29.068607711583553 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_3" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2";
+	rename -uid "A90A5E47-41EA-AB90-A532-B0835B8A101C";
+	setAttr ".t" -type "double3" -0.045798721264308284 -0.0010794028543980971 1.7910903451934246e-07 ;
+	setAttr ".r" -type "double3" 0 0 -14.458578323179044 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159387e-07 -5.3318203096738983e-23 4.7393957597083081e-23 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_4" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3";
+	rename -uid "A3EE0E29-4E1E-B5C1-9352-B09542FF2AF0";
+	setAttr ".t" -type "double3" -0.044067755217918003 -6.3052406176211657e-08 2.2296411103184255e-07 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_END" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4";
+	rename -uid "1DF96E2D-438E-5024-6510-5093135E68C6";
+	setAttr ".t" -type "double3" -0.025556028426124301 -2.2904857473804442e-07 -1.7509211474475706e-07 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_1" -p "Wrist_R_JNT";
+	rename -uid "D97B7396-4FF3-7A73-D8EB-E4B4785B9717";
+	setAttr ".t" -type "double3" 0.038887553926971651 0.0032541494490254765 0.031856272414779313 ;
+	setAttr ".r" -type "double3" -31.999849796225252 -0.25401748132403285 -55.444848147674435 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634608 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_2" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1";
+	rename -uid "570B9963-4A95-93F1-9E44-26B4B054F7F2";
+	setAttr ".t" -type "double3" -0.078125184127749492 -0.0038496345930907694 -0.01500823942056357 ;
+	setAttr ".r" -type "double3" -6.9494498869967032 20.878928505426771 -28.865134259027002 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_3" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2";
+	rename -uid "1B3E945B-4194-28FD-8192-EEADFBF375BA";
+	setAttr ".t" -type "double3" -0.041937163613826128 -0.0028639282510149401 -1.4715484084604214e-08 ;
+	setAttr ".r" -type "double3" 0 0 -22.486540705167773 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159408e-07 -7.1090937741866051e-23 1.0071216020829237e-22 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_4" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3";
+	rename -uid "AB12A767-42FC-57F8-7926-6590CEA76E28";
+	setAttr ".t" -type "double3" -0.030893776408734367 2.9228295364980285e-06 8.1498329734586156e-07 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159387e-07 -8.8278125961003172e-31 1.1848489498583662e-22 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_END" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4";
+	rename -uid "1534D58C-4484-B357-1793-37A7547F9FA1";
+	setAttr ".t" -type "double3" -0.024698421100953851 -1.7661579835781538e-06 2.5202053919315404e-08 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159387e-07 -8.8278125961003172e-31 1.1848489498583662e-22 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_1" -p "Wrist_R_JNT";
+	rename -uid "5FA76EEF-4789-ACC4-1432-9F96EA539481";
+	setAttr ".t" -type "double3" 0.023750619940476021 -0.013005230591251121 -0.035743317333933822 ;
+	setAttr ".r" -type "double3" -52.040077446495168 -120.05176480725191 76.792306847837409 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634608 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_2" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1";
+	rename -uid "A29DAA0C-42CC-DF9C-FC55-378452F2A3A5";
+	setAttr ".t" -type "double3" -0.044906723187581578 -4.0378526931306169e-06 1.1178856692595219e-06 ;
+	setAttr ".r" -type "double3" 0 0 -25.529982632484085 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_3" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2";
+	rename -uid "D3C26ECF-4E3C-1603-BC46-F5B4912BF39A";
+	setAttr ".t" -type "double3" -0.044299875692971828 3.6333242931618772e-06 -2.3208205792002446e-06 ;
+	setAttr ".r" -type "double3" 0 0 -25.893419058142168 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 8.5377364625159387e-07 1.8957583338978861e-22 -1.8957583056488859e-22 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_END" -p "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3";
+	rename -uid "4E66A408-48C4-DE11-476C-32BF8B565739";
+	setAttr ".t" -type "double3" -0.052813834855202371 1.2862182217077134e-08 2.210711047325731e-06 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
 createNode joint -n "ShoulderPlate_1_R_JNT" -p "Shoulder_R_JNT";
 	rename -uid "0C978B24-4251-B623-22D8-C18F1B0EF42D";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
@@ -172,56 +344,219 @@ createNode joint -n "ShoulderPlate_2_R_JNT" -p "Shoulder_R_JNT";
 		 -1.9428902930940239e-16 1.9428902930940239e-16 1 0 -20.756933331037644 165.73785097008792 -1.3919576406478902 1;
 	setAttr ".radi" 4;
 createNode joint -n "Clavical_L_JNT" -p "Root_JNT";
-	rename -uid "A9197D66-4D12-5354-5052-62B9757E96CD";
+	rename -uid "434EF50D-4C5B-7123-9891-079363FCAD1C";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 0.134722 0.064205460905884873 0 ;
+	setAttr ".t" -type "double3" 0.092460900000000013 0.090605990716622953 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -180 0 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 155.83611802215606 0 1;
 	setAttr ".radi" 5;
 createNode joint -n "Shoulder_L_JNT" -p "Clavical_L_JNT";
-	rename -uid "B50A741C-4155-0E81-F7BA-DA95296CB473";
+	rename -uid "51965033-4FC1-C6B1-2EF9-56BA1C1642E7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".oc" 1;
-	setAttr ".t" -type "double3" 0.089996 0 0.013919600000000001 ;
+	setAttr ".t" -type "double3" 0.13225710000000002 0 0.013919600000000001 ;
+	setAttr ".r" -type "double3" 0.021063159485203143 191.76664808687397 37.858723345571718 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jot" -type "string" "xzy";
-	setAttr ".jo" -type "double3" 180 11.766657385813588 37.858692257174916 ;
-	setAttr ".bps" -type "matrix" 0.77293581653213206 -0.60081965380384605 0.20392637672658473 0
-		 0.61371614550309073 0.78952675239590786 0 0 -0.1610053299448049 0.12515290989105077 0.97898622711209127 0
-		 22.471800000000002 158.06899999999999 -1.3919600000000001 1;
+	setAttr ".bps" -type "matrix" -0.77293551666102722 -0.60082009350673904 0.20392621783994358 0
+		 -0.61377572137153813 0.78948035715237919 -0.00035989637357893017 0 -0.16077951032018609 -0.12544313815073746 -0.97898619405592036 0
+		 -22.471778068609908 158.06855874094072 -1.3919576837468146 1;
 	setAttr ".radi" 5;
 createNode joint -n "Elbow_L_JNT" -p "Shoulder_L_JNT";
-	rename -uid "797412BA-41FE-C66B-61E5-9F821CF1EF0A";
+	rename -uid "754B699D-45FC-B7BC-57AA-41A159AD2334";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".oc" 2;
-	setAttr ".t" -type "double3" 0.2915136229583144 -3.4533664296532152e-06 -0.00024098081239070978 ;
+	setAttr ".t" -type "double3" -0.29151362299921418 3.2099172412358713e-06 -0.00024093469725984919 ;
+	setAttr ".r" -type "double3" 0 15.666510038647598 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jot" -type "string" "xzy";
-	setAttr ".jo" -type "double3" 0.001367848484851171 -15.66658140299784 0.0059532835692214202 ;
-	setAttr ".bps" -type "matrix" 0.70080449147718937 -0.54462370738630272 0.46071475131386563 0
-		 0.61362714628214687 0.78959592536032541 -1.7289636519354779e-17 0 -0.36377849039082399 0.28270707809881634 0.88754826230566353 0
-		 45.007599999999996 140.55099999999999 4.529180000000002 1;
+	setAttr ".bps" -type "matrix" -0.70080424084039961 -0.54462510112402374 0.46071348498362652 0
+		 -0.61377572137153813 0.78948035715237919 -0.00035989637357893017 0 -0.36352823807093609 -0.28302696849628783 -0.88754884667202527 0
+		 -45.007623388795786 140.55093009278866 4.5291814696954651 1;
 	setAttr ".radi" 5;
 createNode joint -n "Wrist_L_JNT" -p "Elbow_L_JNT";
-	rename -uid "6CFC56CD-4C57-38EA-26ED-34A739B4B9C0";
+	rename -uid "53F3D3BF-4F14-E2CE-4622-60953CFBE505";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".oc" 3;
-	setAttr ".t" -type "double3" 0.32070140427066696 1.8768034783533949e-06 3.7438576153903116e-07 ;
+	setAttr ".t" -type "double3" -0.32070140426719979 -2.2787170502169828e-06 8.328792497280802e-07 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jot" -type "string" "xzy";
-	setAttr ".jo" -type "double3" 0 8.1748037408959764e-05 -7.1865352831812341e-05 ;
-	setAttr ".bps" -type "matrix" 0.70080424084047044 -0.54462510112390328 0.46071348498366127 0
-		 0.61362802529164484 0.78959524224525468 5.7786853479203415e-07 0 -0.36377749050303876 0.28270630104303607 0.88754891963985616 0
-		 67.482600000000062 123.08499999999998 19.304399999999994 1;
+	setAttr ".bps" -type "matrix" -0.70080424084039961 -0.54462510112402374 0.46071348498362652 0
+		 -0.61377572137153813 0.78948035715237919 -0.00035989637357893017 0 -0.36352823807093609 -0.28302696849628783 -0.88754884667202527 0
+		 -67.482646478408924 123.08462351298455 19.304414850540926 1;
 	setAttr ".radi" 3;
+createNode joint -n "Middle_L_JNT_1" -p "Wrist_L_JNT";
+	rename -uid "D04B2492-4743-F2EB-19D3-B6ADDEC6C7CA";
+	setAttr ".t" -type "double3" -0.041079461172073922 -0.0054799576087881975 0.0017941510038534502 ;
+	setAttr ".r" -type "double3" 0.87424438812789351 -29.817643055485483 -37.914432247006722 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634597 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_2" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1";
+	rename -uid "FC00A798-4609-A0C9-9605-D09879E493FE";
+	setAttr ".t" -type "double3" 0.1 0 0 ;
+	setAttr ".r" -type "double3" 0 0 -9.9841290794509785 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_3" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2";
+	rename -uid "774B4D50-4123-7F65-8378-F6B0279F1F89";
+	setAttr ".t" -type "double3" 0.050179820425673496 3.3098523921637483e-17 9.658940314238868e-17 ;
+	setAttr ".r" -type "double3" 0 0 -18.388217728914043 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_4" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3";
+	rename -uid "1A3DCB15-4E8C-085D-6592-BF96D10DB19E";
+	setAttr ".t" -type "double3" 0.048731638225396001 -2.2207929939455091e-16 1.1796119636642379e-17 ;
+	setAttr ".r" -type "double3" 0 0 -5.7438083302082861 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Middle_L_JNT_END" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4";
+	rename -uid "3F2C8CA7-4DCC-7935-05CE-EB9E5A6A966E";
+	setAttr ".t" -type "double3" 0.030260864435413506 -5.3568260938163775e-16 -2.1427304375265516e-16 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_1" -p "Wrist_L_JNT";
+	rename -uid "130B9900-4544-C11E-C3A5-72A0B79700BA";
+	setAttr ".t" -type "double3" -0.03894562463344526 -0.0073232859350204653 0.020956037074513247 ;
+	setAttr ".r" -type "double3" 7.4250289767747333 -43.937336247334564 -47.768167844085745 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634597 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_2" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1";
+	rename -uid "9288038C-4682-1461-EE59-7BA1DEED635E";
+	setAttr ".t" -type "double3" 0.096706802703085376 0.00057973900523672209 -0.0069106483394375954 ;
+	setAttr ".r" -type "double3" 1.4822519739415689 -5.7624991930694121 -21.889692648879077 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_3" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2";
+	rename -uid "60512619-4199-8F3E-5CD5-99927825E62C";
+	setAttr ".t" -type "double3" 0.041124424838610014 0.0030762451764114532 -4.0280279112181416e-17 ;
+	setAttr ".r" -type "double3" 0 0 -22.125350813254162 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_4" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3";
+	rename -uid "C2E9CCA2-413F-3BE9-7C73-269A11D6DAF4";
+	setAttr ".t" -type "double3" 0.044194711902635631 0.00045634920965640372 -6.8139938136368861e-17 ;
+	setAttr ".r" -type "double3" 0 0 1.8148715609730295 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Index_L_JNT_END" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4";
+	rename -uid "56D4E7CD-4226-BD2F-D81C-1AAC1D16CF47";
+	setAttr ".t" -type "double3" 0.030260864435413506 -5.3568260938163775e-16 -2.1427304375265516e-16 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_1" -p "Wrist_L_JNT";
+	rename -uid "73759C1A-496F-620A-12C2-8586B468BEC5";
+	setAttr ".t" -type "double3" -0.041848168623550459 -0.0057593268747112352 -0.016659749913497068 ;
+	setAttr ".r" -type "double3" -17.018905173388248 -17.995198996504818 -45.142466231884605 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634597 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_2" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1";
+	rename -uid "4779BD29-4563-AE7E-D918-D39B9F435DE5";
+	setAttr ".t" -type "double3" 0.096899939499674514 0.00054573893653925547 -0.00017136785611992445 ;
+	setAttr ".r" -type "double3" -2.8042013166300555 8.1389732153747261 -29.068607711583553 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_3" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2";
+	rename -uid "D72725F8-4A40-7E4A-7C37-618F9234E480";
+	setAttr ".t" -type "double3" 0.045798432525433162 0.0010794557605866032 -4.9682480351975751e-16 ;
+	setAttr ".r" -type "double3" 0 0 -14.458578323179044 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_4" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3";
+	rename -uid "6386B204-4611-B8C3-9563-E197171BF0AF";
+	setAttr ".t" -type "double3" 0.044067842649336199 2.7701365507004607e-17 -6.1981669796651238e-17 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Ring_L_JNT_END" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4";
+	rename -uid "C47959D7-40B9-AD39-6F19-1CB9899E1E59";
+	setAttr ".t" -type "double3" 0.025557006675795774 -6.6694479800011284e-16 -8.2156503822261583e-17 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_1" -p "Wrist_L_JNT";
+	rename -uid "6D33E747-483E-01BC-1870-30BECEF9E65E";
+	setAttr ".t" -type "double3" -0.038890499574227085 -0.0032504136569252752 -0.031857551857031867 ;
+	setAttr ".r" -type "double3" -31.999849796225252 -0.25401748132403285 -55.444848147674435 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634597 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_2" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1";
+	rename -uid "923B0F44-4529-5CD0-B68A-1B8457823ABF";
+	setAttr ".t" -type "double3" 0.078122316794694488 0.0038513775989705581 0.015008902654361564 ;
+	setAttr ".r" -type "double3" -6.9494498869967032 20.878928505426771 -28.865134259027002 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_3" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2";
+	rename -uid "554187CA-4195-DEFC-C31A-2A836BBD8F76";
+	setAttr ".t" -type "double3" 0.041935409075605702 0.0028640246346724497 -1.0838552277903086e-16 ;
+	setAttr ".r" -type "double3" 0 0 -22.486540705167773 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_4" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3";
+	rename -uid "721EB9AB-46E3-72E3-110E-CBB0A9B228EC";
+	setAttr ".t" -type "double3" 0.030901806250886791 -1.1064066329780076e-16 -5.3429483060085629e-17 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Pinky_L_JNT_END" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4";
+	rename -uid "190E2607-41CE-0CB5-32BA-1B8EC957835C";
+	setAttr ".t" -type "double3" 0.024693342448254857 -4.3201553445726378e-16 -9.8393515557404435e-17 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_1" -p "Wrist_L_JNT";
+	rename -uid "B52111C4-44E4-88F5-4894-6282AB53D6E4";
+	setAttr ".t" -type "double3" -0.023752475843937776 0.013007679436105092 0.035742825108105586 ;
+	setAttr ".r" -type "double3" -52.040077446495168 -120.05176480725191 76.792306847837409 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 17.686758166634597 21.317035994354537 -138.78759862051157 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_2" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1";
+	rename -uid "DDF0AE70-44BC-B3E7-2C15-07B10D6BD832";
+	setAttr ".t" -type "double3" 0.044908093170812728 3.6942671144402085e-16 -1.9768908732231685e-16 ;
+	setAttr ".r" -type "double3" 0 0 -25.529982632484085 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_3" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2";
+	rename -uid "6246192A-47EF-3E54-324D-B78DE0647AE4";
+	setAttr ".t" -type "double3" 0.044294489311548002 -2.7297608617971029e-16 -5.2874371547773173e-17 ;
+	setAttr ".r" -type "double3" 0 0 -25.893419058142168 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
+createNode joint -n "Thumb_L_JNT_END" -p "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3";
+	rename -uid "5C996D3F-4C45-F46B-112E-8B865B04534B";
+	setAttr ".t" -type "double3" 0.052820548358155701 5.1070259132757259e-17 1.7208456881689865e-17 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 1.35;
 createNode transform -n "HumanBody2:humanBody";
 	rename -uid "AAA750D4-4455-1771-0F4C-B0BF4661AEF3";
 	addAttr -is true -ci true -k true -sn "currentUVSet" -ln "currentUVSet" -dt "string";
+	setAttr ".v" no;
 	setAttr ".s" -type "double3" 1.1022592005646825 1.1022592005646825 1.1022592005646825 ;
 	setAttr -k on ".currentUVSet" -type "string" "uvSet1";
 createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
@@ -2527,7 +2862,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 	setAttr ".vt[0:165]"  0.0085777901 1.63789654 0.12142599 0.015872961 1.63645923 0.11818505
 		 0.0179331 1.64374757 0.11726891 0.0094300797 1.64630008 0.12199894 0.023962231 1.63831449 0.11265354
 		 0.01965801 1.65484929 0.1159768 0.00927231 1.6550523 0.12381658 0.028378529 1.64492905 0.1082617
-		 0.019223209 1.63090014 0.11482736 0.01524822 1.63119245 0.11695839 0.016660349 1.62558353 0.11545671
+		 0.019223208 1.63090014 0.11482736 0.01524822 1.63119245 0.11695839 0.016660349 1.62558353 0.11545672
 		 0.0083489101 1.63151383 0.11921631 0.0091608902 1.62485516 0.11830106 0.025896691 1.62313116 0.10915019
 		 0.026844179 1.63097382 0.10959207 0.033882581 1.61822522 0.10067241 0.032927647 1.63362741 0.10389114
 		 0.050264448 1.64385021 0.08165624 0.046533309 1.65516889 0.091590792 0.03999491 1.6421181 0.097600862
@@ -2598,7 +2933,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0 1.50243163 0.05712061 0.02172148 1.5067786 0.055937029 0.02695247 1.51421797 -0.10468397
 		 0.022850789 1.54878771 -0.084318817 0.048794221 1.54710889 -0.079241499 0.056454767 1.51430798 -0.098438114
 		 0.02029933 1.5773319 -0.06680093 0.078420013 1.54055083 -0.069504932 0.089173548 1.51175034 -0.087058008
-		 0.1446218 1.52157438 -0.024844179 0.14758427 1.51508534 -0.048229571 0.11192393 1.52899015 -0.057226509
+		 0.1446218 1.52157438 -0.024844179 0.14758426 1.51508534 -0.048229571 0.11192393 1.52899015 -0.057226509
 		 0.10203464 1.54039168 -0.0339268 0.14733773 1.50323522 -0.064550698 0.12263318 1.50659776 -0.07477323
 		 0.01850949 1.60421681 -0.060043558 0.018138779 1.63099957 -0.060742401 0 1.60451293 -0.063208148
 		 0 1.63145792 -0.063064143 0.019156219 1.65694463 -0.066446498 0 1.65772319 -0.068954319
@@ -2623,10 +2958,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.13992411 1.51621687 -0.0025198702 0 1.51465285 -0.10747798 0.057822078 1.45474994 0.092699841
 		 0.093740895 1.45910478 0.080566429 0.063739628 1.41309941 0.11837497 0.10335943 1.41861773 0.10701417
 		 0.12857312 1.46249223 0.06156015 0.14025159 1.42808473 0.08168593 0 1.45222509 0.095396139
-		 0.027039001 1.45314622 0.095247239 0 1.41126215 0.1164321 0.029740501 1.41185975 0.11873774
+		 0.027039001 1.45314622 0.095247239 0 1.41126215 0.1164321 0.029740501 1.41185975 0.11873773
 		 0.19068268 1.45241392 -0.070340812 0.15841508 1.44018137 -0.092622004 0.13932112 1.47750235 -0.0867908
 		 0.16774704 1.48636317 -0.067636177 0.12104768 1.43442857 -0.1112428 0.10373701 1.47525942 -0.1024063
-		 0.22035027 1.47528911 -0.01061575 0.21136767 1.47043717 -0.042482071 0.18143672 1.50089443 -0.041986819
+		 0.22035027 1.47528911 -0.01061575 0.21136767 1.47043717 -0.042482071 0.18143673 1.50089443 -0.041986819
 		 0.18636908 1.50492036 -0.01397367 0.17223783 1.48994815 0.027985379 0.18270336 1.49979842 0.01056769
 		 0.19454052 1.45967829 0.040160891 0.21494025 1.4700036 0.019058669 0.15467277 1.47141027 0.043643232
 		 0.16817673 1.44239426 0.056413021 0.079321615 1.4345715 -0.12211922 0.06679856 1.47569859 -0.11155783
@@ -2640,18 +2975,18 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.17384511 1.41157115 0.06356211 0.20745619 1.42444217 0.044107281 0.14555955 1.39130664 0.094124146
 		 0.17352554 1.38034856 0.060103122 0.2092839 1.38586378 0.041980229 0.14628233 1.35419905 0.093319803
 		 0.25608405 1.40544903 -0.01306859 0.24151611 1.43999898 -0.01217194 0.23359655 1.43528903 0.02005014
-		 0.24402709 1.40079439 0.01955414 0.24661997 1.39732575 -0.049683351 0.23249413 1.4327209 -0.046557322
-		 0.22086135 1.37826872 -0.072680026 0.20838946 1.41457701 -0.071777031 0.20291117 1.28969753 -0.01828202
+		 0.24402708 1.40079439 0.01955414 0.24661997 1.39732575 -0.049683351 0.23249413 1.4327209 -0.046557322
+		 0.22086136 1.37826872 -0.072680026 0.20838946 1.41457701 -0.071777031 0.20291117 1.28969753 -0.01828202
 		 0.18908821 1.3189677 -0.02072726 0.20341961 1.32294357 -0.063397668 0.21605042 1.29400325 -0.059361327
 		 0.17837189 1.33780682 -0.02078536 0.18704267 1.3498435 -0.07312984 0.23203552 1.34527469 -0.0732814
 		 0.24532603 1.31384778 -0.072396979 0.25598872 1.36457932 -0.050726399 0.26852542 1.33340573 -0.051335942
 		 0.26568046 1.37341583 -0.01434569 0.27617404 1.34211874 -0.01639227 0.17518495 1.39722943 -0.092593223
 		 0.30735245 1.27982128 -0.018118449 0.30072406 1.27384949 -0.051290952 0.28432626 1.3044194 -0.051123649
 		 0.29145408 1.311692 -0.01711281 0.2777181 1.25705767 -0.067210138 0.26049387 1.28528225 -0.069283307
-		 0.24811794 1.23898721 -0.05527503 0.23072596 1.26583457 -0.05601988 0.23531228 1.23115873 -0.015739581
-		 0.21854705 1.25981271 -0.016095219 0.23693311 1.32292295 0.030882111 0.22390717 1.35548842 0.033429459
+		 0.24811794 1.23898721 -0.05527503 0.23072596 1.26583457 -0.05601988 0.23531227 1.23115873 -0.015739582
+		 0.21854706 1.25981271 -0.016095219 0.23693311 1.32292295 0.030882111 0.22390717 1.35548842 0.033429459
 		 0.19498694 1.33659697 0.022322491 0.21004751 1.30334318 0.02086875 0.18174072 1.3622911 0.025627239
-		 0.25240144 1.36941493 0.016667331 0.26274383 1.33759916 0.014608099 0.2770367 1.30506885 0.01409365
+		 0.25240144 1.36941493 0.016667331 0.26274383 1.33759916 0.014608099 0.2770367 1.30506885 0.014093651
 		 0.29343078 1.27261937 0.01317894 0.25327033 1.28983343 0.030446401 0.2703768 1.25785542 0.02938221
 		 0.043410432 1.26718187 -0.098156802 0.046408784 1.31058657 -0.11330649 0.096382864 1.30372846 -0.11135513
 		 0.0899885 1.26305103 -0.096356399 0.14532946 1.29250348 -0.078648411 0.13463953 1.25434875 -0.068442628
@@ -2665,10 +3000,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.27745751 1.18439603 0.015216351 0.25252715 1.20307481 -0.016130161 0.26756689 1.17689717 -0.01722233
 		 0.26753095 1.21107507 -0.052860342 0.28304413 1.18397141 -0.051917419 0.29555959 1.22728622 -0.064785078
 		 0.30994549 1.19862211 -0.064017639 0.31673101 1.24172962 -0.050253309 0.33071864 1.21206737 -0.050797001
-		 0.039396308 1.21059144 0.16552243 0.078339905 1.21170032 0.15116465 0 1.2105732 0.168525
+		 0.039396308 1.21059144 0.16552243 0.078339905 1.21170032 0.15116465 0 1.2105732 0.16852501
 		 0.0386368 1.1690892 0.16497269 0.076255895 1.17194831 0.1472099 0 1.16823506 0.16919573
 		 0.11437992 1.21733546 0.12183198 0.1415851 1.23105657 0.077455617 0.11134297 1.17820907 0.12193462
-		 0.13830563 1.18924999 0.082008295 0.14674965 1.15922832 0.04042745 0.14139745 1.16630423 -0.00349212
+		 0.13830562 1.18924999 0.082008295 0.14674965 1.15922832 0.04042745 0.14139745 1.16630423 -0.00349212
 		 0.15009797 1.20707345 -0.01250262 0.15395933 1.20115638 0.032580271 0.11580393 1.17335689 -0.037193369
 		 0.1233195 1.21341479 -0.050456118 0.077540137 1.17918134 -0.05701087 0.082840294 1.22066367 -0.075183429
 		 0.038674809 1.18112981 -0.064623244 0.040563002 1.22389889 -0.078227013 0.075477213 1.098611474 0.14569911
@@ -2678,7 +3013,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.13469651 1.12985778 0.00071038003 0.10939359 1.13607204 -0.03029911 0.14510742 1.12308645 0.044874594
 		 0.14009742 1.09729445 -0.0060897102 0.10972647 1.10259902 -0.03979855 0.15207343 1.092258096 0.044986721
 		 0.074997142 1.14039946 -0.04791953 0.038294122 1.14208138 -0.05736804 0.074498087 1.10512662 -0.05395576
-		 0.037663359 1.10432386 -0.05858162 0 0.99767601 0.15117066 0.040176459 1.0042611361 0.14913745
+		 0.037663359 1.10432386 -0.05858162 0 0.99767601 0.15117067 0.040176459 1.0042611361 0.14913745
 		 0.03941327 1.049777627 0.16078377 0 1.045229316 0.16357903 0.079876073 1.020127296 0.137514
 		 0.077909932 1.061137795 0.14490001 0.14603546 1.051245213 0.090220273 0.14138329 1.085314274 0.091741756
 		 0.11374453 1.07412982 0.12354616 0.11675336 1.03656435 0.11783895 0.11565529 1.028544903 -0.06305372
@@ -2690,7 +3025,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.16057403 0.97455782 0.078140557 0.15612908 1.014181972 0.083478324 0.1234603 0.9990744 0.11237318
 		 0.12967332 0.96284425 0.10827086 0.14357521 0.98392433 -0.02505029 0.11840269 0.97621882 -0.080715857
 		 0.16367596 0.97941285 0.032258771 0.14856716 0.93046397 -0.04201407;
-	setAttr ".vt[498:663]" 0.1162087 0.9234345 -0.089472942 0.17232269 0.9193157 0.01488382
+	setAttr ".vt[498:663]" 0.11620869 0.9234345 -0.089472942 0.17232269 0.9193157 0.01488382
 		 0.071277738 0.97451973 -0.10149441 0.026155839 0.97492892 -0.093809254 0.067726612 0.92198837 -0.10511038
 		 0.022743549 0.92517054 -0.090974219 0.1073195 0.85044557 -0.0776335 0.054224718 0.85141134 -0.060302809
 		 0.061202869 0.87891078 -0.088733099 0.10920818 0.88031214 -0.088479109 0.01286636 0.85384524 -0.00092579005
@@ -2703,10 +3038,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.29679865 1.16111219 -0.052010797 0.30744535 1.13719106 -0.049215388 0.27913818 1.15466821 -0.0176668
 		 0.28892848 1.13207603 -0.01458248 0.28978509 1.16199803 0.01239534 0.29957858 1.13995814 0.01708425
 		 0.31466931 1.17534542 0.02023196 0.32589573 1.15292513 0.02445282 0.33961114 1.1891638 0.010729291
-		 0.3520222 1.1656884 0.01593807 0.1728054 0.87349135 0.070851341 0.17608365 0.81783098 0.069133341
+		 0.3520222 1.1656884 0.01593807 0.1728054 0.87349135 0.070851341 0.17608364 0.81783098 0.069133341
 		 0.16826628 0.92787057 0.07324706 0.14115401 0.87005824 0.10964131 0.14648737 0.81582433 0.109929
-		 0.13531618 0.92094493 0.10818682 0.054662839 0.7914145 0.10207476 0.10009374 0.80462855 0.12011948
-		 0.094848201 0.8532511 0.12023763 0.047061782 0.83245367 0.10474224 0.088348687 0.89718163 0.11814365
+		 0.13531618 0.92094493 0.10818682 0.054662839 0.7914145 0.10207476 0.10009374 0.80462855 0.12011947
+		 0.094848201 0.8532511 0.12023763 0.047061782 0.83245367 0.10474224 0.088348687 0.89718163 0.11814366
 		 0.03604883 0.86559409 0.10879578 0.10355245 0.75068206 0.11271241 0.14928208 0.75407898 0.10261282
 		 0.05947689 0.74673653 0.093289241 0.10525379 0.69719988 0.10099839 0.14822078 0.69704705 0.091289937
 		 0.064828619 0.69754404 0.080867693 0.18188274 0.70360392 0.0078456094 0.18202291 0.75722367 0.013667651
@@ -2724,21 +3059,21 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.17688431 0.65162987 -0.00025027001 0.15464526 0.60699385 -0.049076188 0.17332821 0.59978914 -0.0078756399
 		 0.10720641 0.63947779 0.0835298 0.14632879 0.64019442 0.076570712 0.06838382 0.64116931 0.066350505
 		 0.10539946 0.58549124 0.062793188 0.14298131 0.58643889 0.06052104 0.067780569 0.58874518 0.04704266
-		 0.17284706 0.64410186 0.04720448 0.16818839 0.59138751 0.035090879 0.13091831 0.53315109 -0.07632228
+		 0.17284706 0.64410186 0.04720448 0.16818838 0.59138751 0.035090879 0.13091831 0.53315109 -0.07632228
 		 0.09691909 0.53186345 -0.076337829 0.090257518 0.5660615 -0.073076636 0.12588547 0.56713462 -0.07400167
 		 0.069496758 0.52639681 -0.050504252 0.062004827 0.56031358 -0.044522647 0.17651503 0.51959246 -0.019695049
 		 0.16126423 0.52939397 -0.055473179 0.15704405 0.56324434 -0.050764099 0.17437544 0.55396557 -0.01493232
 		 0.38869938 1.075698376 0.031794231 0.40272465 1.079468846 0.01221408 0.36728373 1.065760851 0.040663101
 		 0.399692 1.04587543 0.036253009 0.41160661 1.048856854 0.019154159 0.38125286 1.037148237 0.044382509
-		 0.40058407 1.073760509 -0.01589701 0.4106718 1.043848395 -0.0057072002 0.38363361 1.060752749 -0.035354201
+		 0.40058407 1.073760509 -0.015897011 0.4106718 1.043848395 -0.0057072002 0.38363361 1.060752749 -0.035354201
 		 0.39718747 1.031427741 -0.02469321 0.35770556 1.048589349 -0.02681997 0.37360081 1.019977212 -0.016906779
 		 0.34254533 1.045528769 0.00359728 0.36063156 1.018468976 0.01059773 0.3479155 1.053306699 0.032039929
 		 0.36513755 1.026087761 0.035639688 0.37564686 0.99420846 0.01642493 0.37907195 1.001763463 0.040462259
 		 0.38969094 0.97158986 0.02072777 0.39094234 0.97939593 0.044404332 0.39263552 1.011871219 0.048651598
 		 0.40292671 0.98839706 0.053817738 0.40960363 1.019365788 0.04204639 0.42126605 1.021090508 0.026429739
-		 0.41916737 0.99511993 0.048701409 0.43115556 0.99605781 0.034714177 0.40983883 1.0045591593 -0.014857519
+		 0.41916737 0.99511993 0.048701409 0.43115556 0.99605781 0.034714177 0.40983883 1.0045591593 -0.014857518
 		 0.38755241 0.9941299 -0.0087550199 0.42289594 0.9787457 -0.00619868 0.40116879 0.96926773 -0.0030134402
-		 0.42197981 1.016227722 0.0035734801 0.43293709 0.99031812 0.01295705 0.14475201 0.46333268 -0.08744704
+		 0.42197981 1.016227722 0.0035734803 0.43293709 0.99031812 0.01295705 0.14475201 0.46333268 -0.08744704
 		 0.11122079 0.46219036 -0.086726516 0.10464092 0.49886391 -0.079832867 0.13743494 0.50041831 -0.080856264
 		 0.091219291 0.45816228 -0.063211843 0.078293808 0.49337482 -0.05780416 0.17861748 0.48761708 -0.024058709
 		 0.16666478 0.49718875 -0.059841562 0.18428108 0.45197228 -0.029924501 0.1734128 0.46035522 -0.065564789
@@ -2747,9 +3082,9 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.16714837 0.47675121 0.01357021 0.14560677 0.47058713 0.034805071 0.082273588 0.50843966 0.01901672
 		 0.11071186 0.50302547 0.042501852 0.10898995 0.53873628 0.04851244;
 	setAttr ".vt[664:829]" 0.07768435 0.54195356 0.02792969 0.15329525 0.40278447 0.012078851
-		 0.17708796 0.40590692 -0.0047449898 0.19016355 0.41427079 -0.03599545 0.18403634 0.38068295 -0.078495733
+		 0.17708796 0.40590692 -0.0047449898 0.19016355 0.41427079 -0.03599545 0.18403633 0.38068295 -0.078495733
 		 0.15261403 0.38423419 -0.10356294 0.14934273 0.4255676 -0.095644027 0.17977194 0.42224437 -0.072043717
-		 0.19335735 0.37352675 -0.041941062 0.091904372 0.47620529 0.012516989 0.11402562 0.47087005 0.029946379
+		 0.19335735 0.37352675 -0.041941062 0.091904372 0.47620529 0.012516988 0.11402562 0.47087005 0.029946379
 		 0.10085475 0.44414866 -0.0011785901 0.11932015 0.44084609 0.017127771 0.12487524 0.40372199 0.0082847103
 		 0.10518537 0.40765175 -0.01157696 0.1576494 0.26273215 -0.0034851301 0.17988275 0.26230943 -0.01948831
 		 0.17994599 0.29683936 -0.01756585 0.15801974 0.29687488 -0.00015815004 0.19286989 0.26541901 -0.046559472
@@ -2761,7 +3096,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.1227235 0.30827749 -0.10882571 0.1010485 0.27154437 -0.082727268 0.094424851 0.30709991 -0.087618865
 		 0.12032419 0.34429935 -0.10896028 0.091773488 0.34333402 -0.087464981 0.11821356 0.38426772 -0.10283177
 		 0.11536103 0.42494163 -0.094659656 0.092671983 0.38126937 -0.079848371 0.092283204 0.42098793 -0.072439142
-		 0.15524268 0.19777869 -0.092336252 0.15419129 0.15841958 -0.08895652 0.13526899 0.15939578 -0.087385684
+		 0.15524268 0.19777869 -0.092336252 0.1541913 0.15841958 -0.08895652 0.13526899 0.15939578 -0.087385684
 		 0.132457 0.19751522 -0.092151232 0.12141782 0.15804932 -0.06538564 0.11707558 0.19613972 -0.071576498
 		 0.1621305 0.11959324 -0.01214007 0.14475867 0.12203999 -0.0088966098 0.14467973 0.096072063 0.0063304901
 		 0.16758743 0.0938325 0.0031025698 0.12986468 0.12028491 -0.018997289 0.12585646 0.078617379 9.1559996e-05
@@ -2776,19 +3111,19 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.13533884 0.041069761 0.076939777 0.16432932 0.03367193 0.10759772 0.18911482 0.032841448 0.095087573
 		 0.13905363 0.030941429 0.11192594 0.2097657 0.026270431 0.081680924 0.20302704 0.035577402 0.052938081
 		 0.2246303 0.01541659 0.073425606 0.21962547 0.018642411 0.046582982 0.19289921 0.051790562 0.024362549
-		 0.20586811 0.026764121 0.01540496 0.17144713 0.02905911 0.13473473 0.19643949 0.0274937 0.12121354
-		 0.1497532 0.02669926 0.14107139 0.17822735 0.02541291 0.15459031 0.20250982 0.02246891 0.14144459
+		 0.20586811 0.026764121 0.01540496 0.17144713 0.02905911 0.13473472 0.19643949 0.0274937 0.12121354
+		 0.1497532 0.02669926 0.14107138 0.17822735 0.02541291 0.15459031 0.20250982 0.02246891 0.14144459
 		 0.1579321 0.0253601 0.15835828 0.21709086 0.022889599 0.10513616 0.21827434 0.01981065 0.12507029
-		 0.22682723 0.01215839 0.095615178 0.22255859 0.0081246402 0.12315246 0.1538682 0.0014723099 0.15544052
-		 0.15319443 0.012658469 0.16278656 0.13742098 0.01310667 0.14117178 0.14660218 0.00133071 0.13508713
-		 0.12661001 0.0155363 0.10983577 0.13709067 0.0014304001 0.10404933 0.12399853 0.020585621 0.078265503
-		 0.13492122 0.0050747199 0.072625302 0.12493027 0.03264989 0.04383659 0.13338716 0.017258961 0.039535969
+		 0.22682722 0.01215839 0.095615178 0.22255859 0.0081246402 0.12315246 0.1538682 0.0014723098 0.15544052
+		 0.15319443 0.012658468 0.16278656 0.13742098 0.01310667 0.14117178 0.14660218 0.00133071 0.13508713
+		 0.12661001 0.0155363 0.10983577 0.13709067 0.0014304002 0.10404933 0.12399853 0.020585621 0.078265503
+		 0.13492122 0.0050747199 0.072625302 0.12493027 0.03264989 0.04383659 0.13338715 0.017258961 0.039535969
 		 0.1894713 -0.0037222099 0.08330413 0.16150317 -0.0032946102 0.095928192 0.15664174 0.00096801994 0.064450212
 		 0.18487288 0.00084853999 0.054706048 0.1517159 0.0095879296 0.032609809 0.17785124 0.0040943399 0.024850531
 		 0.14788248 0.01172763 0.00012887002 0.17017263 0.0063289702 -0.00671094 0.13129212 0.02283494 0.0065462296
 		 0.14009868 0.0058941301 -0.03920386 0.16180684 0.00306635 -0.04558184 0.12460954 0.01572077 -0.030742891
-		 0.19781373 -0.00156654 0.1324171 0.17350322 -0.00069786981 0.15027574 0.16708924 -0.0014187699 0.1263278
-		 0.19338721 -0.0017840799 0.11011955 0.1785755 0.01048538 0.16237754 0.20517109 0.0082428399 0.14712872
+		 0.19781372 -0.00156654 0.1324171 0.17350322 -0.00069786981 0.15027574 0.16708924 -0.0014187699 0.1263278
+		 0.19338721 -0.0017840799 0.11011955 0.1785755 0.01048538 0.16237755 0.20517109 0.0082428399 0.14712872
 		 0.4614867 0.91092521 0.03086571 0.46610969 0.8889305 0.03374397 0.45873412 0.88661593 0.01269657
 		 0.45472947 0.9152326 0.01461284 0.47199321 0.86241293 0.037728142 0.46207836 0.86131972 0.014212101
 		 0.44371474 0.88312447 -0.00422078 0.44021755 0.90995425 -0.0026585099 0.44570392 0.86153197 -0.00197171
@@ -2842,12 +3177,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.45638233 0.77000201 0.051855851 0.44582829 0.77455831 0.056823358 0.44946757 0.78801668 0.05273708
 		 0.44153473 0.76925248 0.1057654 0.43870816 0.77293825 0.11565563 0.44027555 0.7849502 0.11372814
 		 0.4448486 0.77937543 0.099077232 0.44742671 0.77172899 0.11782388 0.45248041 0.7830047 0.11779977
-		 0.45678657 0.77821904 0.10238256 0.45012751 0.76820147 0.10750048 0.42192039 0.76225424 0.014608161
+		 0.45678657 0.77821904 0.10238256 0.45012751 0.76820147 0.10750048 0.42192039 0.76225424 0.014608162
 		 0.42655373 0.77161729 0.0087144999 0.43294686 0.77148557 0.01966037 0.42637834 0.76223135 0.022131249
 		 0.42419395 0.77512288 0.02676964 0.42032334 0.76542616 0.02675036 0.43021718 0.74604928 0.05444555
 		 0.43328357 0.75722784 0.047879819 0.44495565 0.75318277 0.043534361 0.43856671 0.74298358 0.051101252
 		 0.44991967 0.75619024 0.05680687 0.44312257 0.74523103 0.06100193 0.43495733 0.74873018 0.064478613
-		 0.4395836 0.76111573 0.06187756 0.20002419 0.0080109397 0.01483523 0.18969084 0.012062159 -0.014444049
+		 0.4395836 0.76111573 0.06187756 0.20002419 0.0080109397 0.01483523 0.18969084 0.012062158 -0.014444049
 		 0.19238277 0.038610268 -0.01354699 0.17892973 0.011703569 -0.048194937 0.18533695 0.074565969 -0.01118878
 		 0 0.84802783 0.065511063 0.01144218 0.84492517 0.065939248 0 0.85885203 0.10826179
 		 0.43602422 0.93716025 0.0004585901 0.45074835 0.94693708 0.025009209 0.41591358 0.9260385 0.00835713
@@ -2862,8 +3197,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.087056935 0.41558099 -0.041392822 0.081659883 0.45274076 -0.033749022 0.070470713 0.4854483 -0.02301666
 		 0 1.39450073 -0.12036416 0.17638089 0.11383378 -0.02611584 0 0.85805953 0.00635463
 		 0.01536947 0.82095671 0.065596178 0.11408897 0.19454491 -0.045255989 0.12552372 0.19353969 -0.023602841
-		 0.12188458 0.23259445 -0.02405823 0.10737368 0.23526742 -0.04986221 0.1097405 0.23635238 -0.077517889
-		 0.1524331 0.0084577193 -0.091797419 0.17095003 0.011989661 -0.081831858 0.11836986 0.01388747 -0.062144268
+		 0.12188458 0.23259445 -0.02405823 0.10737368 0.23526743 -0.04986221 0.1097405 0.23635238 -0.077517889
+		 0.1524331 0.0084577193 -0.091797419 0.17095003 0.011989661 -0.081831858 0.11836985 0.01388747 -0.062144268
 		 0.12895408 0.0087669697 -0.08225175 0.21760559 0.00054958998 0.095102318 0.21497849 -0.00039435001 0.11558154
 		 0.21682875 0.00112974 0.072606981 0.21338816 0.00219125 0.044502769 0.059209872 0.51744092 -0.01305589
 		 0 1.35329342 -0.11430618 0.39806825 0.83136278 0.12250192 0.4423438 0.74771225 0.079848193
@@ -2872,7 +3207,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.45422876 0.81561667 0.056094062 0.43135151 0.84271795 0.0049111499 0.43107042 0.82730865 0.00568103
 		 0.45468867 0.80295515 0.059370469 0.45363629 0.79080588 0.062545516 0.42964858 0.81312752 0.0076470901
 		 0.42617181 0.79834175 0.01023599 0.45082977 0.77582258 0.06733489 0.44543794 0.7604301 0.07272058
-		 0.42268994 0.78668922 0.012536201 0.41730946 0.77539945 0.01605341 0 1.18220484 -0.059430882
+		 0.42268994 0.78668922 0.012536202 0.41730946 0.77539945 0.01605341 0 1.18220484 -0.059430882
 		 0 1.019803762 -0.069938488 0.15614225 0.36416861 0.0071960199 0.12784564 0.36600026 0.00435548
 		 0.17957522 0.36684877 -0.01089249 0.086588852 0.37621611 -0.047456004 0.10588428 0.36966965 -0.01520695
 		 0.13497366 0.26484925 -0.0041421298 0.097824745 0.27037862 -0.052752119 0.11758198 0.26780736 -0.0239658
@@ -2971,11 +3306,11 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.139924 1.51621723 -0.0025198399 -0.057822071 1.45474994 0.092699707 -0.093740895 1.45910478 0.080566481
 		 -0.063739613 1.41309917 0.11837495 -0.10335942 1.41861773 0.10701415;
 	setAttr ".vt[1328:1493]" -0.12857313 1.46249235 0.061560132 -0.14025159 1.42808473 0.08168593
-		 -0.027039001 1.45314622 0.095247209 -0.029740501 1.41185975 0.11873774 -0.19068266 1.45241392 -0.070340909
+		 -0.027039001 1.45314622 0.095247209 -0.029740501 1.41185975 0.11873773 -0.19068266 1.45241392 -0.070340909
 		 -0.15841483 1.44018137 -0.092621952 -0.13932112 1.47750235 -0.086790822 -0.16774702 1.48636305 -0.067636058
 		 -0.12104753 1.43442857 -0.11124266 -0.10373701 1.47525942 -0.10240631 -0.22035022 1.47528911 -0.01061574
-		 -0.2113677 1.47043717 -0.042482063 -0.18143672 1.50089443 -0.041986819 -0.18636933 1.50492036 -0.01397365
-		 -0.17223783 1.48994815 0.0279854 -0.18270332 1.49979842 0.01056769 -0.19454056 1.45967865 0.040160842
+		 -0.2113677 1.47043717 -0.042482063 -0.18143673 1.50089443 -0.041986819 -0.18636933 1.50492036 -0.01397365
+		 -0.17223783 1.48994815 0.027985401 -0.18270332 1.49979842 0.01056769 -0.19454056 1.45967865 0.040160842
 		 -0.21494025 1.4700036 0.01905866 -0.15467274 1.47141004 0.043643251 -0.16817673 1.44239426 0.056413002
 		 -0.07932166 1.4345715 -0.12211917 -0.066798545 1.47569871 -0.11155776 -0.037581239 1.43583369 -0.12246735
 		 -0.031962071 1.47591078 -0.1169294 -0.034944929 1.32954729 0.15076256 -0.032622088 1.36848617 0.13941644
@@ -2986,21 +3321,21 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.17384516 1.41157091 0.063562185 -0.2074562 1.42444277 0.044107199 -0.14555952 1.39130664 0.094124191
 		 -0.17352554 1.38034856 0.060103122 -0.2092839 1.38586378 0.041980281 -0.14628235 1.35419905 0.093319826
 		 -0.25608405 1.40544903 -0.01306859 -0.24151611 1.43999898 -0.01217194 -0.23359627 1.43528903 0.020050131
-		 -0.24402709 1.40079403 0.01955419 -0.24661992 1.39732575 -0.04968331 -0.2324941 1.4327209 -0.046557251
-		 -0.22086135 1.37826872 -0.072680108 -0.20838948 1.41457713 -0.071777001 -0.20291115 1.28969753 -0.01828205
+		 -0.24402708 1.40079403 0.01955419 -0.24661991 1.39732575 -0.04968331 -0.2324941 1.4327209 -0.046557251
+		 -0.22086136 1.37826872 -0.072680108 -0.20838948 1.41457713 -0.071777001 -0.20291115 1.28969753 -0.01828205
 		 -0.18908817 1.3189677 -0.02072726 -0.20341961 1.32294357 -0.063397676 -0.21605045 1.29400313 -0.059361249
 		 -0.17837189 1.33780682 -0.02078536 -0.18704267 1.3498435 -0.073129848 -0.23203552 1.34527469 -0.073281385
 		 -0.24532603 1.31384826 -0.072396964 -0.25598872 1.36457932 -0.050726399 -0.26852548 1.33340597 -0.051335931
 		 -0.26568046 1.37341583 -0.0143457 -0.27617407 1.34211671 -0.016392279 -0.17518495 1.39722753 -0.092593163
 		 -0.30735248 1.27982163 -0.01811846 -0.30072397 1.27384961 -0.05129084 -0.28432608 1.30441952 -0.051123671
 		 -0.29145414 1.311692 -0.01711279 -0.2777181 1.25705755 -0.06721016 -0.26049387 1.28528214 -0.069283329
-		 -0.24811797 1.23898673 -0.055274941 -0.2307259 1.26583457 -0.056019902 -0.2353124 1.23115873 -0.015739581
+		 -0.24811797 1.23898673 -0.055274941 -0.2307259 1.26583457 -0.056019902 -0.2353124 1.23115873 -0.015739582
 		 -0.21854702 1.25981271 -0.01609526 -0.23693311 1.32292271 0.03088212 -0.22390717 1.35548842 0.03342947
 		 -0.194987 1.33659744 0.022322509 -0.21004751 1.30334318 0.02086875 -0.18174072 1.3622911 0.025627201
 		 -0.25240144 1.36941695 0.01666734 -0.26274392 1.33759904 0.0146082 -0.27703661 1.30506885 0.01409359
 		 -0.29343072 1.27261937 0.013178919 -0.25327027 1.28983343 0.030446401 -0.2703768 1.25785542 0.02938221
 		 -0.043410502 1.26718199 -0.098157078 -0.046408791 1.31058657 -0.11330638 -0.096382864 1.30372846 -0.11135507
-		 -0.0899885 1.26305103 -0.096356481 -0.14532946 1.29250348 -0.078648478 -0.13463964 1.25434983 -0.068442613
+		 -0.0899885 1.26305103 -0.096356481 -0.14532946 1.29250348 -0.078648478 -0.13463965 1.25434983 -0.068442613
 		 -0.10943083 1.37560201 0.12384956 -0.11206156 1.33482945 0.12717336 -0.11078333 1.29753184 0.11799122
 		 -0.11295302 1.25720465 0.11891841 -0.14029627 1.31773746 0.081464842 -0.14063352 1.27554381 0.076097585
 		 -0.16764818 1.28884363 -0.025701189 -0.1590634 1.25026274 -0.023050101 -0.17160246 1.32657826 -0.022711521
@@ -3033,14 +3368,14 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.081728756 0.97812343 0.1281075 -0.039514091 0.95589638 0.13678257 -0.038734049 0.91009337 0.12682354
 		 -0.16057403 0.97455657 0.078140542 -0.15612911 1.014181495 0.083478406 -0.1234603 0.99907529 0.11237317
 		 -0.12967333 0.96284437 0.10827086 -0.14357522 0.98392433 -0.02505031 -0.11840268 0.97621894 -0.080715835
-		 -0.16367598 0.97941291 0.032258738 -0.14856713 0.93046397 -0.042014059 -0.11620867 0.92343366 -0.089472912
+		 -0.16367598 0.97941291 0.032258738 -0.14856714 0.93046397 -0.042014059 -0.11620867 0.92343366 -0.089472912
 		 -0.17232269 0.9193157 0.01488383 -0.07127773 0.97451973 -0.10149438 -0.026155839 0.97492892 -0.093809254
 		 -0.067726634 0.92198867 -0.10511041 -0.022743549 0.92517054 -0.090974219 -0.10731952 0.85044557 -0.0776335
 		 -0.054224711 0.8514111 -0.060302768 -0.061202869 0.87891078 -0.088733092 -0.10920818 0.8803122 -0.088479064
-		 -0.012866381 0.85384524 -0.00092579005 -0.019587839 0.88261515 -0.062944457 -0.10721496 0.78951925 -0.073359691
+		 -0.012866382 0.85384524 -0.00092579005 -0.019587839 0.88261515 -0.062944457 -0.10721496 0.78951925 -0.073359691
 		 -0.04624971 0.78894645 -0.054579321 -0.046981629 0.82262456 -0.052430701 -0.10702023 0.82166177 -0.072939411
 		 -0.01487983 0.78776377 0.0061391504 -0.01128111 0.82308108 0.0089261597 -0.17790774 0.81079233 0.016899429
-		 -0.15313523 0.79813546 -0.03373317 -0.15329753 0.83631516 -0.03605558 -0.17468698 0.86231685 0.018366151
+		 -0.15313524 0.79813546 -0.03373317 -0.15329753 0.83631516 -0.03605558 -0.17468698 0.86231685 0.018366151
 		 -0.15065913 0.86899841 -0.046241961 -0.35215339 1.19364524 -0.01864356 -0.34325004 1.18672335 -0.051321357
 		 -0.36562771 1.16933453 -0.01356208 -0.35711071 1.16164124 -0.047160968 -0.32276973 1.17401814 -0.065906361
 		 -0.33583823 1.14864969 -0.063233741 -0.29679874 1.16111231 -0.052010797 -0.30744535 1.13719082 -0.049215421
@@ -3049,7 +3384,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.33961114 1.18916392 0.010729291 -0.35202229 1.16568851 0.01593801 -0.1728054 0.87349135 0.070851341
 		 -0.17608362 0.8178308 0.069133319 -0.16826625 0.92787051 0.073247068 -0.14115401 0.8700583 0.10964127
 		 -0.14648734 0.81582427 0.10992899 -0.13531619 0.92094493 0.10818685 -0.054662839 0.79141432 0.10207476
-		 -0.10009374 0.80462855 0.12011948 -0.094848223 0.85325122 0.12023763 -0.047061812 0.83245361 0.1047422
+		 -0.10009374 0.80462855 0.12011947 -0.094848223 0.85325122 0.12023763 -0.047061812 0.83245361 0.1047422
 		 -0.088348687 0.89718163 0.11814362 -0.03604883 0.86559409 0.10879578 -0.10355245 0.75068182 0.11271238
 		 -0.1492821 0.75407898 0.10261283 -0.05947689 0.74673647 0.093289241 -0.10525391 0.69719988 0.10099839
 		 -0.14822076 0.69704705 0.09128993 -0.06482859 0.6975438 0.080867693 -0.18188271 0.70360392 0.0078456094
@@ -3087,12 +3422,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.091219291 0.45816219 -0.063211799 -0.078293838 0.49337533 -0.05780416 -0.17861748 0.48761708 -0.02405869
 		 -0.16666478 0.49718881 -0.059841529 -0.18428108 0.45197225 -0.02992451 -0.17341289 0.46035466 -0.065564796
 		 -0.16756178 0.54202884 0.02438402 -0.16724572 0.50776136 0.018489309 -0.1445093 0.53772312 0.05066935
-		 -0.14570217 0.50346899 0.043392941 -0.14607489 0.44171065 0.0211675 -0.16923337 0.44398648 0.00338144
+		 -0.14570217 0.50346899 0.043392941 -0.14607489 0.44171065 0.0211675 -0.16923338 0.44398648 0.00338144
 		 -0.16714837 0.47675133 0.01357021 -0.14560677 0.4705866 0.034805059 -0.082273588 0.50844014 0.01901672
 		 -0.11071192 0.50302529 0.042501811 -0.10898995 0.53873634 0.048512459 -0.077684343 0.54195356 0.02792969
 		 -0.15329522 0.40278435 0.012078851 -0.17708796 0.40590692 -0.00474498 -0.19016376 0.414271 -0.035995401
-		 -0.18403634 0.3806828 -0.078495741 -0.15261407 0.38423419 -0.10356296 -0.14934272 0.4255676 -0.095644027
-		 -0.17977194 0.42224434 -0.072043672 -0.19335733 0.37352675 -0.041941043 -0.091904372 0.47620529 0.012516989
+		 -0.18403633 0.3806828 -0.078495741 -0.15261407 0.38423419 -0.10356296 -0.14934272 0.4255676 -0.095644027
+		 -0.17977194 0.42224434 -0.072043672 -0.19335733 0.37352675 -0.041941043 -0.091904372 0.47620529 0.012516988
 		 -0.11402563 0.4708699 0.02994643 -0.10085478 0.44414863 -0.0011785901 -0.11932012 0.44084603 0.01712778
 		 -0.12487524 0.40372241 0.0082847001 -0.10518536 0.40765172 -0.01157699 -0.15764938 0.26273218 -0.0034851301
 		 -0.17988275 0.26230943 -0.019488299 -0.17994599 0.29683924 -0.01756585 -0.15801974 0.29687485 -0.00015815004
@@ -3119,19 +3454,19 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.18198928 0.048302989 0.064572223 -0.13533884 0.041069761 0.076939777 -0.16432932 0.03367193 0.10759772
 		 -0.18911482 0.032841481 0.095087573 -0.13905363 0.030941429 0.11192594 -0.20976572 0.026270431 0.081680924
 		 -0.20302704 0.035577402 0.052938081 -0.2246303 0.01541659 0.073425576 -0.21962547 0.018642411 0.046582989
-		 -0.19289921 0.051790573 0.024362558 -0.20586786 0.026764121 0.01540496 -0.17144713 0.02905911 0.13473478
-		 -0.19643949 0.0274937 0.12121354 -0.1497532 0.02669928 0.14107139 -0.17822735 0.025412891 0.15459031
+		 -0.19289921 0.051790573 0.024362557 -0.20586786 0.026764121 0.01540496 -0.17144713 0.02905911 0.13473478
+		 -0.19643949 0.0274937 0.12121354 -0.1497532 0.02669928 0.14107138 -0.17822735 0.025412891 0.15459031
 		 -0.20250981 0.0224689 0.14144459 -0.1579321 0.0253601 0.15835828 -0.21709083 0.022889599 0.10513616
 		 -0.21827434 0.01981065 0.12507029 -0.22682728 0.01215839 0.095615178 -0.22255857 0.0081246402 0.12315246
-		 -0.1538682 0.0014723099 0.15544052 -0.15319441 0.012658469 0.16278662 -0.13742098 0.01310667 0.14117178
-		 -0.14660218 0.00133071 0.13508713 -0.12661001 0.0155363 0.10983577 -0.13709062 0.0014304001 0.10404933
+		 -0.1538682 0.0014723098 0.15544052 -0.15319441 0.012658468 0.16278662 -0.13742098 0.01310667 0.14117178
+		 -0.14660218 0.00133071 0.13508713 -0.12661001 0.0155363 0.10983577 -0.13709062 0.0014304002 0.10404933
 		 -0.12399855 0.020585621 0.078265518 -0.1349211 0.0050747199 0.072625287 -0.12493025 0.03264989 0.04383659
-		 -0.13338716 0.017258961 0.039535969 -0.1894713 -0.0037222099 0.083304375 -0.16150317 -0.0032946102 0.095928192
+		 -0.13338715 0.017258961 0.039535969 -0.1894713 -0.0037222099 0.083304375 -0.16150317 -0.0032946102 0.095928192
 		 -0.15664172 0.00096801994 0.064450219 -0.18487288 0.00084853999 0.054706059 -0.1517159 0.0095879296 0.032609809
 		 -0.17785124 0.0040943399 0.024850531 -0.14788248 0.01172763 0.00012887002 -0.17017263 0.0063289702 -0.00671094
 		 -0.13129212 0.02283494 0.0065462296 -0.14009868 0.0058941301 -0.03920386 -0.16180684 0.00306635 -0.04558184
-		 -0.12460954 0.01572077 -0.030742891 -0.19781373 -0.00156654 0.1324171 -0.17350322 -0.00069787027 0.15027574
-		 -0.16708924 -0.0014187699 0.1263278 -0.19338717 -0.0017840799 0.11011954 -0.1785755 0.01048538 0.16237754
+		 -0.12460954 0.01572077 -0.030742891 -0.19781372 -0.00156654 0.1324171 -0.17350322 -0.00069787027 0.15027574
+		 -0.16708924 -0.0014187699 0.1263278 -0.19338717 -0.0017840799 0.11011954 -0.1785755 0.01048538 0.16237755
 		 -0.20517109 0.0082428493 0.14712872 -0.4614867 0.91092521 0.03086577 -0.46610969 0.8889305 0.033743981
 		 -0.45873412 0.88661605 0.01269661 -0.45472935 0.91523248 0.014612859 -0.47199321 0.86241096 0.037728202
 		 -0.46207836 0.86131972 0.01421208 -0.4437148 0.88312447 -0.00422078 -0.44021755 0.90995425 -0.0026585201
@@ -3191,7 +3526,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.43021721 0.7460472 0.054445557 -0.43328357 0.75722784 0.047879819 -0.44495565 0.75318277 0.043534387
 		 -0.4385668 0.74298346 0.05110123 -0.44991967 0.75619024 0.0568069 -0.44312251 0.74523103 0.061001919
 		 -0.43495733 0.74872911 0.064478651 -0.4395836 0.76111573 0.061877571 -0.20002419 0.0080109397 0.01483523
-		 -0.18969084 0.012062159 -0.014444049 -0.19238277 0.03861028 -0.01354699 -0.17892975 0.011703569 -0.048194937
+		 -0.18969084 0.012062158 -0.014444049 -0.19238277 0.03861028 -0.01354699 -0.17892975 0.011703569 -0.048194937
 		 -0.18533695 0.074565977 -0.01118881 -0.01144218 0.84492517 0.06593924 -0.43602422 0.93716025 0.0004585901
 		 -0.45074841 0.94693702 0.02500926 -0.41591358 0.9260385 0.0083571104;
 	setAttr ".vt[1992:2157]" -0.43193284 0.95843691 -0.0024249998 -0.4414953 0.96955377 0.018877091
@@ -3202,32 +3537,32 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.044054672 0.64900231 0.0266467 -0.086057946 0.33950657 -0.050612733 -0.089912526 0.30556393 -0.05211306
 		 -0.087056935 0.41558099 -0.041392822 -0.081659764 0.45274076 -0.033749022 -0.070470713 0.48544839 -0.02301671
 		 -0.17638089 0.11383378 -0.02611584 -0.01536947 0.82095671 0.065596193 -0.11408898 0.19454499 -0.045255989
-		 -0.12552372 0.19353977 -0.023602841 -0.12188456 0.23259445 -0.02405823 -0.10737368 0.23526742 -0.049862191
+		 -0.12552372 0.19353977 -0.023602841 -0.12188455 0.23259445 -0.02405823 -0.10737368 0.23526743 -0.049862191
 		 -0.10974049 0.23635249 -0.077517912 -0.15243308 0.0084577193 -0.091797419 -0.17095003 0.01198964 -0.081831858
-		 -0.11836986 0.01388747 -0.062144209 -0.12895408 0.0087669697 -0.08225175 -0.21760559 0.00054958998 0.095102318
+		 -0.11836985 0.01388747 -0.062144209 -0.12895408 0.0087669697 -0.08225175 -0.21760559 0.00054958998 0.095102318
 		 -0.21497849 -0.00039435001 0.11558154 -0.21682875 0.00112974 0.072606996 -0.21338788 0.00219125 0.044502802
 		 -0.059209872 0.51744097 -0.0130559 -0.39806819 0.83136386 0.12250192 -0.44234288 0.74771249 0.079848111
 		 -0.41570014 0.76540065 0.01936255 -0.45422879 0.81561667 0.056094032 -0.43135044 0.84271795 0.0049111699
 		 -0.43107042 0.82730871 0.0056810202 -0.45468867 0.80295485 0.05937048 -0.45363629 0.79080588 0.062545568
 		 -0.42964858 0.81312752 0.0076470696 -0.42617181 0.79834175 0.01023597 -0.45082977 0.77582252 0.067334898
-		 -0.44543785 0.7604301 0.07272055 -0.42268988 0.78668922 0.012536201 -0.41730946 0.77539945 0.01605342
+		 -0.44543785 0.7604301 0.07272055 -0.42268988 0.78668922 0.012536202 -0.41730946 0.77539945 0.01605342
 		 -0.15614222 0.36416861 0.0071960199 -0.12784564 0.36600026 0.00435548 -0.17957522 0.36684877 -0.01089249
 		 -0.08658886 0.37621608 -0.047456004 -0.10588428 0.36966965 -0.01520695 -0.13497366 0.26484925 -0.0041421298
 		 -0.097824745 0.27037862 -0.052752089 -0.11758197 0.26780719 -0.023965819 -0.13697879 0.23020609 -0.0076404498
 		 -0.15865807 0.22806272 -0.0080083702 -0.17837182 0.22776309 -0.02288506 -0.18978094 0.23147587 -0.045847438
-		 -0.18228748 0.23515618 -0.075970553 -0.1564265 0.2364765 -0.095373727 -0.12834458 0.23669733 -0.096084982
+		 -0.18228748 0.23515618 -0.075970553 -0.15642649 0.2364765 -0.095373727 -0.12834458 0.23669733 -0.096084982
 		 -0.13947429 0.19184639 -0.01002697 -0.15963827 0.1906132 -0.01142071 -0.17666164 0.1910878 -0.025186779
 		 -0.18641676 0.19443008 -0.045530092 -0.17761499 0.19628812 -0.072276637 -0.14227636 0.15566713 -0.01220044
 		 -0.16054356 0.15365557 -0.01465222 -0.17553112 0.15253419 -0.02733705 -0.1820702 0.15416634 -0.046259571
 		 -0.17347679 0.15564808 -0.070320293 -0.1179987 0.15702267 -0.039699599 -0.12849404 0.15655546 -0.02372577
-		 -0.019223209 1.63090014 0.11482736 0.013191951 1.64096403 0.12031273 0.019813549 1.63801992 0.11598312
+		 -0.019223208 1.63090014 0.11482736 0.013191951 1.64096403 0.12031273 0.019813549 1.63801992 0.11598312
 		 0.014265619 1.65018415 0.11956565 0.022968618 1.64533889 0.11309226 0.02108217 1.62350619 0.11243594
 		 0.012478139 1.62838888 0.11770858 0.0120907 1.63421953 0.11913585 0.024360621 1.62806857 0.1111394
 		 0.030285221 1.62620997 0.10605088 0.023676651 1.63328874 0.11250364 0.0283501 1.63679707 0.10858009
 		 0.045103978 1.64218581 0.090135373 0.040750571 1.65415084 0.098051921 0.038071599 1.63022768 0.09800902
 		 0.034145512 1.64341903 0.10329035 0.052845739 1.61941588 0.067924589 0.048819888 1.62984014 0.080198295
 		 0.043894038 1.60632122 0.078687638 0.041086201 1.61629093 0.090360604 0.03334764 1.59753692 0.089369081
-		 0.030941838 1.60672069 0.10022395 0.021394469 1.59144557 0.098713197 0.01983293 1.60039747 0.10872036
+		 0.030941837 1.60672069 0.10022395 0.021394469 1.59144557 0.098713197 0.019832931 1.60039747 0.10872036
 		 0.014252811 1.62113428 0.11586284 0.02619586 1.61615717 0.10756003 0.01699174 1.61123705 0.11258736
 		 0.0047466201 1.65112734 0.12380774 0.0045755599 1.64230585 0.12310519 0.0041933502 1.63488448 0.12102549
 		 0.0043595899 1.62834501 0.11920151 0.0058024698 1.6096065 0.11575403 0.0050270096 1.62050343 0.11804171
@@ -3266,7 +3601,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.02819041 1.72421205 0.11114797 0.042407833 1.7245605 0.10445966 0.03527762 1.71113324 0.10080522
 		 0.027781829 1.70975566 0.10165615 0.035100922 1.70662796 0.10037651 0.02925824 1.70613909 0.10068928
 		 0.01040311 1.70367575 0.11250482 0.01665421 1.70221257 0.10473198 0.0111842 1.71289778 0.11308337
-		 0.01801304 1.70980895 0.10554528 0.022175008 1.75152469 0.10671487 0.0066647101 1.75345409 0.11012504
+		 0.01801304 1.70980895 0.10554528 0.022175007 1.75152469 0.10671487 0.0066647101 1.75345409 0.11012504
 		 0.016863199 1.73708546 0.11369607 0.00465771 1.73788893 0.11578992 0.0040520001 1.7050004 0.12003163
 		 0.00361832 1.71368456 0.11845881 0.0036639699 1.67762792 0.13592075 0.00395709 1.69255769 0.12659919
 		 0.072859712 1.68831646 -0.029195521 0.066392466 1.66504085 -0.027124459 0.05620265 1.69000149 -0.053194929
@@ -3282,7 +3617,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.12667023 1.52845609 -0.041737217 0.13288236 1.51372647 -0.061914559 0.088936113 1.5442667 -0.052173771
 		 0.10001282 1.52350879 -0.072499588 0.02691195 1.61754978 -0.055354018 0.0090826498 1.61781538 -0.061835889
 		 0.027594618 1.64371979 -0.05868667 0.0092990398 1.64457583 -0.064908475 0.030182691 1.66846049 -0.065762907
-		 0.0098145995 1.6699338 -0.073123381 0.032780439 1.69211316 -0.073287748 0.010161609 1.69399631 -0.081289664
+		 0.0098145995 1.6699338 -0.073123381 0.032780439 1.69211316 -0.073287748 0.010161608 1.69399631 -0.081289664
 		 0.085722491 1.70787084 0.0057357298 0.088821232 1.69641781 0.0057512801 0.086785428 1.70228434 -0.0078768404
 		 0.090801656 1.69269657 -0.0040327599 0.059718817 1.71623135 -0.056698352 0.060231399 1.74951649 -0.054901078
 		 0.076092958 1.71388686 -0.031282678 0.076194622 1.74472857 -0.032000151 0.082091659 1.71725631 -0.0095235202
@@ -3295,7 +3630,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.032923009 1.79690611 0.074645303 0.069890283 1.7774657 -0.020575831 0.056633469 1.78223968 -0.042191647
 		 0.05554831 1.80193186 0.0013153399 0.047800962 1.80366695 -0.023145089 0.03444916 1.71907365 -0.076900981
 		 0.01024518 1.72054255 -0.085337363 0.035362538 1.75315142 -0.073174238 0.01091561 1.75442874 -0.081635676
-		 0.032275829 1.81437337 -0.011728999 0.01113792 1.82021594 -0.0087013105 0.034222148 1.81522191 0.01618873
+		 0.032275829 1.81437337 -0.011728998 0.01113792 1.82021594 -0.0087013105 0.034222148 1.81522191 0.01618873
 		 0.01099511 1.82072997 0.02048404 0.035050251 1.78608942 -0.05760242 0.01135612 1.78791749 -0.064585611
 		 0.032794919 1.80678666 -0.03453676 0.01126515 1.81002522 -0.036892761 0.02737873 1.65461314 0.1090612
 		 0.034032591 1.66478312 0.10405769 0.026375251 1.67319 0.10966948 0.011004911 1.68783534 0.12228043
@@ -3312,7 +3647,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.078818999 1.54909015 -0.02618558 0.071277931 1.47227907 0.07675425 0.079430372 1.43750668 0.10167728
 		 0.10541482 1.47472584 0.061740261 0.1179283 1.44243574 0.08456517 0.01280579 1.46929109 0.085848786
 		 0.01392236 1.43300867 0.10645825 0.039844058 1.47011626 0.084016263 0.043785438 1.43394947 0.10711014
-		 0.16540666 1.46461868 -0.080690049 0.13112327 1.45697165 -0.099623315 0.14504793 1.49382305 -0.074085742
+		 0.16540666 1.46461868 -0.080690049 0.13112326 1.45697165 -0.099623315 0.14504793 1.49382305 -0.074085742
 		 0.11347693 1.49366379 -0.088898189 0.20220335 1.49159551 -0.0266474 0.18995327 1.48049259 -0.056643702
 		 0.16627644 1.51365221 -0.032323588 0.1618903 1.50275254 -0.0562356 0.16016968 1.50581431 0.01342203
 		 0.19365291 1.48259676 0.02603949 0.16497526 1.51428056 -0.0074116602 0.2040773 1.49025166 0.00246929
@@ -3324,21 +3659,21 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.018813791 1.27331066 0.15859491 0.12139798 1.36342168 -0.11635869 0.068967454 1.3698566 -0.12709276
 		 0.10806285 1.4120723 -0.12229351 0.06236022 1.41437685 -0.12745485 0.18680947 1.43613088 0.050415687
 		 0.15800685 1.41841137 0.073746823 0.19183606 1.40332913 0.05197949 0.16092953 1.38534057 0.078130268
-		 0.24712384 1.42152178 0.0046645999 0.23113555 1.45650637 0.0049176603 0.2270053 1.41181219 0.033494569
+		 0.24712384 1.42152178 0.0046645999 0.23113556 1.45650637 0.0049176603 0.22700529 1.41181219 0.033494569
 		 0.21570104 1.44768465 0.033192869 0.24715361 1.42002714 -0.03118916 0.2292975 1.40642858 -0.061977819
 		 0.22946338 1.45649457 -0.02819247 0.21308969 1.44344747 -0.058900151 0.19969192 1.30293274 -0.042862501
-		 0.18762733 1.32918942 -0.046717647 0.22346406 1.31826138 -0.071415961 0.21088877 1.34875286 -0.0741129
+		 0.18762733 1.32918942 -0.046717647 0.22346407 1.31826138 -0.071415961 0.21088877 1.34875286 -0.0741129
 		 0.25150174 1.33991194 -0.065274507 0.2402875 1.37235677 -0.064433068 0.26850805 1.35483706 -0.033760082
 		 0.2587184 1.38648176 -0.032504071 0.16444701 1.36755967 -0.094598636 0.14915328 1.4145813 -0.10450087
 		 0.1988892 1.38488078 -0.080553427 0.18451738 1.42585254 -0.083118618 0.29902634 1.29468799 -0.035478871
 		 0.28223792 1.28119457 -0.062707923 0.28256777 1.32480145 -0.034701291 0.2660785 1.30991924 -0.064174183
 		 0.25323674 1.26119459 -0.066125825 0.22974394 1.24646771 -0.037274212 0.23707074 1.28858829 -0.068852283
 		 0.21353061 1.27418315 -0.038987711 0.2151366 1.32987976 0.03043633 0.20166799 1.36148667 0.035005428
-		 0.19550131 1.31083071 0.0031753001 0.18177556 1.34164703 0.0035318199 0.26628274 1.35712445 0.0013194301
+		 0.19550131 1.31083071 0.0031753001 0.18177556 1.34164703 0.0035318199 0.26628274 1.35712445 0.0013194302
 		 0.25775072 1.38866639 0.0037177301 0.24457133 1.34759176 0.026075238 0.23432553 1.37873006 0.02957434
 		 0.29430619 1.29380202 -0.00053738995 0.27859473 1.32569873 1.4950037e-05 0.27445468 1.28203058 0.02456845
 		 0.25810128 1.31485403 0.02523946 0.068977192 1.28628969 -0.10701258 0.071613386 1.32713747 -0.12020753
-		 0.11800137 1.27815139 -0.091692612 0.12504859 1.31641829 -0.10060783 0.086250268 1.39346468 0.12458952
+		 0.11800136 1.27815139 -0.091692612 0.12504859 1.31641829 -0.10060783 0.086250268 1.39346468 0.12458952
 		 0.09112975 1.35112214 0.13791041 0.12573925 1.4032594 0.10338147 0.12989432 1.36343706 0.11176951
 		 0.092492364 1.3111707 0.13620238 0.09408205 1.27360761 0.13350111 0.12810987 1.32525492 0.10465754
 		 0.12716618 1.28529179 0.098582581 0.15715934 1.26857936 -0.050306428 0.16522367 1.30682361 -0.05462677
@@ -3360,7 +3695,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.092322767 1.15598309 0.13311686 0.1265927 1.15091205 -0.01797845 0.14384858 1.14368343 0.02058598
 		 0.12434015 1.11638474 -0.02091695 0.14509326 1.11019123 0.020621089 0.057155207 1.16047871 -0.056736607
 		 0.094651863 1.15710437 -0.042460669 0.05649415 1.12308049 -0.05464118 0.092384189 1.12125027 -0.043825641
-		 0.019952789 1.023615241 0.15797454 0.059648938 1.033569813 0.15056024 0.01948596 1.067965627 0.1658514
+		 0.019952789 1.023615241 0.15797454 0.059648938 1.033569813 0.15056023 0.01948596 1.067965627 0.1658514
 		 0.05809658 1.074974656 0.15576395 0.13110976 1.06248641 0.10880568;
 	setAttr ".vt[2490:2655]" 0.12644069 1.0968256 0.10879073 0.097344354 1.048376203 0.13184147
 		 0.094408333 1.085886359 0.13481067 0.12890202 1.048832297 -0.036301728 0.12718797 1.083909392 -0.028535258
@@ -3373,12 +3708,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.049074978 1.0009521246 -0.09278252 0.096336916 1.0027445555 -0.086762339 0.045072962 0.94868898 -0.1023364
 		 0.095101878 0.94758207 -0.099275216 0.082796484 0.86302423 -0.083241291 0.03467609 0.86600548 -0.053454198
 		 0.089395978 0.898449 -0.098354556 0.040942878 0.90033692 -0.091383755 0.075664327 0.80526102 -0.069922082
-		 0.024241351 0.80695742 -0.023998251 0.078338869 0.835702 -0.071692571 0.0272089 0.83953011 -0.025162671
+		 0.024241352 0.80695742 -0.023998251 0.078338869 0.835702 -0.071692571 0.0272089 0.83953011 -0.025162671
 		 0.16788015 0.82748878 -0.0085773403 0.13266429 0.81036437 -0.056677479 0.1661415 0.87087321 -0.012248171
 		 0.1328674 0.8417111 -0.061989021 0.34316742 1.20334983 -0.036566678 0.35681441 1.17931235 -0.034497891
 		 0.3278735 1.19306791 -0.060875621 0.34067786 1.16828227 -0.0608528 0.30328584 1.17883193 -0.061463472
 		 0.31554061 1.1549964 -0.062364448 0.27920413 1.16718173 -0.036688589 0.28977972 1.14490831 -0.035835877
-		 0.27593219 1.16765285 0.00028725996 0.2860814 1.14625394 0.0013762701 0.29550248 1.1792599 0.020261711
+		 0.27593219 1.16765285 0.00028725996 0.2860814 1.14625394 0.0013762701 0.29550248 1.1792599 0.020261712
 		 0.30689105 1.15753222 0.019789509 0.3214848 1.19443858 0.01719816 0.33364677 1.1714493 0.01956185
 		 0.34119391 1.20462632 -0.0037070501 0.35499972 1.1812489 0.00037894995 0.17940764 0.84308684 0.044501711
 		 0.17607279 0.89829081 0.046481252 0.16221589 0.84642571 0.093008593 0.15737095 0.90065974 0.09312766
@@ -3387,7 +3722,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.12760995 0.72464609 0.10610887 0.082321689 0.72348058 0.1006445 0.18380511 0.72884893 0.037347771
 		 0.18255702 0.78634065 0.042035416 0.16599403 0.72603774 0.082055509 0.16545853 0.78692025 0.090077505
 		 0.081682108 0.72930014 -0.077688441 0.036172148 0.72831541 -0.035848189 0.077329919 0.7703203 -0.073510431
-		 0.02843665 0.76963377 -0.02853068 0.17249173 0.73092246 -0.0150534 0.13614562 0.73086512 -0.06390471
+		 0.02843665 0.76963377 -0.028530682 0.17249173 0.73092246 -0.0150534 0.13614562 0.73086512 -0.06390471
 		 0.17059153 0.78110772 -0.0101431 0.13410562 0.77366567 -0.059701573 0.31796214 1.1337254 0.027513539
 		 0.29675156 1.12197053 0.0068579502 0.33165565 1.10573733 0.03415687 0.3125661 1.09388423 0.01262273
 		 0.38040146 1.12715876 0.01385466 0.36791146 1.15590143 0.0063897502 0.35815364 1.11904478 0.032116219
@@ -3396,7 +3731,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.35591599 1.14198959 -0.054391552 0.3862803 1.12477732 -0.016090259 0.37164143 1.15340817 -0.026803419
 		 0.097824126 0.63523 -0.078105904 0.060536791 0.63273984 -0.049985681 0.088350594 0.68351537 -0.07915888
 		 0.047500201 0.68259513 -0.042738929 0.13728917 0.68486094 -0.06673082 0.17034103 0.68075424 -0.02164006
-		 0.13914403 0.63506663 -0.066868603 0.16687423 0.62940401 -0.027431861 0.12771007 0.66831392 0.091900118
+		 0.13914403 0.63506663 -0.066868603 0.16687423 0.62940401 -0.027431861 0.12771006 0.66831392 0.091900118
 		 0.08592739 0.66867465 0.086519077 0.12618884 0.61194456 0.073055431 0.085806027 0.6123929 0.068060577
 		 0.18095341 0.67426908 0.02929965 0.16371611 0.66962522 0.070814729 0.1754529 0.62157953 0.019471031
 		 0.15943308 0.61483198 0.057411619 0.11065847 0.54935628 -0.077954099 0.07816451 0.54593241 -0.063713267
@@ -3414,7 +3749,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.38691756 0.98046362 0.0051845401 0.41766942 1.033211112 0.01138595 0.4283694 1.0062878132 0.020280899
 		 0.41174755 1.024403811 -0.0129652 0.42439502 0.99739218 -0.0030807399 0.1242066 0.48200366 -0.08664573
 		 0.09696234 0.47883376 -0.071549751 0.11693969 0.51693439 -0.081429183 0.085597605 0.51333672 -0.068678387
-		 0.17263958 0.50919855 -0.040633831 0.1786086 0.47523966 -0.045717303 0.15014929 0.51610458 -0.070292369
+		 0.17263958 0.50919855 -0.040633831 0.17860861 0.47523966 -0.045717303 0.15014929 0.51610458 -0.070292369
 		 0.15700342 0.48137102 -0.075568162 0.17387703 0.52926081 0.00231881 0.1732641 0.57033271 0.0095611699
 		 0.15793672 0.52072394 0.036351122 0.15757564 0.56237924 0.044813361 0.15688002 0.45839405 0.02095012
 		 0.17726979 0.46494234 -0.0077260099 0.15831317 0.48855609 0.031031311;
@@ -3428,28 +3763,28 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.18831772 0.31466293 -0.03062474 0.17483887 0.28844115 -0.09552025 0.17345148 0.32407388 -0.098651722
 		 0.19322497 0.28499925 -0.065033898 0.19301136 0.31960717 -0.065773912 0.14469208 0.31399885 0.0028465302
 		 0.12126123 0.31654814 -0.0087403897 0.1410643 0.289891 -0.10749436 0.10888328 0.2896857 -0.097811356
-		 0.13865909 0.32590142 -0.11220565 0.10516799 0.32578155 -0.10175101 0.13344178 0.40547082 -0.10250731
+		 0.13865909 0.32590142 -0.11220565 0.10516799 0.32578155 -0.10175101 0.13344178 0.40547082 -0.10250732
 		 0.10307091 0.40333375 -0.08932174 0.12996832 0.44472343 -0.093916863 0.10036629 0.44197625 -0.081747703
-		 0.14420073 0.1785478 -0.09297958 0.12588897 0.17778234 -0.080475524 0.15451305 0.10919316 -0.0030820302
+		 0.14420073 0.1785478 -0.09297958 0.12588897 0.17778234 -0.080475524 0.15451306 0.10919316 -0.0030820302
 		 0.1352606 0.10488459 -0.00604766 0.1583311 0.086103007 0.018624241 0.13686886 0.077454068 0.01978443
 		 0.15724862 0.098852709 -0.082255155 0.17821716 0.097551346 -0.059767589 0.1580998 0.059188489 -0.095922559
 		 0.17522779 0.060391858 -0.06668295 0.13467902 0.056800827 -0.099215195 0.11611715 0.055576038 -0.079549171
-		 0.13918094 0.099384509 -0.0899795 0.12629621 0.098444566 -0.074109405 0.11688171 0.06175838 -0.011064109
+		 0.13918094 0.099384509 -0.0899795 0.12629621 0.098444566 -0.074109405 0.11688171 0.06175838 -0.011064108
 		 0.11847642 0.10081048 -0.01948189 0.11216095 0.060161911 -0.045789499 0.11652447 0.099873945 -0.044544958
 		 0.16577141 0.06150407 0.051580381 0.14304824 0.055537809 0.056476388 0.17388099 0.040310878 0.08638873
 		 0.1485039 0.038801871 0.093886711 0.19697696 0.036010168 0.07372348 0.21637344 0.02408945 0.063683949
 		 0.18810211 0.051596459 0.043684669 0.20717214 0.03209053 0.034275971 0.18000652 0.029495521 0.11613629
 		 0.15497644 0.029443309 0.12589507 0.18771014 0.027625389 0.14002089 0.16351807 0.028417019 0.14916588
 		 0.20390259 0.027040729 0.10086264 0.210371 0.024330871 0.12406661 0.22137098 0.01956648 0.088155292
-		 0.2244752 0.01692535 0.1121693 0.14570814 0.0053503299 0.15173374 0.14806269 0.020530332 0.15428801
+		 0.22447519 0.01692535 0.1121693 0.14570814 0.0053503299 0.15173374 0.14806269 0.020530332 0.15428801
 		 0.13572894 0.0077214497 0.12275037 0.1368805 0.022081161 0.12681745 0.1281701 0.0082656201 0.091760255
 		 0.12724316 0.02774868 0.095204487 0.12790981 0.01669284 0.059615932 0.12740836 0.036900479 0.060521971
 		 0.17273623 -0.0016605499 0.074869826 0.1464431 -0.00053808995 0.084496349 0.16738026 0.0034187098 0.044557191
-		 0.14287254 0.0068229199 0.052381393 0.16166461 0.0076822001 0.01346156 0.14019184 0.01677005 0.02023829
-		 0.15516007 0.0062390296 -0.021698421 0.13567677 0.013239909 -0.014777251 0.18263267 -0.0018988299 0.13167073
+		 0.14287254 0.0068229199 0.052381393 0.16166462 0.0076822001 0.01346156 0.14019184 0.01677005 0.02023829
+		 0.15516007 0.0062390296 -0.021698421 0.13567677 0.013239909 -0.014777252 0.18263267 -0.0018988299 0.13167073
 		 0.15862523 -0.0018749902 0.14439535 0.17783648 -0.0038058099 0.10499539 0.15092184 -0.0017157701 0.11698747
-		 0.19258599 0.017600389 0.15536569 0.16662538 0.01998077 0.16364688 0.18962422 0.00260334 0.15164296
-		 0.16403089 0.00517178 0.16125073 0.46115157 0.9007408 0.022680489 0.46637478 0.87403673 0.023920082
+		 0.19258599 0.017600389 0.15536569 0.16662538 0.01998077 0.16364689 0.18962422 0.0026033402 0.15164296
+		 0.16403089 0.00517178 0.16125073 0.46115157 0.9007408 0.022680489 0.46637478 0.87403673 0.023920083
 		 0.45016441 0.89883292 0.0030723899 0.45358425 0.87279218 0.00327898 0.46349576 0.90503854 0.04146523
 		 0.45975101 0.91174787 0.062868647 0.47090432 0.87794799 0.047855631 0.46669242 0.8846665 0.073371723
 		 0.41946453 0.8843419 0.01021883 0.43174848 0.89273453 -0.0033772397 0.424546 0.86533272 0.011325181
@@ -3459,7 +3794,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.40616027 0.95717019 0.056413662 0.41552064 0.86618775 0.093412392 0.41870335 0.87846977 0.087211087
 		 0.42104846 0.86903381 0.1000781 0.42428604 0.88382316 0.094456188 0.41053191 0.88391596 0.071440101
 		 0.3967717 0.86957979 0.094250478 0.39832348 0.88344163 0.086843625 0.40561691 0.86650634 0.091255397
-		 0.40805665 0.87859827 0.083506353 0.41133019 0.89693403 0.10772839 0.40885362 0.87803161 0.11556888
+		 0.40805665 0.87859827 0.083506353 0.41133019 0.89693403 0.10772838 0.40885362 0.87803161 0.11556888
 		 0.42119807 0.89169389 0.10254735 0.41847911 0.87420171 0.10986955 0.39881063 0.87827092 0.11237331
 		 0.40152976 0.89685911 0.10504894 0.39406398 0.87469029 0.10298269 0.39608735 0.89104348 0.096218891
 		 0.40787807 0.83677119 0.1077147 0.41282582 0.85158765 0.09898793 0.41287437 0.83849066 0.11499368
@@ -3498,9 +3833,9 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.42369193 0.94375437 -0.0017897302 0.44564366 0.963314 0.03530838 0.43789765 0.96568543 0.05465734
 		 0.45320305 0.93969518 0.047749199 0.44227862 0.94156873 0.066510521 0.15657212 0.90183723 -0.034626771
 		 0.0088215694 0.90399331 -0.073558889 0.15122575 0.94943476 0.094235204 0.1325466 0.90422386 -0.074432403
-		 0.017006641 1.45609164 -0.12094469 0.017132619 0.76685041 0.032623939 0.058441438 0.56760973 0.018886631
+		 0.017006641 1.45609164 -0.12094469 0.017132618 0.76685041 0.032623939 0.058441438 0.56760973 0.018886631
 		 0.051144391 0.57700348 -0.02090787 0.037782893 0.7668007 0.081146516 0.060471319 0.90213454 0.11719097
-		 0.0260728 0.72618127 0.023488218 0.053875979 0.61796379 0.038790692 0.010242861 0.95015746 -0.087335154
+		 0.0260728 0.72618127 0.023488218 0.053875979 0.61796379 0.038790692 0.010242862 0.95015746 -0.087335154
 		 0.045139752 0.62726587 -0.00553241 0.097115487 0.32030609 -0.03449934 0.092931747 0.43046948 -0.021756029
 		 0.076708563 0.47292995 -0.046110459 0.085916691 0.43757212 -0.05371451 0.12572236 0.051670097 0.023505559
 		 0.18140481 1.3748585 0.041664027 0.019664491 1.41514361 -0.12193961 0.17149273 1.35144651 0.0042217202
@@ -3518,7 +3853,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.41502166 0.90248662 0.01420976 0.40599084 0.90614593 0.049998332 0.4459433 0.74478614 0.085758947
 		 0.44326851 0.76739264 0.11270724 0.41994613 0.76102555 0.0215942 0.43520638 0.74249184 0.059307836
 		 0.40770802 0.9410187 0.015702471 0.17511366 1.33483195 -0.05184966 0.023078781 1.3326962 -0.11345753
-		 0.020759922 1.24642003 -0.085780591 0.018540259 1.084238768 -0.06071949 0.01898713 1.12313211 -0.057371911
+		 0.020759922 1.24642003 -0.085780591 0.018540258 1.084238768 -0.06071949 0.01898713 1.12313211 -0.057371911
 		 0.4499211 0.82511747 0.063968003 0.46209991 0.82237619 0.04971192 0.43318897 0.83151275 0.01370782
 		 0.43678993 0.83585578 -0.00040356992 0.45198274 0.80004621 0.06980437 0.46171457 0.79533499 0.05667264
 		 0.42964157 0.80529153 0.0169647 0.43262848 0.80391848 0.00248736 0.44734466 0.7715776 0.077646449
@@ -3535,8 +3870,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.40250218 0.83397406 0.12603495 0.42318317 0.94250375 0.073625423 0.39391711 0.96550238 0.035128802
 		 0.40008536 0.97435468 0.053084351 0.43479562 0.97408259 0.0041521802 0.39926693 0.95979464 0.01000466
 		 0.13020338 0.8698408 -0.0728129 0.0063324897 0.86804694 -0.026799701 0.19582239 0.00213582 0.033921011
-		 0.2023533 -0.00080604001 0.063335866 0.20575966 -0.0018361899 0.089701138 0.20680398 -0.00234886 0.11241105
-		 0.21190317 0.00157937 0.13033378 0.21471006 0.014916751 0.13637638 0.14999275 1.21635342 0.055536151
+		 0.2023533 -0.00080604001 0.063335866 0.20575966 -0.0018361899 0.089701138 0.20680399 -0.00234886 0.11241105
+		 0.21190317 0.00157937 0.13033378 0.21471006 0.014916752 0.13637638 0.14999275 1.21635342 0.055536151
 		 0.14615026 1.10467649 0.069497898 0.16974284 0.95234215 0.052121319 0.45753837 0.92654479 0.028813118
 		 0.43758634 0.98319489 0.02821872 0.41746825 0.9629001 -0.00529576 0.41530973 0.98222631 0.055230498
 		 0.43064058 0.98592436 0.046450868 0.14853397 1.31197834 0.054963622 0.13657275 0.018808831 -0.10095623
@@ -3549,7 +3884,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.14054765 0.38345933 0.01007353 0.16789986 0.38413239 0.00280407 0.18757586 0.38992763 -0.022316001
 		 0.087071396 0.39880395 -0.06080398 0.094819263 0.3920958 -0.028539 0.1155595 0.38618347 -0.0021809801
 		 0.14281078 0.34698531 0.0063407701 0.16935408 0.34650269 -0.00183005 0.18883684 0.3502464 -0.027782541
-		 0.19261974 0.356704 -0.063049138 0.17128557 0.36205316 -0.096423499 0.13625894 0.36397916 -0.10975513
+		 0.19261974 0.356704 -0.063049138 0.17128557 0.36205316 -0.096423499 0.13625893 0.36397916 -0.10975514
 		 0.10392763 0.36326969 -0.097498797 0.085610583 0.36000374 -0.067423359 0.094578274 0.35441944 -0.031907629
 		 0.1180336 0.34979177 -0.0052619497 0.14529985 0.28081208 0.00011578009 0.091805287 0.28865981 -0.06964346
 		 0.10281859 0.28654289 -0.037122652 0.12446284 0.28331012 -0.01128743 0.14638531 0.24660689 -0.00360188
@@ -3558,11 +3893,11 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.10122122 0.25391474 -0.066476256 0.11068311 0.25198346 -0.03731247 0.12780249 0.24913576 -0.01366269
 		 0.14878966 0.21020578 -0.0074869199 0.16908836 0.20920493 -0.015708551 0.18447371 0.21136633 -0.033920269
 		 0.18641971 0.21504554 -0.059743211 0.16888784 0.21707508 -0.085726231 0.14246982 0.21756417 -0.096605927
-		 0.12058867 0.21698366 -0.086220369 0.1309925 0.21217121 -0.015040769 0.15013523 0.17271578 -0.01066787
+		 0.12058868 0.21698366 -0.086220369 0.1309925 0.21217121 -0.015040769 0.15013523 0.17271578 -0.01066787
 		 0.1687355 0.17173165 -0.018771991 0.18185917 0.17325586 -0.035162549 0.18210116 0.17524098 -0.058321498
 		 0.16574022 0.17705385 -0.082131796 0.11622814 0.17610401 -0.054941248 0.12080067 0.17507869 -0.03247124
 		 0.13338321 0.17418022 -0.016587909 0.15244059 0.13699543 -0.01135164 0.16867605 0.1337496 -0.020521281
-		 0.17965516 0.13306743 -0.036455348 0.17820759 0.13472362 -0.057940859 0.16215119 0.13719532 -0.079874761
+		 0.17965515 0.13306743 -0.036455348 0.17820759 0.13472362 -0.057940859 0.16215119 0.13719532 -0.079874761
 		 0.14280626 0.13948642 -0.089926593 0.12729706 0.1391167 -0.076305702 0.11861435 0.13847741 -0.049655721
 		 0.12320208 0.13855003 -0.028961461 0.13677593 0.13841882 -0.01605228 0.41615212 0.88340658 0.05976586
 		 0.42451134 0.88195831 0.081420481 0.39773232 0.89399171 0.070375107 0.39560416 0.90893829 0.08005885
@@ -3576,11 +3911,11 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.040750571 1.65415084 0.098051928 -0.038071599 1.63022768 0.09800902 -0.034145512 1.64342117 0.10329034
 		 -0.05284575 1.61941588 0.067924574 -0.048819888 1.62984014 0.080198295 -0.043894 1.60632122 0.07868766
 		 -0.041086193 1.61629093 0.090360604 -0.033347651 1.59753692 0.089369081 -0.030941879 1.60672069 0.10022394
-		 -0.02139445 1.59144557 0.098713204 -0.01983293 1.60039747 0.10872036 -0.014252811 1.62113428 0.11586298
+		 -0.02139445 1.59144557 0.098713204 -0.019832931 1.60039747 0.10872036 -0.014252811 1.62113428 0.11586298
 		 -0.026195869 1.61615717 0.10756003 -0.01699174 1.61123705 0.11258736 -0.0047466201 1.65112734 0.12380762
 		 -0.0045755599 1.64230585 0.12310518 -0.0041933502 1.63488448 0.12102549 -0.0043595899 1.62834501 0.11920153
-		 -0.0058024698 1.6096065 0.11575417 -0.0050270096 1.62050343 0.11804166 -0.0074836202 1.58820891 0.10374813
-		 -0.0069178804 1.59726596 0.11407184 -0.01109468 1.66699111 0.13198873 -0.013177549 1.65946436 0.12402524
+		 -0.0058024698 1.6096065 0.11575416 -0.0050270096 1.62050343 0.11804166 -0.0074836202 1.58820891 0.10374813
+		 -0.0069178804 1.59726596 0.11407184 -0.01109468 1.66699111 0.13198872 -0.013177549 1.65946436 0.12402524
 		 -0.01524194 1.67219198 0.12445151 -0.020475499 1.66453242 0.11648195 -0.0044332203 1.65808809 0.12963369
 		 -0.0039183199 1.66589773 0.13660444 -0.00742818 1.58343136 0.086192787 -0.0070062103 1.57873976 0.068030693
 		 -0.02145257 1.58633435 0.081911027 -0.02079148 1.58147466 0.06340979 -0.03395275 1.59273577 0.073713347
@@ -3615,14 +3950,14 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.042407833 1.72456038 0.10445966 -0.03527762 1.71113324 0.10080522 -0.027781829 1.7097559 0.10165617
 		 -0.035100922 1.70662796 0.10037655 -0.02925824 1.70613897 0.10068928 -0.01040311 1.70367575 0.11250482
 		 -0.01665421 1.70221221 0.10473198 -0.0111842 1.7128979 0.11308337 -0.01801304 1.70980895 0.10554539
-		 -0.022175008 1.75152528 0.10671489 -0.0066647101 1.75345433 0.11012504 -0.016863199 1.73708546 0.11369609
+		 -0.022175007 1.75152528 0.10671489 -0.0066647101 1.75345433 0.11012504 -0.016863199 1.73708546 0.11369609
 		 -0.00465771 1.73788905 0.11578992 -0.0040520001 1.7050004 0.12003163 -0.00361832 1.71368456 0.11845882
 		 -0.0036639699 1.67762792 0.13592075 -0.0039570997 1.69255769 0.12659919 -0.07285969 1.68831646 -0.029195521
 		 -0.066392459 1.66504073 -0.02712447 -0.05620265 1.69000149 -0.053194899 -0.050212421 1.66678071 -0.048244528
 		 -0.083842553 1.68507338 -0.01462675 -0.089077741 1.68187165 -0.0083389198 -0.077823102 1.66573513 -0.01158785
 		 -0.08410053 1.66798508 -0.0048325397 -0.057997778 1.64276791 -0.02367205 -0.054438062 1.61944044 -0.02205269
 		 -0.043186396 1.64354753 -0.0429952 -0.042248849 1.61838388 -0.041275393 -0.055883259 1.59577012 -0.01946347
-		 -0.059387971 1.57327414 -0.01238684 -0.046490479 1.59257269 -0.041257311 -0.057287477 1.56964493 -0.037638038
+		 -0.059387971 1.57327414 -0.012386841 -0.046490479 1.59257269 -0.041257311 -0.057287477 1.56964493 -0.037638038
 		 -0.087914437 1.68176723 -0.00059845002 -0.08514519 1.68384731 0.0078101601 -0.083607338 1.66975069 0.0023722099
 		 -0.080858737 1.67126727 0.01100048 -0.078959771 1.51813281 0.017145781 -0.055569738 1.52004933 0.035467468
 		 -0.093489066 1.49756777 0.04368607 -0.062805593 1.49661398 0.056854539 -0.0064862198 1.52850866 0.04880181
@@ -3631,7 +3966,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.13288234 1.51372647 -0.061914548 -0.088936098 1.5442667 -0.05217379 -0.10001281 1.52350879 -0.072499625
 		 -0.02691195 1.61754978 -0.055354051 -0.0090826498 1.61781538 -0.061835889 -0.027594618 1.64371979 -0.05868667
 		 -0.0092990398 1.64457583 -0.064908475 -0.030182691 1.66846049 -0.06576293 -0.0098145995 1.6699338 -0.073123381
-		 -0.032780439 1.69211316 -0.073287733 -0.010161609 1.69399631 -0.081289664 -0.085722476 1.70787084 0.0057357298
+		 -0.032780439 1.69211316 -0.073287733 -0.010161608 1.69399631 -0.081289664 -0.085722476 1.70787084 0.0057357298
 		 -0.088821232 1.69641769 0.0057512801 -0.086785421 1.70228422 -0.0078768497 -0.090801522 1.69269657 -0.0040327501
 		 -0.059718829 1.7162317 -0.056698352 -0.060231391 1.74951661 -0.054901101 -0.076093003 1.71388686 -0.031282678
 		 -0.076194622 1.74472857 -0.032000162 -0.082091644 1.71725631 -0.0095235296 -0.08163821 1.74384975 -0.0072582602
@@ -3644,9 +3979,9 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.069890283 1.77746582 -0.020575831 -0.056633521 1.78223968 -0.042191602;
 	setAttr ".vt[3320:3485]" -0.055548321 1.80193174 0.0013153399 -0.047800943 1.80366743 -0.023145089
 		 -0.034449209 1.71907365 -0.076900981 -0.01024518 1.72054255 -0.085337356 -0.035362549 1.75315142 -0.073174238
-		 -0.01091561 1.75443053 -0.081635676 -0.032275818 1.81437337 -0.011728999 -0.01113792 1.82021594 -0.0087013105
+		 -0.01091561 1.75443053 -0.081635676 -0.032275818 1.81437337 -0.011728998 -0.01113792 1.82021594 -0.0087013105
 		 -0.034222141 1.81522155 0.01618873 -0.01099512 1.82072997 0.02048403 -0.035050239 1.78608942 -0.05760242
-		 -0.01135611 1.78791749 -0.064585611 -0.03279493 1.80678678 -0.034536779 -0.01126516 1.81002533 -0.036892761
+		 -0.011356111 1.78791749 -0.064585611 -0.03279493 1.80678678 -0.034536779 -0.01126516 1.81002533 -0.036892761
 		 -0.02737873 1.65461564 0.1090612 -0.034032591 1.66478288 0.1040577 -0.026375251 1.67319 0.10966948
 		 -0.011004911 1.68783534 0.12228043 -0.01015443 1.67618108 0.13154989 -0.01819697 1.68051922 0.11601029
 		 -0.00370336 1.72304678 0.11844511 -0.01047455 1.56378186 -0.076225482 -0.029412292 1.59053814 -0.057833053
@@ -3672,13 +4007,13 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.01780731 1.31175733 0.15072617 -0.056734107 1.2716608 0.15427029 -0.018813791 1.27331066 0.15859491
 		 -0.12139798 1.36342168 -0.11635869 -0.068967454 1.3698566 -0.12709276 -0.10806285 1.41207194 -0.12229326
 		 -0.06236022 1.41437685 -0.1274548 -0.1868095 1.43613017 0.050415769 -0.15800685 1.41841161 0.073746823
-		 -0.19183606 1.40332901 0.05197949 -0.16092955 1.38534057 0.07813029 -0.24712411 1.42152178 0.0046646101
-		 -0.23113555 1.45650637 0.0049176603 -0.22700535 1.41181171 0.033494648 -0.21570109 1.44768298 0.03319281
+		 -0.19183606 1.40332901 0.05197949 -0.16092955 1.38534057 0.07813029 -0.24712412 1.42152178 0.0046646101
+		 -0.23113556 1.45650637 0.0049176603 -0.22700535 1.41181171 0.033494648 -0.21570109 1.44768298 0.03319281
 		 -0.24715362 1.42002714 -0.03118917 -0.22929752 1.40642929 -0.061977699 -0.22946337 1.45649457 -0.028192438
 		 -0.21308993 1.44344747 -0.058900163 -0.19969197 1.30293274 -0.042862501 -0.18762736 1.32918775 -0.046717647
-		 -0.22346406 1.31826138 -0.071415991 -0.21088877 1.34875476 -0.074112833 -0.25150174 1.33991206 -0.065274522
+		 -0.22346407 1.31826138 -0.071415991 -0.21088877 1.34875476 -0.074112833 -0.25150174 1.33991206 -0.065274522
 		 -0.24028751 1.3723557 -0.064433068 -0.26850808 1.35483706 -0.033760082 -0.2587184 1.38648176 -0.032504052
-		 -0.16444701 1.36755967 -0.094598629 -0.14915332 1.4145813 -0.10450095 -0.19888917 1.38488066 -0.080553442
+		 -0.16444701 1.36755967 -0.094598629 -0.14915332 1.4145813 -0.10450095 -0.19888918 1.38488066 -0.080553442
 		 -0.18451734 1.42585313 -0.083118476 -0.2990264 1.29468799 -0.035478871 -0.28223789 1.28119493 -0.062707931
 		 -0.28256774 1.32480168 -0.03470131 -0.2660785 1.30991745 -0.064174078 -0.25323674 1.26119447 -0.066125788
 		 -0.22974403 1.24646747 -0.037274212 -0.23707074 1.28858805 -0.068852179 -0.21353088 1.27418315 -0.038987711
@@ -3686,13 +4021,13 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.18177556 1.34164691 0.0035318299 -0.26628274 1.35712612 0.00131945 -0.25775072 1.38866639 0.0037177301
 		 -0.24457136 1.34759128 0.02607533 -0.23432553 1.37873006 0.02957434 -0.29430622 1.29380202 -0.00053736998
 		 -0.27859446 1.32569849 1.4950037e-05 -0.27445462 1.28203058 0.024568278 -0.25810128 1.31485581 0.02523941
-		 -0.068977199 1.28628933 -0.10701258 -0.071613386 1.32713747 -0.12020765 -0.11800137 1.27815127 -0.091692612
+		 -0.068977199 1.28628933 -0.10701258 -0.071613386 1.32713747 -0.12020765 -0.11800136 1.27815127 -0.091692612
 		 -0.12504861 1.31641829 -0.1006078 -0.086250268 1.39346457 0.12458957 -0.091129757 1.35112214 0.13791041
 		 -0.12573926 1.4032594 0.10338149 -0.12989432 1.36343718 0.11176954 -0.092492349 1.3111707 0.13620234
 		 -0.09408202 1.27360749 0.1335011 -0.12810984 1.32525492 0.10465752 -0.12716618 1.28529215 0.098582581
 		 -0.15715931 1.26857936 -0.050306428 -0.16522367 1.30682361 -0.054626789 -0.16226225 1.27203703 0.00127678
 		 -0.16337314 1.31638885 0.00573907 -0.22884247 1.24858487 0.00480481 -0.24828605 1.26428568 0.02912491
-		 -0.21176381 1.27925134 0.0042454 -0.23075323 1.29660296 0.029627979 -0.30706504 1.22072315 0.019902069
+		 -0.2117638 1.27925134 0.0042454 -0.23075323 1.29660296 0.029627979 -0.30706504 1.22072315 0.019902069
 		 -0.3255412 1.23064065 -0.0040384699 -0.29108626 1.2502749 0.022974091 -0.30999786 1.26129925 -0.0019528
 		 -0.28149462 1.20472562 0.025011972 -0.26546985 1.23363078 0.02786456 -0.26251382 1.19180095 0.00253185
 		 -0.24617772 1.21951413 0.0044178702 -0.26525673 1.19163084 -0.03608289 -0.24816279 1.21894729 -0.03652557
@@ -3704,7 +4039,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.095842578 1.193923 0.13732292 -0.15128337 1.18311954 0.01346554 -0.13453856 1.1901983 -0.02728302
 		 -0.15798169 1.22735798 0.0047236499 -0.14421609 1.23152912 -0.040366311 -0.10029607 1.19687164 -0.056593407
 		 -0.059463859 1.20134211 -0.069999687 -0.10867269 1.2380178 -0.076199189 -0.063892178 1.24402416 -0.089251101
-		 -0.05689612 1.11276066 0.15626758 -0.057031542 1.1505425 0.15687425 -0.01913747 1.1079843 0.16616432
+		 -0.05689612 1.11276066 0.15626758 -0.057031542 1.1505425 0.15687424 -0.01913747 1.1079843 0.16616432
 		 -0.0191688 1.1478982 0.1679218 -0.12088122 1.12947977 0.10463051 -0.12337808 1.16443515 0.10406025
 		 -0.091252841 1.12049174 0.13205196 -0.092322767 1.15598309 0.13311687 -0.12659274 1.15091205 -0.01797845
 		 -0.14384858 1.14368451 0.020585999 -0.12434013 1.11638474 -0.02091697 -0.14509353 1.11019123 0.020621071
@@ -3735,7 +4070,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.12618895 0.78194922 0.11589714 -0.07884296 0.77342987 0.11131735 -0.12760992 0.72464609 0.10610887
 		 -0.082321689 0.72348082 0.10064448 -0.18380511 0.7288487 0.03734776 -0.18255702 0.78634048 0.042035416
 		 -0.16599403 0.72603774 0.082055531 -0.16545853 0.78692025 0.090077467 -0.081682116 0.72930014 -0.077688441
-		 -0.036172148 0.72831541 -0.035848159 -0.077329941 0.77032006 -0.073510461 -0.02843665 0.76963377 -0.02853068
+		 -0.036172148 0.72831541 -0.035848159 -0.077329941 0.77032006 -0.073510461 -0.02843665 0.76963377 -0.028530682
 		 -0.17249173 0.73092246 -0.01505343 -0.13614564 0.73086512 -0.063904673 -0.17059155 0.78110784 -0.01014307
 		 -0.13410538 0.77366555 -0.059701573 -0.31796214 1.13372421 0.027513549 -0.29675159 1.12197053 0.0068579898
 		 -0.33165568 1.10573733 0.034156848 -0.31256598 1.093883872 0.012622749 -0.38040143 1.12715876 0.01385462
@@ -3745,7 +4080,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.38628024 1.12477732 -0.01609025 -0.37164143 1.15340912 -0.026803391 -0.097824126 0.63523 -0.078105919
 		 -0.060536817 0.63273984 -0.049985681 -0.088350594 0.68351537 -0.079158857 -0.047500201 0.68259513 -0.042738918
 		 -0.13728917 0.68486106 -0.06673082 -0.17034103 0.68075424 -0.02164006 -0.139144 0.63506663 -0.066868588
-		 -0.16687423 0.62940401 -0.02743184 -0.12771007 0.66831416 0.091900118 -0.08592739 0.66867357 0.086519092
+		 -0.16687423 0.62940401 -0.02743184 -0.12771006 0.66831416 0.091900118 -0.08592739 0.66867357 0.086519092
 		 -0.12618858 0.61194456 0.073055312 -0.085806027 0.61239284 0.068060592 -0.18095343 0.67426908 0.02929965
 		 -0.16371611 0.66962522 0.070814729 -0.1754529 0.62157947 0.01947102 -0.15943308 0.61483198 0.057411589
 		 -0.11065847 0.54935634 -0.077954121 -0.078164533 0.54593253 -0.063713253 -0.10543261 0.58803499 -0.076942757
@@ -3763,14 +4098,14 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.37249202 1.0052585602 -0.00061098998 -0.38691756 0.98046362 0.00518452 -0.41766959 1.033211112 0.01138595
 		 -0.42836937 1.006287694 0.020280881 -0.41174755 1.024403811 -0.01296518 -0.42439514 0.99739218 -0.0030807599
 		 -0.1242066 0.48200372 -0.08664573 -0.096962303 0.47883373 -0.071549751 -0.11693969 0.51693439 -0.081429183
-		 -0.085597605 0.51333672 -0.068678387 -0.17263955 0.50919855 -0.040633831 -0.1786086 0.47523972 -0.045717303
+		 -0.085597605 0.51333672 -0.068678387 -0.17263955 0.50919855 -0.040633831 -0.17860861 0.47523972 -0.045717303
 		 -0.1501493 0.51610464 -0.070292346 -0.15700343 0.48137105 -0.075568162 -0.17387691 0.52926087 0.00231881
 		 -0.1732641 0.57033271 0.0095611699 -0.15793672 0.520724 0.036351122 -0.15757565 0.56237936 0.044813391
 		 -0.15688002 0.45839405 0.02095012 -0.17726979 0.46494234 -0.0077260099 -0.15831323 0.48855609 0.031031301
 		 -0.17491218 0.49772495 -0.0017660999 -0.095654532 0.52185446 0.034937728 -0.12763804 0.51908237 0.050269701
 		 -0.088724352 0.561795 0.048580039 -0.12554643 0.56017733 0.058132246 -0.16193968 0.42376813 0.00977208
 		 -0.18287428 0.4287321 -0.015525481 -0.16824305 0.40398121 -0.090079635 -0.16357605 0.44374782 -0.082570814
-		 -0.19028968 0.39820611 -0.057540689 -0.18496601 0.4379456 -0.051465988 -0.09977895 0.48943123 0.02712482
+		 -0.19028969 0.39820611 -0.057540689 -0.18496601 0.4379456 -0.051465988 -0.09977895 0.48943123 0.02712482
 		 -0.10626746 0.45762107 0.016613601 -0.12927401 0.48586509 0.041077472 -0.13062905 0.45588279 0.027912861
 		 -0.13526598 0.42286095 0.016131349 -0.11252677 0.42398539 0.0041470299 -0.16962847 0.27946666 -0.0082072504
 		 -0.1881381 0.28092605 -0.03130395 -0.16975793 0.31269774 -0.0054283296 -0.18831772 0.31466293 -0.030624749
@@ -3780,12 +4115,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.105168 0.32578155 -0.10175101 -0.13344178 0.40547127 -0.10250718 -0.10307091 0.40333375 -0.08932174
 		 -0.12996832 0.44472343 -0.093916863 -0.10036629 0.44197625 -0.081747703 -0.14420073 0.1785478 -0.09297958
 		 -0.12588884 0.17778234 -0.080475532 -0.15451302 0.10919316 -0.0030820302 -0.1352606 0.10488459 -0.00604766
-		 -0.1583311 0.086103022 0.018624241 -0.13686875 0.07745406 0.01978443 -0.15724859 0.098852739 -0.082255162
+		 -0.1583311 0.086103022 0.018624241 -0.13686876 0.07745406 0.01978443 -0.15724859 0.098852739 -0.082255162
 		 -0.17821716 0.097551346 -0.059767589 -0.15809977 0.059188489 -0.095922567 -0.17522778 0.060391858 -0.066683002
 		 -0.13467902 0.056800827 -0.099215202 -0.11611715 0.055576082 -0.079549164 -0.13918094 0.099384509 -0.0899795
 		 -0.12629616 0.098444566 -0.074109413 -0.11688168 0.06175838 -0.0110641 -0.11847642 0.10081046 -0.01948189
 		 -0.11216094 0.0601619 -0.045789499 -0.11652446 0.099873945 -0.044544958 -0.16577141 0.061504103 0.051580381
-		 -0.14304829 0.05553782 0.056476332 -0.17388099 0.040310878 0.0863887 -0.14850388 0.038801871 0.093886703
+		 -0.14304829 0.05553782 0.056476332 -0.17388099 0.040310878 0.0863887 -0.14850387 0.038801871 0.093886703
 		 -0.19697696 0.036010168 0.073723502 -0.21637344 0.02408945 0.063683949 -0.18810211 0.051596459 0.043684669
 		 -0.20717219 0.03209053 0.034275971 -0.1800065 0.029495521 0.11613632 -0.15497643 0.029443309 0.12589493
 		 -0.18771014 0.027625389 0.14002089 -0.16351807 0.028417019 0.1491659 -0.20390259 0.027040729 0.10086264
@@ -3794,10 +4129,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.1368805 0.022081161 0.12681745 -0.1281701 0.0082656201 0.091760255 -0.12724316 0.02774868 0.095204487
 		 -0.12790981 0.01669281 0.059615958 -0.12740836 0.036900479 0.060521971 -0.17273626 -0.0016605499 0.074869841
 		 -0.1464431 -0.00053808995 0.084496349 -0.16738027 0.0034187098 0.044557191 -0.14287254 0.0068229199 0.052381411
-		 -0.16166461 0.0076822001 0.01346156 -0.14019184 0.01677005 0.02023829 -0.15516022 0.0062390296 -0.021698421
-		 -0.1356768 0.013239909 -0.014777251 -0.18263267 -0.0018988299 0.13167076 -0.15862523 -0.0018749902 0.14439535
+		 -0.16166462 0.0076822001 0.01346156 -0.14019184 0.01677005 0.02023829 -0.15516022 0.0062390296 -0.021698421
+		 -0.1356768 0.013239909 -0.014777252 -0.18263267 -0.0018988299 0.13167076 -0.15862523 -0.0018749902 0.14439535
 		 -0.17783649 -0.0038058099 0.10499539 -0.15092184 -0.0017157701 0.11698747 -0.19258599 0.017600389 0.15536566
-		 -0.16662538 0.019980751 0.16364688 -0.18962422 0.00260334 0.15164296 -0.16403091 0.00517178 0.16125073
+		 -0.16662538 0.019980751 0.16364689 -0.18962422 0.0026033402 0.15164296 -0.16403091 0.00517178 0.16125073
 		 -0.46115157 0.9007408 0.02268048 -0.46637478 0.87403679 0.02392013 -0.45016441 0.89883304 0.0030724099
 		 -0.45358425 0.87279212 0.00327898 -0.46349576 0.90503854 0.04146523 -0.45975104 0.91174787 0.062868625
 		 -0.47090378 0.87794799 0.047855619 -0.46669292 0.88466626 0.073371708 -0.41946456 0.88434148 0.01021894
@@ -3821,7 +4156,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.46823561 0.78344607 0.070251361 -0.47267616 0.79849237 0.065886863 -0.46137181 0.78907657 0.08261732
 		 -0.4637602 0.80357575 0.079516031 -0.47451493 0.81238234 0.062592939 -0.4754118 0.82966942 0.058911439
 		 -0.46419126 0.81627649 0.075788751 -0.46287417 0.83144701 0.073983029 -0.4530021 0.80459785 0.027671941
-		 -0.45182422 0.82295197 0.023154682 -0.46659383 0.80519891 0.034800109 -0.46746591 0.82474536 0.03151286
+		 -0.45182422 0.82295197 0.023154683 -0.46659383 0.80519891 0.034800109 -0.46746591 0.82474536 0.03151286
 		 -0.4460727 0.80604166 0.041349057 -0.45963332 0.80654824 0.04782426 -0.44533521 0.82072049 0.037202731
 		 -0.46062753 0.82131279 0.045633569 -0.44609338 0.8249048 0.093660057 -0.4542557 0.83231139 0.1055005
 		 -0.44456631 0.83872759 0.089219511 -0.45401862 0.84722567 0.10000402 -0.46199933 0.8184731 0.083242886
@@ -3831,25 +4166,25 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.44753158 0.81321526 0.097111374 -0.45376903 0.8187722 0.10978726 -0.45914531 0.79667526 0.091638193
 		 -0.46228391 0.80670238 0.086883686 -0.46433461 0.79970598 0.10440525 -0.4685441 0.81229109 0.099215724
 		 -0.43944618 0.78836471 0.0084516201 -0.4448283 0.80049056 0.0058366698 -0.43762478 0.79012728 0.02181495
-		 -0.44188094 0.80188721 0.020613588 -0.44772545 0.77510422 0.036149081 -0.45103562 0.78956854 0.031722449
+		 -0.44188094 0.80188721 0.020613587 -0.44772545 0.77510422 0.036149081 -0.45103562 0.78956854 0.031722449
 		 -0.45867562 0.77523261 0.04270279 -0.4633781 0.79005998 0.038395319 -0.44351944 0.77996463 0.048159882
 		 -0.454436 0.77983606 0.054438427 -0.44460952 0.79307038 0.044901747 -0.45734048 0.79338402 0.050608721
 		 -0.43805486 0.77548105 0.10842105 -0.44324648 0.77768576 0.11986525 -0.44323194 0.78928614 0.10354707
 		 -0.44821131 0.79164672 0.11646372 -0.44854781 0.77107424 0.10100772 -0.45443666 0.78463084 0.096106179
 		 -0.45382512 0.77349365 0.11239618 -0.45948359 0.78715712 0.10882291 -0.42819905 0.76457399 0.01517581
-		 -0.43427125 0.77699882 0.011082459 -0.4267323 0.76726413 0.026530089 -0.4326961 0.77903694 0.023636879
+		 -0.43427125 0.77699882 0.011082458 -0.4267323 0.76726413 0.026530089 -0.4326961 0.77903694 0.023636879
 		 -0.43450969 0.7475884 0.046804801 -0.44192237 0.76145965 0.041122124 -0.44612357 0.74681389 0.052745849
 		 -0.45265815 0.76089549 0.047158241 -0.43111321 0.75279349 0.058865272 -0.4427937 0.75204766 0.064897276
 		 -0.43792859 0.76662832 0.052776009 -0.44951403 0.7659815 0.059158619 -0.19920112 0.02033776 -0.00041502996
 		 -0.18720207 0.026104501 -0.031549729 -0.19395295 0.047208238 0.0046588099 -0.18603109 0.058973089 -0.029489869
 		 -0.01071231 0.85083032 0.08946833 -0.018688209 0.87929368 0.12200823 -0.4464471 0.92825258 0.00729906
-		 -0.42775205 0.91942561 -0.00035447002 -0.44232848 0.95428848 0.0075045903 -0.42369246 0.94375396 -0.0017897398
+		 -0.42775205 0.91942561 -0.00035447002 -0.44232848 0.95428848 0.0075045903 -0.42369246 0.94375396 -0.0017897397
 		 -0.44564366 0.963314 0.035308409 -0.43789819 0.96568537 0.054657351 -0.45320305 0.93969518 0.047749311
 		 -0.44227868 0.94156867 0.066510618 -0.15657212 0.90183723 -0.034626771 -0.0088215694 0.90399361 -0.073558882
 		 -0.15122563 0.94943482 0.094235241 -0.13254662 0.90422362 -0.074432418 -0.01700666 1.45609164 -0.12094469
-		 -0.017132619 0.76685041 0.032623939 -0.058441419 0.56760973 0.018886641 -0.051144399 0.57700354 -0.020907819
+		 -0.017132618 0.76685041 0.032623939 -0.058441419 0.56760973 0.018886641 -0.051144399 0.57700354 -0.020907819
 		 -0.037782893 0.7668007 0.081146523 -0.060471319 0.90213454 0.11719097 -0.0260728 0.72618133 0.023488218
-		 -0.053875979 0.61796385 0.038790628 -0.010242861 0.9501577 -0.087335154 -0.045139771 0.62726587 -0.00553241
+		 -0.053875979 0.61796385 0.038790628 -0.010242862 0.9501577 -0.087335154 -0.045139771 0.62726587 -0.00553241
 		 -0.097115375 0.32030609 -0.03449934 -0.092931636 0.43046948 -0.021756029 -0.076708563 0.47292995 -0.046110459
 		 -0.085916691 0.43757212 -0.053714491 -0.12572236 0.051670078 0.023505559 -0.18140481 1.37485826 0.041664001
 		 -0.019664491 1.41514361 -0.12193961 -0.17149277 1.35144651 0.0042217001 -0.18374729 0.094967268 -0.032743391
@@ -3867,7 +4202,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.40599099 0.90614647 0.049998458 -0.44594318 0.74478638 0.085758984 -0.44326887 0.76739341 0.11270694
 		 -0.41994601 0.76102567 0.02159421 -0.43520695 0.74249208 0.059307817;
 	setAttr ".vt[3984:4149]" -0.40770799 0.9410187 0.01570249 -0.17511366 1.33483195 -0.05184966
-		 -0.023078781 1.3326962 -0.11345748 -0.020759922 1.24641979 -0.085780554 -0.018540259 1.084238768 -0.060719538
+		 -0.023078781 1.3326962 -0.11345748 -0.020759922 1.24641979 -0.085780554 -0.018540258 1.084238768 -0.060719538
 		 -0.01898713 1.12313211 -0.057371911 -0.44992125 0.82511765 0.063967973 -0.46209991 0.82237619 0.04971192
 		 -0.43318897 0.83151269 0.01370783 -0.43678993 0.83585578 -0.00040356992 -0.45198268 0.80004591 0.06980437
 		 -0.46171451 0.79533499 0.05667264 -0.42964157 0.80529141 0.016964689 -0.43262848 0.80391836 0.00248736
@@ -3879,13 +4214,13 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.39453763 0.83099395 0.11673097 -0.44760558 0.74929041 0.072533041 -0.44156969 0.75551677 0.083646446
 		 -0.45878518 0.78109115 0.060891099 -0.45127898 0.78678983 0.073322728 -0.46293399 0.80806434 0.053628877
 		 -0.45152804 0.81218797 0.067101739 -0.41832012 0.76735115 0.01279657 -0.41683987 0.77004278 0.02406059
-		 -0.42831558 0.79068625 0.0054526399 -0.42643058 0.79245758 0.01853914 -0.43571708 0.81903625 -0.00018501998
+		 -0.42831558 0.79068625 0.0054526399 -0.42643058 0.79245758 0.01853914 -0.43571708 0.81903625 -0.00018501999
 		 -0.43270782 0.81904393 0.01495564 -0.40428066 0.83078265 0.11888634 -0.40250218 0.83397406 0.12603496
 		 -0.42318317 0.94250369 0.073625378 -0.39391667 0.96550238 0.035128787 -0.40008536 0.97435457 0.053084329
 		 -0.43479565 0.97408289 0.0041521601 -0.39926684 0.9597947 0.01000463 -0.13020338 0.8698408 -0.07281284
 		 -0.0063324897 0.86804694 -0.026799701 -0.19582239 0.00213582 0.033921011 -0.2023533 -0.00080604001 0.063335866
-		 -0.20575961 -0.0018361899 0.089701116 -0.20680398 -0.00234886 0.11241103 -0.21190317 0.00157937 0.13033378
-		 -0.21471006 0.014916751 0.13637643 -0.14999276 1.21635342 0.055536151 -0.14615025 1.10467649 0.069497891
+		 -0.2057596 -0.0018361899 0.089701116 -0.20680399 -0.00234886 0.11241103 -0.21190317 0.00157937 0.13033378
+		 -0.21471006 0.014916752 0.13637643 -0.14999276 1.21635342 0.055536151 -0.14615025 1.10467649 0.069497891
 		 -0.16974258 0.95234227 0.052121293 -0.45753834 0.92654586 0.028813109 -0.43758652 0.98319489 0.028218711
 		 -0.41746819 0.9629001 -0.0052957702 -0.41530973 0.98222643 0.055230498 -0.43064058 0.9859246 0.046450783
 		 -0.148534 1.3119781 0.054963652 -0.13657275 0.018808831 -0.10095623 -0.14516938 0.0038550699 -0.067827985
@@ -3893,27 +4228,27 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.065411992 0.52809507 0.0068446398 -0.056771971 0.53777051 -0.029086659 -0.073346771 0.49676442 0.00048416003
 		 -0.1503322 1.26414704 0.051686149 -0.022282679 1.29037702 -0.10290324 -0.14435996 1.17453015 0.06126925
 		 -0.01969403 1.20260715 -0.068408981 -0.14041814 1.13699841 0.066337071 -0.01913527 1.16190207 -0.05811511
-		 -0.15126964 1.073519111 0.070082821 -0.1573548 1.038962245 0.067043804 -0.016786329 1.042930007 -0.067526676
+		 -0.15126963 1.073519111 0.070082821 -0.1573548 1.038962245 0.067043804 -0.016786329 1.042930007 -0.067526676
 		 -0.16382393 0.99951875 0.060779288 -0.01308267 0.99786538 -0.08093673 -0.14054762 0.38345921 0.01007353
 		 -0.16789986 0.38413239 0.00280407 -0.18757582 0.38992772 -0.022315979 -0.087071396 0.39880395 -0.06080398
 		 -0.094819263 0.39209566 -0.028539 -0.1155595 0.38618338 -0.0021809901 -0.14281078 0.34698477 0.0063407701
 		 -0.16935408 0.34650269 -0.00183004 -0.18883684 0.3502464 -0.02778255 -0.19261976 0.356704 -0.063049138
-		 -0.17128557 0.36205319 -0.096423499 -0.13625894 0.36397916 -0.10975513 -0.10392764 0.36326969 -0.097498797
+		 -0.17128557 0.36205319 -0.096423499 -0.13625893 0.36397916 -0.10975514 -0.10392764 0.36326969 -0.097498797
 		 -0.085610718 0.36000365 -0.067423366 -0.094578274 0.35441944 -0.031907629 -0.11803359 0.34979177 -0.00526194
 		 -0.14529985 0.28081208 0.00011578009 -0.091805287 0.28865981 -0.06964346 -0.10281862 0.28654313 -0.037122719
 		 -0.12446284 0.28331003 -0.01128745 -0.14638531 0.24660717 -0.00360188 -0.16924626 0.245012 -0.01191756
 		 -0.18708977 0.24654679 -0.03251183 -0.19098897 0.25061801 -0.062481709 -0.17289209 0.25342807 -0.090103634
 		 -0.1418426 0.25433353 -0.10059947 -0.11435585 0.25448373 -0.09121237 -0.1012212 0.25391474 -0.066476256
 		 -0.11068311 0.25198343 -0.037312478 -0.12780243 0.24913576 -0.01366268 -0.14878964 0.21020578 -0.0074869199
-		 -0.16908836 0.20920493 -0.015708551 -0.18447371 0.21136633 -0.033920269 -0.18641974 0.2150455 -0.059743211
-		 -0.16888784 0.21707514 -0.085726261 -0.14246982 0.21756417 -0.096605927 -0.12058867 0.21698371 -0.086220369
+		 -0.16908836 0.20920493 -0.015708551 -0.18447371 0.21136633 -0.033920269 -0.18641974 0.21504551 -0.059743211
+		 -0.16888784 0.21707514 -0.085726261 -0.14246982 0.21756417 -0.096605927 -0.12058868 0.21698372 -0.086220369
 		 -0.1309925 0.21217115 -0.015040769 -0.15013523 0.17271578 -0.01066787 -0.1687355 0.17173165 -0.018771991
 		 -0.18185917 0.17325586 -0.035162549 -0.18210116 0.17524098 -0.058321498 -0.16574022 0.17705385 -0.082131825
-		 -0.11622814 0.17610401 -0.05494123 -0.12080067 0.17507878 -0.03247124 -0.13338323 0.17418025 -0.016587909
+		 -0.11622814 0.17610401 -0.05494123 -0.12080067 0.17507878 -0.03247124 -0.13338323 0.17418024 -0.016587909
 		 -0.15244059 0.1369954 -0.01135164 -0.16867605 0.13374974 -0.020521281 -0.17965521 0.13306743 -0.036455348
 		 -0.17820759 0.13472362 -0.057940871 -0.1621512 0.13719533 -0.079874739 -0.14280626 0.1394864 -0.089926593
 		 -0.12729706 0.13911672 -0.076305702 -0.11861435 0.13847741 -0.049655721 -0.12320208 0.13855003 -0.028961461
-		 -0.1367759 0.13841882 -0.01605228 -0.416152 0.88340652 0.059765879 -0.42451093 0.88195807 0.081420854
+		 -0.13677591 0.13841882 -0.01605228 -0.416152 0.88340652 0.059765879 -0.42451093 0.88195807 0.081420854
 		 -0.39773232 0.89399165 0.070375107 -0.39560425 0.90893829 0.080058858 -0.40378487 0.9190042 0.090174809
 		 -0.4179666 0.91995341 0.093547493 -0.42761546 0.87139869 0.072738469 -0.43243501 0.88962477 0.089984939
 		 -0.44662738 0.91368043 0.07919465 -0.43004039 0.90727788 0.091843441 -0.01788399 1.63301694 0.11612469
@@ -3927,7 +4262,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.01209354 1.63135076 0.11827978 0.0086395899 1.62831831 0.11870115 0.013217551 1.62507534 0.11706086
 		 0.01531384 1.63370883 0.1176453 0.00832815 1.63460875 0.1202611 0.02249396 1.62930143 0.11262884
 		 0.026993489 1.62695789 0.10898334 0.02448467 1.63068163 0.11146963 0.029282989 1.62059474 0.10596927
-		 0.03399815 1.62687123 0.10215425 0.029779589 1.63176358 0.10706723 0.022169448 1.632002 0.1133711
+		 0.03399815 1.62687123 0.10215425 0.029779589 1.63176358 0.10706723 0.022169447 1.632002 0.1133711
 		 0.025797611 1.63481355 0.11088551 0.03106072 1.63956404 0.10587554 0.048391428 1.6495899 0.086854145
 		 0.043244902 1.64827657 0.094422542 0.041837331 1.63558245 0.093989879 0.046811201 1.63600218 0.085350446
 		 0.044055909 1.66056371 0.095542371 0.0375828 1.65969741 0.10117102 0.037520148 1.64834714 0.10077017
@@ -3949,10 +4284,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.01212051 1.66324091 0.12847456 0.01365728 1.66873002 0.1284667 0.01037179 1.6711427 0.13327755
 		 0.0088355504 1.65865016 0.12739652 0.017231191 1.66105545 0.12022929 0.017797239 1.66878545 0.12046129
 		 0.016489709 1.67662692 0.1201233 0.012783241 1.67468643 0.12815985 0.02354563 1.6596452 0.11263856
-		 0.023320042 1.66917598 0.11283851 0.0041942899 1.66156244 0.13381773 0 1.6579138 0.13038242
+		 0.023320043 1.66917598 0.11283851 0.0041942899 1.66156244 0.13381773 0 1.6579138 0.13038242
 		 0.00372147 1.67121685 0.13750044 0 1.66581571 0.13723746 0 1.58306944 0.086640052
-		 0.0072082598 1.58153927 0.076716527 0.014635771 1.5844754 0.084591538 0 1.57830334 0.068652302
-		 0.0072206999 1.57300723 0.062075071 0.0139536 1.57973254 0.066175602 0.021039151 1.58443117 0.072385304
+		 0.0072082598 1.58153927 0.076716527 0.014635772 1.5844754 0.084591538 0 1.57830334 0.068652302
+		 0.0072206999 1.57300723 0.062075071 0.0139536 1.57973254 0.066175602 0.021039153 1.58443117 0.072385304
 		 0.027849609 1.58912671 0.078215063 0.021567181 1.57558239 0.05676889 0.027626691 1.58423388 0.059933528
 		 0.03388311 1.5910666 0.06461969 0.039798528 1.5969708 0.068733633 0.03621408 1.58215189 0.048529118
 		 0.0408393 1.59261394 0.051272977 0.050427917 1.60723066 0.05819435 0.055725049 1.61112881 0.044779692
@@ -3973,7 +4308,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.060365628 1.60890973 -0.00119874 0.059070218 1.59984136 0.01142838 0.05837553 1.58722043 0.0061078798
 		 0.058380362 1.59677398 -0.0085338298 0.060417783 1.6112771 0.0160945 0.054960441 1.59449649 0.024892161
 		 0.05386705 1.57970917 0.022059299 0.055052821 1.56350219 0.017429529 0.058864888 1.57426775 -3.6780002e-05
-		 0.04565144 1.5786525 0.036730729 0.015404981 1.56511128 0.05625144 0.023483159 1.55654585 0.049353771
+		 0.04565144 1.5786525 0.036730729 0.015404982 1.56511128 0.05625144 0.023483159 1.55654585 0.049353771
 		 0.030623989 1.56934702 0.048135482 0.01519812 1.545874 0.050191458 0.02149375 1.534464 0.047740761
 		 0.03112122 1.54613829 0.044648454 0.040036131 1.56127536 0.0397439 0.037732989 1.53329313 0.0428904
 		 0.047271088 1.54903567 0.032471228 0 1.56405425 0.05992217 0.0079706302 1.55529034 0.055959977
@@ -3981,7 +4316,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 	setAttr ".vt[4316:4481]" 0.02651006 1.68855381 0.10461119 0.018966071 1.68979955 0.11027367
 		 0.020705249 1.68345475 0.11209618 0.031137381 1.69420314 0.10070682 0.025088619 1.69327271 0.10331853
 		 0.01824823 1.69524348 0.10758462 0.0118459 1.69884348 0.11253592 0.01230554 1.69205153 0.1168507
-		 0.024029261 1.69743884 0.10221657 0.01856387 1.69884968 0.10465895 0.046147343 1.70413256 0.096672103
+		 0.024029262 1.69743884 0.10221657 0.01856387 1.69884968 0.10465895 0.046147343 1.70413256 0.096672103
 		 0.04380177 1.70207143 0.09761814 0.046811882 1.69993114 0.095671378 0.04824112 1.70281839 0.095198534
 		 0.0411411 1.70432293 0.098890088 0.03778543 1.70209706 0.099595115 0.04063604 1.69937587 0.09847638
 		 0.043827802 1.69632685 0.096709162 0.050290953 1.69776571 0.092910148 0.036434129 1.69654703 0.099345207
@@ -4001,21 +4336,21 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.078271881 1.74294102 0.028338021 0.066498183 1.74448633 0.064398408 0.071223252 1.72738791 0.047772732
 		 0.075616844 1.71824598 0.033677861 0.079382516 1.71039844 0.021902649 0.080323972 1.72027528 0.01729589
 		 0.074226744 1.70778763 0.037766758 0.044332109 1.71285045 0.097703256 0.050243467 1.71342325 0.094270192
-		 0.050206829 1.71802914 0.097274311 0.042035177 1.71630716 0.10003653 0.05056705 1.7097733 0.093261845
+		 0.050206829 1.71802914 0.097274311 0.042035177 1.71630716 0.10003652 0.05056705 1.7097733 0.093261845
 		 0.056439281 1.7122438 0.089386292 0.056950111 1.71753252 0.090396427 0.04846862 1.72315419 0.1003401
 		 0.046166692 1.70980024 0.096517757 0.047465239 1.70716107 0.095857888 0.050764881 1.70682049 0.09319061
 		 0.039241958 1.71109784 0.099750549 0.042025998 1.70853865 0.098700531 0.04424582 1.70616221 0.097738065
 		 0.048330698 1.70494521 0.095312923 0.038363568 1.70660925 0.099817559 0.074617513 1.65761769 -0.00663163
 		 0.076959811 1.65541744 0.00242771 0.0716113 1.64993942 0.0065744799 0.068429276 1.64772642 -0.0028973699
-		 0.081463106 1.6627121 -0.00104925 0.081583977 1.66440058 0.0036103697 0.07846991 1.65883374 0.0087756403
+		 0.081463106 1.6627121 -0.00104925 0.081583977 1.66440058 0.0036103695 0.07846991 1.65883374 0.0087756403
 		 0.074363343 1.65468121 0.014721611 0.067690328 1.64437318 0.010218211 0.07916081 1.66550827 0.01235159
-		 0.076499239 1.664204 0.018265869 0.05889152 1.61970639 -0.012397179 0.062851138 1.6304872 -0.0042979298
+		 0.076499239 1.664204 0.018265868 0.05889152 1.61970639 -0.012397178 0.062851138 1.6304872 -0.0042979298
 		 0.062281281 1.62025988 0.00522605 0.063052274 1.64168942 -0.01361426 0.065585591 1.63874328 0.0033102199
 		 0.064038523 1.63026989 0.01066908 0.051379919 1.73672807 0.092155889 0.040933382 1.73465025 0.10303941
 		 0.045200393 1.72858036 0.102203 0.058192339 1.74560237 0.080315858 0.047868919 1.74448764 0.093599997
 		 0.03624516 1.74191523 0.1033897 0.024641659 1.73655605 0.11125106 0.03004007 1.72973251 0.11061848
 		 0.04317994 1.75303364 0.09502165 0.030947959 1.74986148 0.1034363 0.026976669 1.71202052 0.10298068
-		 0.03183993 1.71625125 0.10419869 0.02716176 1.71948063 0.10930625 0.021667968 1.71307933 0.10616311
+		 0.03183993 1.71625125 0.10419869 0.02716176 1.71948063 0.10930625 0.021667967 1.71307933 0.10616311
 		 0.035790719 1.71369016 0.10130052 0.039553169 1.72051132 0.10403633 0.035586659 1.724913 0.10808399
 		 0.02068413 1.72314906 0.11361463 0.031362928 1.71070421 0.10143249 0.035133928 1.70879924 0.10055967
 		 0.024736231 1.70832765 0.10159378 0.028606601 1.70784175 0.10101758 0.031973179 1.70648432 0.10063901
@@ -4036,7 +4371,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.087601811 1.68330073 -0.01153203;
 	setAttr ".vt[4482:4647]" 0.081164248 1.67521405 -0.01418909 0.09030135 1.68802762 -0.0072261696
 		 0.088844813 1.68119657 -0.00464701 0.086910687 1.67483282 -0.0074190097 0.081897318 1.6667248 -0.0078106499
-		 0.084448814 1.66918063 -0.0015774999 0.055335678 1.63138819 -0.022772349 0.050693013 1.64343846 -0.03350988
+		 0.084448814 1.66918063 -0.0015774999 0.055335678 1.63138819 -0.022772348 0.050693013 1.64343846 -0.03350988
 		 0.054752599 1.60746217 -0.021045351 0.048733182 1.618976 -0.031859901 0.04178562 1.63118899 -0.041752502
 		 0.03576481 1.64350939 -0.051698491 0.04380716 1.60537755 -0.041029558 0.035096359 1.61775684 -0.04919818
 		 0.057546891 1.58444774 -0.016661391 0.052058447 1.59443939 -0.030533189 0.061947562 1.5616039 -0.0071967696
@@ -4059,7 +4394,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.11676636 1.51872206 -0.066835791 0.09460555 1.53507566 -0.06286224 0.083631784 1.54886854 -0.039414831
 		 0.10612798 1.50935197 -0.08084017 0.027726891 1.60411394 -0.055696741 0.018113751 1.61766112 -0.059655651
 		 0.0269097 1.63074887 -0.05642176 0.00923815 1.60435593 -0.062433992 0 1.61793959 -0.062410697
-		 0.0091054998 1.63127422 -0.062689237 0.01854472 1.64416122 -0.063063949 0.028778261 1.65629137 -0.061926797
+		 0.0091054998 1.63127422 -0.062689237 0.01854472 1.64416122 -0.063063949 0.028778262 1.65629137 -0.061926797
 		 0 1.64480925 -0.065264821 0.0095595298 1.65745318 -0.068509243 0.019826749 1.66933751 -0.070646599
 		 0.0315997 1.68034327 -0.06959457 0 1.67021453 -0.073759608 0.01000653 1.68210316 -0.077736914
 		 0.020784751 1.6932478 -0.078797258 0.033752061 1.70471537 -0.075660206 0 1.69432867 -0.08212819
@@ -4089,7 +4424,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.02258024 1.75394154 -0.078811146 0.03546771 1.77065313 -0.066993147 0 1.75462329 -0.082439557
 		 0.011245009 1.77200425 -0.074755929 0.031594638 1.81175721 -0.023186149 0.022082429 1.8179816 -0.0095992703
 		 0.033531748 1.81569397 0.0014666 0.01116458 1.81652498 -0.0226983 0 1.82101548 -0.0085197594
-		 0.011116739 1.82152879 0.0055740499 0.022342199 1.81864119 0.01934885;
+		 0.011116739 1.82152879 0.0055740499 0.022342198 1.81864119 0.01934885;
 	setAttr ".vt[4648:4813]" 0 1.82149267 0.020655651 0.0230875 1.78714597 -0.062080488
 		 0.034129199 1.79822326 -0.04622262 0 1.78816831 -0.065301381 0.011350941 1.80053282 -0.05116139
 		 0.022360681 1.8086772 -0.036176261 0 1.8105278 -0.037118472 0.030657981 1.65958893 0.10662634
@@ -4100,17 +4435,17 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.074279711 1.68646574 0.033560861 0.050688699 1.70449126 0.093345203 0.052548017 1.70237315 0.091366321
 		 0.050659217 1.70200181 0.093187049 0.02146358 1.70447385 0.10142221 0.02416111 1.7055316 0.1008746
 		 0.077812746 1.69878292 0.026719939 0.059995059 1.54896212 0.010471409 0.026544349 1.52024996 0.049915571
-		 0.082139805 1.69512665 0.01763119 0.079872191 1.6818012 0.018082229 0.02390646 1.70338655 0.10081205
+		 0.082139805 1.69512665 0.01763119 0.079872191 1.6818012 0.018082229 0.02390646 1.70338655 0.10081206
 		 0.03476119 1.50626004 0.0550211 0.023227962 1.49425268 0.065872461 0.037811838 1.48336089 0.074329451
 		 0.01217335 1.48280025 0.07635466 0 1.49318588 0.065764591 0.14013982 1.49570835 0.028609969
-		 0.12197979 1.50597882 0.019647149 0.12929276 1.48807728 0.03873061 0.096428879 1.53933883 -0.02205134
+		 0.12197979 1.50597882 0.019647149 0.12929277 1.48807728 0.03873061 0.096428879 1.53933883 -0.02205134
 		 0.11528568 1.52114534 -0.0064370199 0.14192836 1.52055395 -0.01379001 0.13966224 1.51124907 0.0083585205
 		 0.07285583 1.54713428 -0.01337878 0.01324612 1.51445341 -0.10675441 0 1.53256607 -0.097331829
 		 0.054905001 1.47100401 0.08138945 0.075370938 1.45657575 0.088253409 0.088398121 1.47402263 0.069626935
 		 0.060786217 1.43511724 0.10586365 0.083104111 1.41573215 0.11423357 0.099076137 1.43961835 0.094949581
 		 0.11168092 1.46071291 0.071562178 0.12157178 1.47565556 0.053068589 0.12263563 1.42283726 0.095491216
 		 0.13526425 1.44624639 0.072015189 0 1.46907973 0.085684814 0.01331896 1.45255661 0.095527284
-		 0.025955429 1.46962893 0.085341021 0 1.43263137 0.1060538 0.014597749 1.4116441 0.11738826
+		 0.025955429 1.46962893 0.085341021 0 1.43263137 0.1060538 0.014597748 1.4116441 0.11738826
 		 0.028289899 1.43349731 0.10685721 0.041709479 1.4538269 0.094631501 0.045976236 1.4120785 0.11948214
 		 0.17546615 1.4456532 -0.082303122 0.14887315 1.45985079 -0.090393946 0.15512542 1.48081899 -0.077810794
 		 0.17947178 1.47153151 -0.069713429 0.14036319 1.43636489 -0.10236881 0.11222354 1.45560801 -0.10744105
@@ -4125,23 +4460,23 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.18185556 1.45182657 0.047045577 0.15492868 1.43486118 0.067587219 0.10063417 1.43414032 -0.1182619
 		 0.072832018 1.45547628 -0.11696887 0.085067876 1.47528732 -0.10738421 0.058031842 1.43529737 -0.12353624
 		 0.03468807 1.45608377 -0.12044562 0.049014531 1.47572315 -0.11452784 0.061276969 1.49557757 -0.10562012
-		 0.02938479 1.495296 -0.11182813 0.01724924 1.33020818 0.14832582 0.033894449 1.34856367 0.14665025
+		 0.02938479 1.495296 -0.11182813 0.01724924 1.33020818 0.14832583 0.033894449 1.34856367 0.14665025
 		 0.016033201 1.36859179 0.13686159 0 1.34890425 0.1418438 0.053446461 1.32877064 0.1506971
-		 0.071270488 1.34887516 0.14452662 0.050270882 1.36849248 0.14025457 0.031201292 1.38973927 0.12981142
+		 0.071270488 1.34887516 0.14452663 0.050270882 1.36849248 0.14025457 0.031201292 1.38973927 0.12981142
 		 0 1.38947225 0.12633045 0.06653358 1.39077008 0.12918639 0.035880599 1.31093884 0.15210348
 		 0.055553261 1.29086637 0.15141967 0.073463418 1.30950558 0.14551781 0 1.31180143 0.14933622
 		 0.018328261 1.29284942 0.15363678 0.037703641 1.27267551 0.15798421 0.05791042 1.25191784 0.15785918
 		 0.07565672 1.27157497 0.14634578 0 1.27329874 0.1581731 0.01923256 1.25286996 0.16327669
 		 0.12519474 1.33889925 -0.10695495 0.09516526 1.36667454 -0.12526482 0.11518241 1.38807905 -0.12227134
-		 0.14520779 1.36264586 -0.10435262 0.070887908 1.34766042 -0.12406298 0.044210728 1.37248671 -0.12330112
-		 0.066047378 1.39237034 -0.12903041 0.085360117 1.41324902 -0.12681085 0.12939937 1.4120487 -0.11405457
+		 0.14520779 1.36264586 -0.10435262 0.070887908 1.34766042 -0.12406298 0.044210728 1.37248671 -0.12330113
+		 0.066047378 1.39237034 -0.12903041 0.085360117 1.41324902 -0.12681085 0.12939936 1.4120487 -0.11405457
 		 0.040289339 1.41501129 -0.12410343 0.17170115 1.426947 0.060955819 0.19009729 1.42006791 0.052019812
-		 0.20214777 1.44222331 0.043102361 0.14346355 1.40962219 0.089261577 0.15988418 1.40203321 0.077543847
+		 0.20214777 1.44222331 0.043102361 0.14346355 1.40962219 0.089261577 0.15988417 1.40203321 0.077543847
 		 0.17492664 1.39600968 0.06349773 0.18948291 1.3874321 0.049089197 0.21025556 1.40597773 0.044235419
 		 0.14688125 1.37275314 0.095624752 0.15995599 1.36848629 0.075073108 0.24946438 1.4224205 -0.012702
 		 0.23984508 1.43890071 0.0047010798 0.2396469 1.41774845 0.020169221 0.25306186 1.40470815 0.0044561499
-		 0.23225616 1.45789182 -0.011279791 0.22568803 1.45291841 0.019891839 0.22251743 1.42989528 0.033446401
-		 0.22997639 1.39447057 0.032205701 0.25374192 1.40287328 -0.032019939 0.24034972 1.41458511 -0.048382118
+		 0.23225616 1.45789182 -0.011279792 0.22568804 1.45291841 0.019891839 0.22251743 1.42989528 0.033446401
+		 0.22997639 1.39447057 0.032205701 0.25374192 1.40287328 -0.032019939 0.24034971 1.41458511 -0.048382118
 		 0.2390461 1.4379518 -0.029904841 0.23527914 1.3891232 -0.06345325 0.21510674 1.39601517 -0.072246648
 		 0.22199331 1.42451894 -0.060350601 0.22298849 1.45175564 -0.044477321 0.20019777 1.43362713 -0.071340762
 		 0.19571985 1.30451906 -0.019723851 0.19359928 1.31685865 -0.044709411 0.20963973 1.30856109 -0.061361149
@@ -4158,13 +4493,13 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.2740126 1.29571307 -0.063238233 0.27620906 1.31889009 -0.051227633 0.28341445 1.32696974 -0.016791919
 		 0.2526755 1.2992723 -0.070934743 0.2624681 1.24751651 -0.065139458 0.23882703 1.25223088 -0.055757761
 		 0.24478903 1.27472878 -0.06718494 0.23872575 1.23289919 -0.037138939 0.22673689 1.24536228 -0.015743271
-		 0.22145545 1.26016665 -0.037685689 0.22304325 1.27970803 -0.057462312 0.21057734 1.27469003 -0.01694628
+		 0.22145544 1.26016665 -0.037685689 0.22304325 1.27970803 -0.057462312 0.21057734 1.27469003 -0.01694628
 		 0.23004973 1.33944249 0.031733539 0.20831591 1.34630692 0.032288522 0.20220205 1.31988978 0.021200299
 		 0.22254224 1.3132242 0.0297172 0.21780881 1.37070632 0.03631844 0.19343595 1.37192428 0.038489129
 		 0.18843132 1.35238683 0.023719991 0.18819207 1.32679021 0.0031263598 0.20339815 1.29504991 0.0036529498
 		 0.17632382 1.35064816 0.00443561 0.26164186 1.37283325 0.00245971 0.25711146 1.35367537 0.015369411
 		 0.27183679 1.3413527 0.00043387004 0.24822514 1.3849293 0.0182647 0.23916583 1.36340952 0.027387099
-		 0.25083837 1.33129048 0.025417279 0.28623205 1.30984509 -0.00017400995 0.28516585 1.28878343 0.01374578
+		 0.25083837 1.33129048 0.025417278 0.28623205 1.30984509 -0.00017400995 0.28516585 1.28878343 0.01374578
 		 0.30231917 1.27758336 -0.00112149 0.26946771 1.32141495 0.01429441 0.26610985 1.29834378 0.025002539
 		 0.26188132 1.27364314 0.029982761 0.28283399 1.26599956 0.023957441 0.24477094 1.30632782 0.030680249
 		 0.045246948 1.28865969 -0.10602584 0.070655696 1.30731058 -0.11474989 0.093488514 1.28336132 -0.1038323
@@ -4175,10 +4510,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.12989798 1.34381771 0.11016318 0.093018018 1.29209232 0.13391189 0.11110928 1.3166573 0.121792
 		 0.095445499 1.25393844 0.13560563 0.11168081 1.27733779 0.11771201 0.12665436 1.30623972 0.099817619
 		 0.14324282 1.33609235 0.087729752 0.12831117 1.26480758 0.098194234 0.1397021 1.29738832 0.077648841
-		 0.16193789 1.28802335 -0.054066099 0.16401863 1.26950538 -0.025287651 0.15052801 1.25141156 -0.047024559
-		 0.16870384 1.32439768 -0.054269802 0.1695222 1.30731571 -0.02298844 0.16304493 1.29479492 0.00208713
+		 0.16193789 1.28802335 -0.054066099 0.16401863 1.26950538 -0.025287652 0.15052801 1.25141156 -0.047024559
+		 0.16870384 1.32439768 -0.054269802 0.16952221 1.30731571 -0.02298844 0.16304493 1.29479492 0.00208713
 		 0.15685107 1.26977968 0.028551159 0.16047908 1.24983072 0.0019919001 0.16592136 1.33977723 0.0052039898
-		 0.15557177 1.32210863 0.029941641 0.2375046 1.23394859 0.0047405898 0.2362216 1.25526094 0.020847701
+		 0.15557176 1.32210863 0.029941641 0.2375046 1.23394859 0.0047405898 0.2362216 1.25526094 0.020847702
 		 0.22027999 1.26363945 0.00465731 0.25696269 1.24881017 0.02866875 0.23950443 1.28019929 0.02948725
 		 0.21855594 1.28693116 0.020942431 0.31463292 1.20707548 0.018283799 0.31756222 1.22683442 0.0095806699
 		 0.29914767 1.23510194 0.021517619 0.29464182 1.2130326 0.025437441 0.3334192 1.21692121 -0.0044600097
@@ -4206,12 +4541,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.0863491 1.24181759 -0.085550502 0.041894022 1.24543536 -0.088789769 0.074677311 1.11644399 0.1451063
 		 0.056725677 1.13144076 0.15667059 0.038175449 1.10985076 0.16342838 0.057405628 1.09411037 0.15605615
 		 0.075273 1.15288591 0.14572145 0.038198799 1.14891016 0.1645864 0.019074799 1.12773764 0.16714934
-		 0 1.10722589 0.16626792 0.019284571 1.088278174 0.16590372 0 1.14749539 0.168515
+		 0 1.10722589 0.16626793 0.019284571 1.088278174 0.16590372 0 1.14749539 0.168515
 		 0.13195664 1.13359785 0.087105453 0.12096108 1.14650202 0.1037273 0.1071398 1.12494135 0.11908453
 		 0.1229653 1.11306953 0.10652079 0.13537259 1.16941869 0.084517643 0.10873317 1.15980732 0.11994137
 		 0.091299765 1.13793063 0.13189648 0.092551015 1.10346496 0.13367911 0.13740692 1.14733744 -0.00025343001
 		 0.12350836 1.13316512 -0.016761549 0.11213159 1.15416491 -0.032045331 0.14496464 1.14013767 0.04342461
-		 0.14252155 1.1261791 0.021824669 0.13664716 1.11330175 -0.00212191 0.12651308 1.10009968 -0.02627263
+		 0.14252156 1.1261791 0.021824669 0.13664716 1.11330175 -0.00212191 0.12651308 1.10009968 -0.02627263
 		 0.10914087 1.11911821 -0.03451794 0.14861451 1.10725582 0.04526845 0.14872566 1.094782829 0.018566411
 		 0.075960353 1.15928864 -0.050624918 0.056744982 1.14148927 -0.053474151 0.038300991 1.16121399 -0.059643488
 		 0.092774652 1.13847017 -0.039545789 0.074647814 1.12253821 -0.050059762 0.056250408 1.1049633 -0.056958199
@@ -4221,8 +4556,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.038933571 1.070739508 0.16278255 0 1.066772938 0.16596535 0.076694638 1.080320477 0.14597799
 		 0.14352705 1.068671584 0.091675043 0.12962306 1.080158949 0.11017711 0.11498414 1.055662632 0.12105141
 		 0.13315719 1.044222593 0.10594606 0.13788092 1.10130358 0.090636656 0.11164217 1.09168005 0.12343653
-		 0.096019223 1.067503691 0.13422737 0.09877117 1.028518796 0.12824757 0.11257106 1.049883962 -0.053545643
-		 0.12757199 1.067078233 -0.030814659 0.14219333 1.047491074 -0.013766009 0.13045079 1.028675914 -0.043037299
+		 0.096019223 1.067503691 0.13422737 0.09877117 1.028518796 0.12824756 0.11257106 1.049883962 -0.053545643
+		 0.127572 1.067078233 -0.030814659 0.14219333 1.047491074 -0.013766008 0.13045079 1.028675914 -0.043037299
 		 0.10977145 1.085952163 -0.0428266 0.1417069 1.081436634 -0.00832019 0.15102988 1.063117266 0.01602993
 		 0.15748176 1.043286085 0.04288495 0.15313271 1.027068734 0.01192491 0.1532706 1.076758265 0.044695292
 		 0.034424052 1.045040846 -0.069778115 0.055038709 1.068101525 -0.06373547 0.073504359 1.050042629 -0.072046429
@@ -4233,7 +4568,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0 0.92159003 0.13505882 0.019155491 0.90127671 0.12988189 0 0.97206694 0.14460072
 		 0.15854266 0.99491906 0.080558822 0.14202234 1.0074058771 0.10024296 0.12718827 0.98135483 0.11017595
 		 0.14801426 0.97013885 0.095430337 0.15034834 1.032962918 0.087095045 0.11968633 1.017564297 0.11491098
-		 0.10299321 0.98914599 0.12122813 0.10701457 0.95163512 0.11533728 0.14230393 1.007294178 -0.020792469
+		 0.10299321 0.98914599 0.12122813 0.10701457 0.95163512 0.11533727 0.14230393 1.007294178 -0.020792469
 		 0.1327861 0.98045194 -0.05527151 0.11745302 1.0036759377 -0.072357319 0.16202097 1.0031763315 0.037231389
 		 0.15504257 0.98271197 0.0045519001 0.14683165 0.95766813 -0.031879779 0.13461395 0.92739135 -0.068578929
 		 0.11745545 0.94941771 -0.085229397 0.16779728 0.95280492 0.025649669 0.16015586 0.92791265 -0.01526134
@@ -4246,7 +4581,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.075950369 0.78854102 -0.071320646 0.045793008 0.80636096 -0.05286077 0.076458171 0.82091469 -0.06985075
 		 0.10688063 0.80611724 -0.072425812 0.025727849 0.78896558 -0.025834179 0.012413451 0.80598402 0.0081822397
 		 0.02458719 0.82381576 -0.02342473 0.050176576 0.83773893 -0.054057032 0.10695287 0.83646822 -0.073406003
-		 0.012192491 0.8392148 0.0076455097 0.16855089 0.80471689 -0.0088016 0.1532995 0.81783271 -0.033997122
+		 0.012192491 0.8392148 0.0076455097 0.16855089 0.80471689 -0.0088016 0.15329951 0.81783271 -0.033997122
 		 0.16709723 0.84954184 -0.0095738498 0.17626175 0.8366996 0.017890349 0.13261081 0.7927506 -0.056828808
 		 0.13298491 0.82667506 -0.058392782 0.15266383 0.85353053 -0.03995873 0.16328296 0.88972443 -0.019406751
 		 0.17334609 0.88845414 0.017787779 0.13193005 0.855883 -0.067062095 0.34501225 1.20545864 -0.019834401
@@ -4261,26 +4596,26 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 	setAttr ".vt[5146:5311]" 0.31213716 1.14624965 0.023240099 0.32029182 1.16429508 0.021163659
 		 0.32776245 1.18276131 0.01764841 0.33276051 1.20077026 0.0090028299 0.33954743 1.15982485 0.02263
 		 0.34589386 1.17764342 0.01317492 0.34847564 1.19300973 -0.0019148401 0.36131775 1.16900587 0.00314659
-		 0.17749032 0.87047523 0.045659561 0.17463349 0.84613436 0.070065461 0.1812311 0.81530184 0.043292709
+		 0.17749031 0.87047523 0.045659561 0.17463349 0.84613436 0.070065461 0.1812311 0.81530184 0.043292709
 		 0.17393044 0.92581064 0.048140138 0.17086388 0.901191 0.071821801 0.15987301 0.87347353 0.09295667
 		 0.14402951 0.8436926 0.11042219 0.16411828 0.81805837 0.09234421 0.15458807 0.92646539 0.093575023
 		 0.1382142 0.89624333 0.10881929 0.076701149 0.7976436 0.11462566 0.097682692 0.8296535 0.12086357
-		 0.070194989 0.84253716 0.11547647 0.051109388 0.81255454 0.10440371 0.12424991 0.81101584 0.11886607
+		 0.070194989 0.84253716 0.11547647 0.051109388 0.81255454 0.1044037 0.12424991 0.81101584 0.11886607
 		 0.11900768 0.86286473 0.11850232 0.091660887 0.87571663 0.1191344 0.062933438 0.88197416 0.11562021
 		 0.0433782 0.85022652 0.10477706 0.11287547 0.91067332 0.11612255 0.10206414 0.77788997 0.11716116
 		 0.12742993 0.75250357 0.11138444 0.14829698 0.78512591 0.10703917 0.057164311 0.76946241 0.098490328
 		 0.08058697 0.74858832 0.10643193 0.10444691 0.72418559 0.10747144 0.12745358 0.69704455 0.099707566
 		 0.14904997 0.72515941 0.097371705 0.061950788 0.72303933 0.087681293 0.084086873 0.69715667 0.09400589
-		 0.18253203 0.73024058 0.01112587 0.18345004 0.75719553 0.040220272 0.17779876 0.72727257 0.061588898
+		 0.18253203 0.73024058 0.01112587 0.18345003 0.75719553 0.040220272 0.17779876 0.72727257 0.061588898
 		 0.18313877 0.70125777 0.03358832 0.18074934 0.78431016 0.01544763 0.17620476 0.7871179 0.067091182
 		 0.16615991 0.75544161 0.0865677 0.16511795 0.69772911 0.07675498 0.084578209 0.70675743 -0.07889279
 		 0.05440639 0.72843504 -0.062565878 0.079381481 0.75055641 -0.075853311 0.11131566 0.73027182 -0.078881577
-		 0.041776408 0.70639807 -0.039379582 0.027586211 0.72765976 -0.0050472897 0.031148519 0.7492134 -0.032338291
+		 0.041776408 0.70639807 -0.039379582 0.027586212 0.72765976 -0.0050472897 0.031148519 0.7492134 -0.032338291
 		 0.048023328 0.77015746 -0.056912798 0.10844574 0.77130127 -0.075492047 0.0179534 0.76832914 0.0029736999
 		 0.17201592 0.7056486 -0.018113701 0.15625392 0.73106366 -0.04027978 0.17192316 0.75630242 -0.012383359
 		 0.13668075 0.70796847 -0.06535504 0.13540886 0.75290215 -0.062130891 0.15441947 0.77714467 -0.035084508
 		 0.30548501 1.12724328 0.020780161 0.32450461 1.12007892 0.03140796 0.33186221 1.1405226 0.02860954
-		 0.29489079 1.11934853 -0.01190708 0.30397242 1.10819256 0.010108691 0.31985402 1.098983645 0.02751771
+		 0.29489079 1.11934853 -0.01190708 0.30397242 1.10819256 0.010108692 0.31985402 1.098983645 0.02751771
 		 0.33949149 1.0907197 0.036021899 0.34483665 1.11267006 0.035267901 0.31147829 1.091423869 -0.0063327402
 		 0.32220843 1.079007745 0.01477355 0.38617221 1.12739527 -0.00039464995 0.37428164 1.14180803 0.00998051
 		 0.37038651 1.12410915 0.02489906 0.38601479 1.11154807 0.017426429 0.37307686 1.15630233 -0.0096458206
@@ -4294,8 +4629,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.06681902 0.60823148 -0.053910188 0.050240461 0.63098025 -0.02761581 0.053656049 0.65775681 -0.046210863
 		 0.063828811 0.68213582 -0.066302635 0.11498735 0.68500102 -0.079750277 0.03866278 0.68260545 -0.0148369
 		 0.155471 0.68334371 -0.045626849 0.13807307 0.66080886 -0.067459576 0.17964555 0.67759967 0.00382557
-		 0.16833787 0.6555618 -0.024950212 0.15439324 0.63264501 -0.048651882 0.14030221 0.60961956 -0.065757483
-		 0.17459126 0.62565958 -0.00436525 0.16630302 0.60371411 -0.029488958 0.10651682 0.66846037 0.092971794
+		 0.16833788 0.6555618 -0.024950212 0.15439324 0.63264501 -0.048651882 0.14030221 0.60961956 -0.065757483
+		 0.17459126 0.62565958 -0.00436525 0.16630302 0.60371411 -0.029488957 0.10651682 0.66846037 0.092971794
 		 0.12757152 0.63955873 0.082947329 0.14745417 0.6685344 0.084272295 0.067225292 0.66959971 0.07397259
 		 0.086851016 0.63982356 0.077954441 0.10623629 0.61178261 0.072802097 0.12504928 0.58548141 0.064130038
 		 0.1443827 0.61287904 0.068204612 0.067488171 0.6142745 0.057244893 0.085491277 0.58654875 0.057738617
@@ -4305,20 +4640,20 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.12811352 0.54937905 -0.074728057 0.081849813 0.52962989 -0.065974623 0.065538213 0.5424999 -0.047704082
 		 0.074579805 0.56387037 -0.0612434 0.086833775 0.5869959 -0.071308583 0.12445994 0.58783174 -0.074665673
 		 0.059078149 0.58163255 -0.03985469 0.17075811 0.52497697 -0.038470149 0.15827663 0.54538149 -0.052396268
-		 0.16830041 0.55922836 -0.033947337 0.17538956 0.53577787 -0.017516799 0.14730524 0.53201884 -0.068217091
+		 0.16830042 0.55922836 -0.033947337 0.17538956 0.53577787 -0.017516799 0.14730524 0.53201884 -0.068217091
 		 0.14266382 0.56585467 -0.064716607 0.1555903 0.58390057 -0.04976888 0.17345414 0.57571119 -0.01167048
 		 0.38258347 1.092152357 0.029936381 0.39742222 1.078643441 0.023349719 0.39750409 1.095730186 0.0083202999
 		 0.35951269 1.081553936 0.03907983 0.37834588 1.071280122 0.037906639 0.39437419 1.060248613 0.033849239
 		 0.40701678 1.048250079 0.02875861 0.40712202 1.063729286 0.01565728 0.37460938 1.050934553 0.04234951
-		 0.3907364 1.042041063 0.041603927 0.40361455 1.077780485 -0.00150626 0.39475214 1.089501381 -0.020873699
+		 0.3907364 1.042041063 0.041603927 0.40361455 1.077780485 -0.00150626 0.39475212 1.089501381 -0.020873699
 		 0.41269794 1.047390103 0.00726372 0.4057416 1.058483362 -0.01074324 0.39430043 1.06774807 -0.02871727
 		 0.37572044 1.076728463 -0.040668711 0.40587044 1.038154483 -0.01785592 0.39072645 1.045655489 -0.029945891
 		 0.37040406 1.053981423 -0.034422189 0.3486433 1.064567327 -0.03202527;
-	setAttr ".vt[5312:5477]" 0.38521358 1.024918437 -0.02392967 0.36599612 1.033741593 -0.021737169
+	setAttr ".vt[5312:5477]" 0.38521358 1.024918437 -0.02392967 0.36599612 1.033741593 -0.021737168
 		 0.34788203 1.045633435 -0.01306283 0.33225945 1.060823321 -9.3639996e-05 0.36504832 1.017858028 -0.0043487297
 		 0.35205069 1.031464219 0.00721164 0.34280583 1.0483284 0.01948609 0.3382037 1.068624258 0.030585971
 		 0.36091885 1.021447659 0.024540961 0.35695419 1.039168358 0.033709038 0.3567107 1.0595541 0.03887336
-		 0.37226903 1.03159368 0.042454839 0.36832887 1.0061885118 0.01369389 0.37569198 0.99735117 0.02972929
+		 0.37226903 1.03159368 0.042454839 0.36832887 1.0061885118 0.013693891 0.37569198 0.99735117 0.02972929
 		 0.37241742 1.013724804 0.03795743 0.38312343 0.98245358 0.018693641 0.38884789 0.97512001 0.0335849
 		 0.38544747 0.99018508 0.042518139 0.38492298 1.0068813562 0.046966627 0.38715839 1.024298906 0.046203151
 		 0.39587241 0.98398894 0.051367961 0.39797229 0.99966222 0.051299982 0.40471897 1.032379031 0.03897211
@@ -4344,10 +4679,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.092632815 0.53963602 0.041137662 0.080113485 0.52414131 0.02249166 0.12854949 0.50266707 0.04624898
 		 0.1268004 0.53787553 0.0520414 0.10646245 0.5605669 0.05563841 0.072604917 0.56403059 0.036527261
 		 0.14932662 0.42318073 0.015796829 0.16615731 0.40366772 0.0060222 0.17330088 0.42525837 -0.00086784008
-		 0.18578953 0.40975055 -0.019101581 0.18732603 0.43344399 -0.032964122 0.16996506 0.38294291 -0.093537636
+		 0.18578953 0.40975055 -0.019101582 0.18732603 0.43344399 -0.032964122 0.16996506 0.38294291 -0.093537636
 		 0.15109716 0.40518162 -0.099771284 0.16611728 0.42448044 -0.0863363 0.1822018 0.40171015 -0.075372212
 		 0.14733851 0.44470391 -0.091446549 0.17676015 0.44158524 -0.068757899 0.1921861 0.3940765 -0.03904948
-		 0.19184636 0.37733543 -0.060495064 0.18797331 0.41863564 -0.054444481 0.086676858 0.49236166 0.01619591
+		 0.19184636 0.37733543 -0.060495064 0.18797331 0.41863564 -0.054444481 0.086676858 0.49236163 0.01619591
 		 0.10235599 0.47297099 0.023127051 0.11208813 0.48667344 0.036604431 0.096825793 0.46045649 0.0060448702
 		 0.10978883 0.4417493 0.0098221498 0.11659203 0.45616764 0.023307359 0.12986872 0.46996251 0.034786168
 		 0.13227823 0.44101751 0.02141232 0.1222388 0.42298102 0.01196772 0.13870007 0.40288135 0.01253688
@@ -4355,7 +4690,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.18001448 0.27970013 -0.01838119 0.16979791 0.29648927 -0.0068803402 0.1577104 0.27992648 -0.00172939
 		 0.18804938 0.26356471 -0.03176038 0.19299166 0.282805 -0.046886321 0.1880064 0.2981393 -0.030988209
 		 0.180099 0.31322217 -0.01670891 0.16966903 0.32904738 -0.0037649199 0.15780407 0.31299222 0.0016209499
-		 0.19307107 0.31684998 -0.047029518 0.18871589 0.33164692 -0.029715171 0.17452234 0.2704607 -0.092801295
+		 0.19307108 0.31684998 -0.047029518 0.18871589 0.33164692 -0.029715171 0.17452234 0.2704607 -0.092801295
 		 0.15824084 0.28934592 -0.10403235 0.17432036 0.3065747 -0.097667724 0.18759519 0.28704256 -0.082387663
 		 0.15621133 0.32524678 -0.10852844 0.17239079 0.34215564 -0.098285049 0.18688959 0.32224625 -0.083951108
 		 0.19276878 0.26741394 -0.063861854 0.19307157 0.30265456 -0.065765582 0.19290455 0.3371765 -0.064916417
@@ -4363,7 +4698,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.11958019 0.332849 -0.0070943302 0.11028948 0.31807584 -0.02011854 0.12303357 0.30019706 -0.01015344
 		 0.14187035 0.27172542 -0.10369242 0.12428815 0.29002249 -0.10554069 0.13984828 0.30816606 -0.11075573
 		 0.11150125 0.27178955 -0.094188988 0.097222999 0.28912562 -0.085472792 0.10669284 0.30780122 -0.10076961
-		 0.12143233 0.32606891 -0.1098716 0.13747154 0.3441509 -0.11185739 0.092586964 0.32510224 -0.088455431
+		 0.12143233 0.32606891 -0.1098716 0.13747154 0.3441509 -0.11185738 0.092586964 0.32510224 -0.088455431
 		 0.10426793 0.34410799 -0.10067597 0.13494281 0.38466182 -0.10644738 0.11689696 0.40485343 -0.098832168
 		 0.13178432 0.4257206 -0.098228551 0.10368483 0.38307697 -0.093330495 0.092838667 0.40121329 -0.075973243
 		 0.10199766 0.42323381 -0.085457668 0.11359972 0.44381219 -0.090508983 0.092589386 0.43987238 -0.068161301
@@ -4371,7 +4706,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.14333923 0.19785458 -0.095046453 0.12720498 0.15887529 -0.078030497 0.11964188 0.17695142 -0.068055756
 		 0.12348285 0.19689146 -0.083568871 0.15346989 0.1217058 -0.0087716104;
 	setAttr ".vt[5478:5643]" 0.14433409 0.10831463 -0.0030824901 0.15609773 0.097581089 0.0058512702
-		 0.16467971 0.10667347 -0.0060953898 0.13685031 0.12124515 -0.01264457 0.12683499 0.10117974 -0.011776119
+		 0.16467972 0.10667347 -0.0060953898 0.13685031 0.12124515 -0.01264457 0.12683499 0.10117974 -0.011776119
 		 0.13510188 0.089628898 0.0044029099 0.14661735 0.084708795 0.01977315 0.16143103 0.074483588 0.034391571
 		 0.17003618 0.081915781 0.016135041 0.13015552 0.065558463 0.020340759 0.13945118 0.066421911 0.037686151
 		 0.15938455 0.11790694 -0.07991159 0.1679545 0.098363817 -0.07186617 0.15686083 0.079620369 -0.087141417
@@ -4391,20 +4726,20 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.20687772 0.03054627 0.067747086 0.19285303 0.043232169 0.058649711 0.2187628 0.02153929 0.076838367
 		 0.22290516 0.016898349 0.060985669 0.21295768 0.02723301 0.04909588 0.19790076 0.04242963 0.038800228
 		 0.18358913 0.06248752 0.028576419 0.21335277 0.02164722 0.030792439 0.20035526 0.038964368 0.019558219
-		 0.1675449 0.0295188 0.12220539 0.18391724 0.028546929 0.12878411 0.19247653 0.02895355 0.10867521
+		 0.1675449 0.0295188 0.12220539 0.18391724 0.028546929 0.12878412 0.19247653 0.02895355 0.10867521
 		 0.14540231 0.027768942 0.12726557 0.15917298 0.02897682 0.13863248 0.17532818 0.02847245 0.14552541
-		 0.19067819 0.024184421 0.1491764 0.19981022 0.026129469 0.13251491 0.15564837 0.02627342 0.1517873
+		 0.19067819 0.024184421 0.1491764 0.19981022 0.026129469 0.13251491 0.15564838 0.02627342 0.1517873
 		 0.16652405 0.026035391 0.15772602 0.20790647 0.02575485 0.11295056 0.21345665 0.02388042 0.093755201
-		 0.21223867 0.02097162 0.13248536 0.21871749 0.021792222 0.11662105 0.22364761 0.018461609 0.099431254
+		 0.21223867 0.02097162 0.13248536 0.2187175 0.021792222 0.11662105 0.22364761 0.018461609 0.099431254
 		 0.22591934 0.01374362 0.084282905 0.22163507 0.01513563 0.12501702 0.22637121 0.010348049 0.10910304
-		 0.15286474 0.0057533504 0.15978558 0.14466529 0.01248281 0.15458012 0.13963459 0.0064789997 0.13845591
+		 0.15286474 0.0057533504 0.15978557 0.14466529 0.01248281 0.15458012 0.13963459 0.0064789997 0.13845591
 		 0.15127766 0.00039876997 0.14782639 0.15519215 0.020478839 0.16195947 0.14072832 0.020661769 0.14211354
 		 0.13367577 0.01461959 0.12512514 0.12966464 0.0077954801 0.10716814 0.14231387 0.00167209 0.12022553
 		 0.1303097 0.024346359 0.11138231 0.12374911 0.01722811 0.094374679 0.12761259 0.01121065 0.076203302
 		 0.13570099 0.00219746 0.0882833 0.12683217 0.032087758 0.078107908 0.12525196 0.025991021 0.061401602
 		 0.12756008 0.023824429 0.04261288 0.13421148 0.01035156 0.056150988 0.12651771 0.043615088 0.0421452
-		 0.17520864 -0.00389233 0.089976899 0.15912637 -0.0013586 0.080160052 0.17023759 0.00064313004 0.059824251
-		 0.18721715 -0.0012862299 0.069020778 0.14826179 -0.0022801801 0.10054218 0.14483325 0.00218707 0.068634301
+		 0.17520864 -0.00389233 0.089976899 0.15912637 -0.0013586 0.080160052 0.1702376 0.00064313004 0.059824251
+		 0.18721716 -0.0012862299 0.069020778 0.14826179 -0.0022801801 0.10054218 0.14483325 0.00218707 0.068634301
 		 0.1540968 0.0052281795 0.04849977 0.16443114 0.0059903003 0.029118659 0.18162103 0.0025075001 0.039931711
 		 0.14123432 0.013087699 0.036030661 0.14989901 0.01199612 0.0168189 0.15871127 0.0080561098 -0.0031550301
 		 0.17401703 0.0055478499 0.0095193395 0.13262822 0.021947801 0.023355929 0.1387594 0.01671244 0.00372502
@@ -4417,7 +4752,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.2019171 0.0019359 0.14145571 0.46345615 0.90147698 0.032041539 0.46337563 0.88749468 0.023082471
 		 0.45650873 0.90049928 0.013061251 0.45941907 0.91376531 0.023976751 0.46948996 0.87554032 0.035586629
 		 0.46841282 0.8611325 0.025359549 0.46082363 0.87345177 0.013153041 0.45209819 0.88522041 0.0025036002
-		 0.44201472 0.89610171 -0.0036834897 0.44851112 0.91346687 0.00425791 0.4545956 0.86164659 0.0041492702
+		 0.44201472 0.89610171 -0.0036834895 0.44851112 0.91346687 0.00425791 0.4545956 0.86164659 0.0041492702
 		 0.44511777 0.87152243 -0.00377547 0.46076444 0.91725653 0.03675174 0.46201435 0.90913391 0.05181168
 		 0.46677232 0.89165205 0.044894502 0.45666248 0.9264133 0.05575994 0.45477593 0.91314262 0.072218917
 		 0.46331009 0.89757466 0.068870008 0.46989536 0.88126272 0.060734011 0.47448623 0.8646211 0.050616488
@@ -4451,12 +4786,12 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.39517009 0.89955652 0.090551578 0.40347645 0.83636343 0.10609173 0.41057447 0.84348398 0.10245517
 		 0.41120309 0.83760607 0.11064794 0.40550324 0.83223271 0.11358748 0.40795907 0.85131818 0.097157456
 		 0.41660005 0.85233748 0.10220171 0.41604865 0.84555745 0.11056341 0.41294584 0.83972549 0.11942012
-		 0.40896159 0.833197 0.11834639 0.41866016 0.85520476 0.11182408 0.38899752 0.83949399 0.11379168
+		 0.40896159 0.833197 0.11834639 0.41866016 0.85520476 0.11182408 0.38899752 0.83949399 0.11379167
 		 0.39191133 0.84491861 0.10501589 0.39406031 0.83750755 0.10695624 0.39126694 0.83339661 0.11440971
 		 0.39039204 0.85460997 0.10482703 0.39761922 0.85227036 0.097921021 0.40075234 0.84345078 0.10041482
 		 0.39640865 0.83229631 0.11158744 0.40117142 0.86172211 0.12024492 0.40609193 0.85282189 0.12245843
 		 0.41293636 0.8599357 0.11997142 0.39880589 0.84549195 0.12425042 0.40231019 0.83827019 0.12683573
-		 0.4085083 0.84361899 0.12452571 0.41456431 0.84943312 0.11939881 0.40746439 0.83590186 0.12519483
+		 0.4085083 0.84361899 0.12452571 0.41456431 0.84943312 0.11939881 0.40746441 0.83590186 0.12519483
 		 0.39495641 0.85314536 0.11955453 0.39024392 0.84437048 0.11986494 0.3930051 0.83900231 0.12441728
 		 0.39159253 0.86025649 0.11414494 0.38912544 0.84916425 0.11301075 0.38956273 0.83677477 0.12084746
 		 0.4536373 0.74834067 0.0735135 0.45964679 0.7591275 0.077300638 0.45630306 0.75458872 0.087860949
@@ -4501,28 +4836,28 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.45901477 0.77734154 0.049983412 0.45587966 0.7678417 0.044794571 0.46311069 0.79177064 0.046261691
 		 0.4413707 0.77309746 0.050192371 0.44808838 0.78122854 0.054329872 0.44471589 0.78671724 0.046385862
 		 0.45214394 0.77268839 0.05632269 0.45608464 0.78682381 0.052566253 0.45026168 0.79431939 0.0513683
-		 0.43813476 0.76991677 0.1109405 0.43795338 0.77778262 0.11575753 0.44056308 0.78245085 0.10575665
+		 0.43813476 0.76991677 0.1109405 0.43795338 0.77778262 0.11575753 0.44056308 0.78245085 0.10575666
 		 0.44205552 0.77258682 0.10209139 0.44212645 0.77151161 0.11879887 0.44989461 0.77602553 0.11923658
-		 0.44561613 0.78478849 0.11829224 0.44285801 0.79188836 0.11172368 0.44764188 0.7860955 0.096795686
+		 0.44561613 0.78478849 0.11829223 0.44285801 0.79188836 0.11172368 0.44764188 0.7860955 0.096795686
 		 0.4551495 0.78972816 0.11604996 0.45155078 0.7779215 0.098250046 0.45373571 0.77126634 0.10460278
-		 0.44568801 0.76667958 0.10549107 0.45968243 0.78492302 0.10042252 0.45668846 0.78046584 0.11064839
+		 0.44568801 0.76667958 0.10549106 0.45968243 0.78492302 0.10042252 0.45668846 0.78046584 0.11064839
 		 0.4497219 0.76837331 0.11333285 0.42374894 0.76529503 0.01112264 0.43122327 0.77094102 0.01293133
 		 0.4298543 0.76518935 0.021548711 0.42467308 0.76038963 0.018046411 0.42947578 0.77761739 0.0066939802
 		 0.4360587 0.77747405 0.01807747 0.42967492 0.77328378 0.02503947 0.42152104 0.76934195 0.028054129
-		 0.42360651 0.76261854 0.026078269 0.42706525 0.78068 0.025347929 0.42981458 0.75011796 0.05126689
+		 0.42360649 0.76261854 0.026078269 0.42706525 0.78068 0.025347929 0.42981458 0.75011796 0.05126689
 		 0.43811199 0.75465071 0.043412901 0.44128868 0.74612886 0.046822492 0.43295231 0.74264669 0.05175148
 		 0.43684328 0.76390427 0.044967197 0.44857261 0.75990099 0.040753532 0.44916603 0.75405866 0.049874749
 		 0.44728023 0.74899709 0.060249273 0.44162726 0.74209666 0.056131721 0.45329097 0.76305079 0.054124899
 		 0.43052879 0.74650866 0.060731109 0.43624678 0.7539562 0.064989202 0.43448943 0.75992942 0.055612858
 		 0.43923518 0.7459693 0.065147892 0.44618428 0.75920427 0.061854418 0.44291198 0.76785308 0.059137519
-		 0.19463095 0.010062161 5.8259964e-05 0.1934102 0.024193991 -0.01483773 0.19851094 0.032976851 0.00145362
-		 0.20571053 0.01583709 0.013550989 0.18422659 0.012789201 -0.030376069 0.18096106 0.02579557 -0.050565638
+		 0.19463095 0.010062161 5.8259964e-05 0.1934102 0.024193991 -0.01483773 0.19851093 0.032976851 0.00145362
+		 0.20571053 0.01583709 0.013550988 0.18422659 0.012789201 -0.030376069 0.18096106 0.02579557 -0.050565638
 		 0.18600401 0.041903008 -0.03059365 0.18879929 0.054544002 -0.01175353 0.18904139 0.061726332 0.00799408
 		 0.18739986 0.076936692 -0.030015161 0.0064494996 0.84786123 0.065701582 0.020156719 0.84972167 0.089178875
 		 0.01619982 0.86111158 0.10865777 0 0.84984994 0.089416869 0.038493469 0.88824511 0.12022349
 		 0 0.87633193 0.12157317 0.43782973 0.92404723 0.00012832999 0.44458824 0.94245034 0.0088872397
 		 0.45290801 0.93023837 0.018454699 0.4194468 0.91282701 0.0053562499 0.42550823 0.93228143 -0.0002375999
-		 0.43442044 0.94844973 -0.0008898899 0.43881235 0.9642303 0.0059933602 0.44572335 0.95979464 0.021671928
+		 0.43442044 0.94844973 -0.0008898899 0.43881235 0.9642303 0.0059933602 0.44572335 0.95979464 0.021671927
 		 0.41386294 0.94084406 0.0045197201 0.42127421 0.95359957 -0.0035649699 0.4415527 0.97324282 0.03153744
 		 0.44303966 0.96520233 0.046482399 0.44969547 0.9522301 0.040323392 0.43455207 0.97599822 0.05021017
 		 0.4302839 0.96484929 0.05933971 0.44037387 0.95424134 0.059995633 0.4492152 0.94121981 0.058210548
@@ -4531,7 +4866,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0 0.90508002 -0.07042852 0.00942476 0.92627394 -0.08300522 0.16432787 0.95227069 0.075512573
 		 0.13241515 0.94292259 0.10776938 0.12980174 0.88515586 -0.076401837 0.018404979 1.43574297 -0.12179037
 		 0 1.45629025 -0.12119262 0.015677691 1.47604656 -0.11853784 0.023829861 0.76595801 0.058850788
-		 0.01415131 0.78592908 0.03594359 0.020846691 0.74693567 0.0283705 0.06281285 0.54551774 0.011238131
+		 0.01415131 0.78592908 0.03594359 0.020846691 0.74693567 0.0283705 0.06281285 0.54551774 0.011238132
 		 0.054693919 0.5923121 0.02862232 0.050034169 0.5720402 -0.00126032 0.048634939 0.60146862 -0.01405493
 		 0.053553298 0.55528378 -0.025941839 0.03502382 0.7869702 0.084832996 0.040742267 0.74574071 0.076049238
 		 0.084995657 0.91791695 0.1169948 0.031955659 0.72438478 0.048726019 0.0320035 0.70395082 0.017770521
@@ -4541,7 +4876,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 	setAttr ".vt[5976:6141]" 0.094616354 0.41153255 -0.025750881 0.089728639 0.44840667 -0.01654618
 		 0.085208103 0.43467021 -0.0378826 0.081797846 0.45562264 -0.050459381 0.07646399 0.46941841 -0.028591001
 		 0.071015909 0.48968413 -0.041273691 0.086789921 0.41858348 -0.057352219 0.12410232 0.039054587 0.02614207
-		 0.17316963 1.3650955 0.02573741 0.16839015 1.36623442 0.051586919 0.020689439 1.39441586 -0.12125156
+		 0.17316963 1.3650955 0.02573741 0.16839014 1.36623442 0.051586919 0.020689439 1.39441586 -0.12125156
 		 0 1.41521728 -0.12160376 0.1751041 1.33714902 -0.02182664 0.18033756 0.11339746 -0.03559956
 		 0.180132 0.095965937 -0.020716 0.17734794 0.085567772 -0.00207665 0.16986942 0.11612187 -0.018390991
 		 0 0.85140204 0.037358042 0.0055010198 0.85747933 0.0052633099 0.0085177394 0.84672403 0.037312612
@@ -4557,7 +4892,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.11463497 0.021611782 -0.06514243 0.12019978 0.0285013 -0.029767631 0.1255849 0.031405792 0.0085342899
 		 0.22460058 0.0056060599 0.093594663 0.21923353 0.0024258599 0.11903527 0.21645233 -9.2429967e-05 0.10643908
 		 0.22407383 0.00760363 0.07164146 0.21767168 0.00084776001 0.084113009 0.21936327 0.0098114703 0.04468235
-		 0.21533065 0.00179735 0.059517488 0.20756271 0.0044611199 0.02921083 0.060789607 0.52216792 -0.032016758
+		 0.21533066 0.00179735 0.059517488 0.20756271 0.0044611199 0.02921083 0.060789607 0.52216792 -0.032016758
 		 0.064457998 0.5015803 -0.01759395 0 1.49575651 -0.11464234 0.02228466 1.35323048 -0.11690687
 		 0 1.37386692 -0.11780283 0.15127867 1.33433533 0.059876241 0.39323142 0.8320542 0.12087402
 		 0.39735466 0.83414674 0.12542027 0.41126415 0.91150689 0.040213972 0.41099346 0.92839468 0.021174399
@@ -4568,7 +4903,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.021238549 1.26836252 -0.09565562 0.017918419 1.064129353 -0.063387483 0 1.083831072 -0.060700599
 		 0.0188317 1.10376132 -0.058801617 0 1.12321544 -0.056927498 0.019062931 1.14247501 -0.05675067
 		 0.44571346 0.83290833 0.062199451 0.45316973 0.8225081 0.05445138 0.45150357 0.81862277 0.065472968
-		 0.46289727 0.81516242 0.051792968 0.43094894 0.83786744 0.013708009 0.43097878 0.83519864 0.0050111199
+		 0.46289727 0.81516242 0.051792968 0.43094894 0.83786744 0.013708008 0.43097878 0.83519864 0.0050111199
 		 0.43323624 0.82546675 0.01431566 0.43688142 0.84463745 -0.00072300003 0.43616775 0.82699251 -0.00082182005
 		 0.45164174 0.80589956 0.068455018 0.45394677 0.79694313 0.060584549 0.4520326 0.79391462 0.071366213
 		 0.46246183 0.80160332 0.05506938 0.46043751 0.78876978 0.058286928 0.43156156 0.81226015 0.0157497
@@ -4608,22 +4943,22 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 0.12622996 0.26626992 -0.012217429 0.13599575 0.24786158 -0.0058762198 0.14727472 0.22899111 -0.0058190101
 		 0.15783957 0.24564293 -0.0057430295 0.16931577 0.22750419 -0.014077229 0.17925757 0.24515781 -0.021165071
 		 0.18573844 0.22932081 -0.033303071 0.19158041 0.24856289 -0.046199031 0.18490176 0.252359 -0.078178652
-		 0.18863174 0.23352262 -0.06104216 0.15763791 0.25401792 -0.097747982 0.170744 0.23606139 -0.087679259
+		 0.18863174 0.23352262 -0.06104216 0.15763791 0.25401792 -0.097747982 0.170744 0.23606138 -0.087679259
 		 0.14183486 0.23667791 -0.098251387 0.12694487 0.2544643 -0.098477304 0.11736922 0.23658951 -0.088661604
 		 0.1053736 0.25433317 -0.080109596 0.10270743 0.2532554 -0.051658813 0.11978213 0.25059226 -0.024358271
-		 0.12918264 0.23128454 -0.01448838 0.13871685 0.21116889 -0.0089007597 0.14928068 0.19111928 -0.0089662494
+		 0.12918264 0.23128454 -0.01448838 0.13871685 0.2111689 -0.0089007597 0.14928068 0.19111928 -0.0089662494
 		 0.15951096 0.2095101 -0.0097779101 0.16879278 0.19050565 -0.017158519 0.17744908 0.20968685 -0.024134532
 		 0.18321103 0.19267854 -0.034489859 0.18812385 0.21341515 -0.04560174 0.17984752 0.2162659 -0.07393185
 		 0.18426405 0.19550255 -0.05877275 0.16731271 0.19715911 -0.084102117 0.15569763 0.21749392 -0.093750961
-		 0.13036758 0.21736282 -0.09414959 0.13214155 0.19277091 -0.015675491 0.14056806 0.17346825 -0.01140809
-		 0.15128617 0.1547125 -0.01175387 0.16006996 0.17203993 -0.01330268 0.16872554 0.15279518 -0.02005866
+		 0.13036758 0.21736282 -0.09414959 0.13214155 0.1927709 -0.015675491 0.14056806 0.17346825 -0.011408091
+		 0.15128617 0.1547125 -0.01175387 0.16006996 0.17203993 -0.01330268 0.16872555 0.15279518 -0.02005866
 		 0.17603596 0.17205076 -0.026310649 0.18065727 0.15327182 -0.03584075 0.18445271 0.17456608 -0.045703739
 		 0.17968391 0.15481529 -0.058157731 0.17569891 0.17589861 -0.071251363 0.1641922 0.15701196 -0.080753028
 		 0.1179941 0.15751909 -0.051807892 0.11624068 0.17535058 -0.042498339 0.12233803 0.15678272 -0.031026982
 		 0.12690526 0.17469433 -0.02382406 0.13505286 0.15622476 -0.01699454 0.14407223 0.13794556 -0.01152865
 		 0.160952 0.13558103 -0.01464311 0.17513746 0.13251764 -0.028087741 0.18115509 0.13394676 -0.046435479
 		 0.17166016 0.13572328 -0.069695666 0.15219539 0.13859856 -0.088148467 0.13440861 0.13967022 -0.086208493
-		 0.12255454 0.13866816 -0.063404731 0.11867381 0.13847955 -0.03721717 0.13000531 0.13857016 -0.02262372
+		 0.12255454 0.13866815 -0.063404731 0.11867381 0.13847955 -0.03721717 0.13000531 0.13857016 -0.02262372
 		 0.42165715 0.87673843 0.066260785 0.42725781 0.87750304 0.078116983 0.42971393 0.88318765 0.087216832
 		 0.39436164 0.90168679 0.07462059 0.39883468 0.91493201 0.085694507 0.41022977 0.92068624 0.09280511
 		 0.4252668 0.91526031 0.092484444 0.43213677 0.89815569 0.090651967 0.43717986 0.91196281 0.084685735
@@ -4656,8 +4991,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.0075134998 1.58552754 0.095435075 -0.01037181 1.67114305 0.1332776 -0.01365728 1.66873014 0.12846673
 		 -0.01212051 1.66324306 0.12847458 -0.0077476799 1.66624212 0.13479263 -0.01723122 1.66105545 0.12022928
 		 -0.0088355504 1.65865016 0.12739652 -0.01278325 1.67468691 0.12815985 -0.016489709 1.67662668 0.12012333
-		 -0.017797239 1.66878557 0.12046127 -0.023320042 1.66917598 0.1128385 -0.02354563 1.65964127 0.11263857
-		 -0.0041942899 1.66156244 0.13381775 -0.00372147 1.67121673 0.13750045 -0.014635771 1.58447766 0.084591538
+		 -0.017797239 1.66878557 0.12046127 -0.023320043 1.66917598 0.1128385 -0.02354563 1.65964127 0.11263857
+		 -0.0041942899 1.66156244 0.13381775 -0.00372147 1.67121673 0.13750045 -0.014635772 1.58447766 0.084591538
 		 -0.00720825 1.58153963 0.076716527 -0.013953609 1.5797348 0.066175662 -0.0072206901 1.57300711 0.062075071
 		 -0.027849641 1.58912706 0.078215063 -0.02103919 1.58443117 0.072385304 -0.02762671 1.58423388 0.059933528
 		 -0.021567181 1.57558239 0.05676889 -0.03979858 1.5969708 0.068733633 -0.033883091 1.5910666 0.06461969
@@ -4677,16 +5012,16 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.033193752 1.68971586 0.1006231 -0.03645112 1.67836547 0.10157793 -0.029452709 1.67685485 0.1066616
 		 -0.028196741 1.68309116 0.10592914 -0.047328979 1.69236529 0.094516926 -0.04359467 1.68124294 0.097495496
 		 -0.03726447 1.67009151 0.10149499 -0.058380369 1.5967741 -0.0085338401 -0.058375522 1.58722043 0.0061078798
-		 -0.059070218 1.59984136 0.011428351 -0.06036561 1.60890961 -0.00119875 -0.054960508 1.59449649 0.02489217
+		 -0.059070218 1.59984136 0.011428352 -0.06036561 1.60890961 -0.00119875 -0.054960508 1.59449649 0.02489217
 		 -0.060417809 1.6112771 0.016094491 -0.058864869 1.57426775 -3.6780002e-05 -0.055052821 1.56350207 0.01742951
 		 -0.053867031 1.57970917 0.022059299 -0.04565138 1.5786525 0.036730729 -0.030623971 1.56934702 0.048135482
-		 -0.02348315 1.55654585 0.049353771 -0.015404981 1.56511128 0.05625144 -0.03112122 1.54613829 0.04464842
+		 -0.02348315 1.55654585 0.049353771 -0.015404982 1.56511128 0.05625144 -0.03112122 1.54613829 0.04464842
 		 -0.02149375 1.534464 0.047740761 -0.01519812 1.54587448 0.050191469 -0.040036131 1.56127536 0.0397439
 		 -0.047271088 1.54903591 0.032471228 -0.037732989 1.53329313 0.0428904 -0.0079706302 1.55529034 0.055959977
 		 -0.0071225897 1.53725719 0.049910661 -0.020705249 1.68345463 0.11209618 -0.018966081 1.68979955 0.11027356
-		 -0.02651006 1.68855381 0.10461108 -0.025088631 1.69327271 0.10331853 -0.031137381 1.69420314 0.10070682
+		 -0.02651006 1.68855381 0.10461108 -0.025088632 1.69327271 0.10331853 -0.031137381 1.69420314 0.10070682
 		 -0.01230554 1.69205379 0.11685073 -0.011845879 1.69884372 0.11253593 -0.01824823 1.69524348 0.10758462
-		 -0.01856387 1.69884968 0.10465894 -0.024029261 1.69743884 0.10221657 -0.048241202 1.70281839 0.095198534
+		 -0.01856387 1.69884968 0.10465894 -0.024029262 1.69743884 0.10221657 -0.048241202 1.70281839 0.095198534
 		 -0.046811882 1.69993091 0.095671378 -0.04380177 1.70207119 0.09761814 -0.046147291 1.70413196 0.096672058
 		 -0.040636029 1.69937575 0.09847638 -0.03778543 1.70209706 0.099595115 -0.041141119 1.70432341 0.098890074
 		 -0.050290953 1.69776571 0.092910148 -0.043827821 1.69632709 0.096709162 -0.036434129 1.69654703 0.099345207
@@ -4713,14 +5048,14 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.039241981 1.71109784 0.099750549 -0.048330698 1.70494509 0.09531305 -0.04424582 1.70616221 0.097738065
 		 -0.038363568 1.70660925 0.099817559 -0.068429269 1.64772642 -0.0028973699 -0.071611278 1.64993942 0.0065744696
 		 -0.076959804 1.65541744 0.00242771 -0.074617513 1.65761769 -0.00663163 -0.078469902 1.65883362 0.0087756505
-		 -0.081583969 1.66440034 0.0036103697 -0.081463099 1.6627121 -0.00104924 -0.067690328 1.64437318 0.010218211
+		 -0.081583969 1.66440034 0.0036103695 -0.081463099 1.6627121 -0.00104924 -0.067690328 1.64437318 0.010218211
 		 -0.074363351 1.65468121 0.014721611 -0.076499261 1.664204 0.01826583 -0.079160839 1.66550839 0.01235155
-		 -0.062281307 1.62026 0.0052260398 -0.062851138 1.63048732 -0.0042979498 -0.058891531 1.61970639 -0.012397179
+		 -0.062281307 1.62026 0.0052260398 -0.062851138 1.63048732 -0.0042979498 -0.058891531 1.61970639 -0.012397178
 		 -0.065585591 1.63874316 0.0033102001 -0.063052304 1.64168942 -0.01361426 -0.064038523 1.63026989 0.01066908
 		 -0.045200393 1.72858036 0.10220302 -0.040933382 1.73465014 0.10303941 -0.05137993 1.73672807 0.092155889
 		 -0.047868919 1.74448764 0.093599997 -0.058192328 1.74560237 0.08031594 -0.030040091 1.72973251 0.11061838
 		 -0.024641659 1.73655605 0.11125107 -0.03624516 1.74191523 0.1033897 -0.030947959 1.74986124 0.10343631
-		 -0.04317994 1.75303578 0.09502168 -0.021667968 1.71307933 0.10616308 -0.027161729 1.71948063 0.10930625
+		 -0.04317994 1.75303578 0.09502168 -0.021667967 1.71307933 0.10616308 -0.027161729 1.71948063 0.10930625
 		 -0.031839941 1.71625125 0.10419869 -0.026976669 1.71202052 0.1029807 -0.039553169 1.72051132 0.10403633
 		 -0.035790719 1.71369016 0.10130052 -0.02068413 1.72314882 0.11361463 -0.035586659 1.724913 0.10808399
 		 -0.035133939 1.70879924 0.10055967 -0.031362928 1.71070421 0.10143249 -0.028606601 1.70784175 0.10101758
@@ -4761,7 +5096,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.13735503 1.50433791 -0.068963043 -0.14773129 1.50862873 -0.058059022 -0.083631776 1.54886854 -0.039414831
 		 -0.094605491 1.53507602 -0.062862247 -0.10612798 1.50935209 -0.080840252 -0.0269097 1.63074887 -0.056421738
 		 -0.018113751 1.61766112 -0.059655651 -0.027726891 1.60411394 -0.055696741 -0.0091054998 1.63127446 -0.062689237
-		 -0.00923815 1.60435593 -0.06243404 -0.028778261 1.65629137 -0.06192679;
+		 -0.00923815 1.60435593 -0.06243404 -0.028778262 1.65629137 -0.06192679;
 	setAttr ".vt[6640:6805]" -0.01854472 1.64416122 -0.063063942 -0.0095595298 1.65745318 -0.068509243
 		 -0.031599689 1.68034327 -0.06959454 -0.01982677 1.66933751 -0.070646591 -0.01000653 1.68210316 -0.077736787
 		 -0.033752061 1.70471537 -0.075660221 -0.020784741 1.6932478 -0.078797296 -0.01017057 1.70639312 -0.084152244
@@ -4806,11 +5141,11 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.099076137 1.43961608 0.094949573 -0.083104111 1.41573215 0.11423357 -0.06078621 1.43511724 0.10586356
 		 -0.12157165 1.47565556 0.053068582 -0.11168092 1.46071291 0.071562208 -0.13526426 1.44624639 0.072015181
 		 -0.12263563 1.42283726 0.09549123 -0.025955429 1.46962893 0.085340984 -0.01331896 1.45255661 0.095527284
-		 -0.028289909 1.43349767 0.10685721 -0.014597749 1.41164434 0.11738827 -0.041709479 1.4538269 0.094631396
+		 -0.028289909 1.43349767 0.10685721 -0.014597748 1.41164434 0.11738827 -0.041709479 1.4538269 0.094631396
 		 -0.045976229 1.4120785 0.11948214 -0.17947176 1.47153163 -0.069713503 -0.15512538 1.48081851 -0.077810839
 		 -0.14887317 1.45985079 -0.090393953 -0.17546618 1.44565368 -0.082303107 -0.12215576 1.4757297 -0.095233291
 		 -0.11222353 1.45560801 -0.10744105 -0.14036305 1.43636501 -0.1023688 -0.15594229 1.49689007 -0.065957606
-		 -0.13022125 1.49312353 -0.081617959 -0.095936634 1.49451101 -0.095509805 -0.20452014 1.49172962 -0.01159833
+		 -0.13022125 1.49312353 -0.081617959 -0.095936634 1.49451101 -0.095509805 -0.20452015 1.49172962 -0.01159833
 		 -0.18492316 1.50453806 -0.02792898 -0.19715925 1.4880873 -0.041824423 -0.21745355 1.47462583 -0.026653349
 		 -0.1761688 1.49390233 -0.05553022 -0.20254849 1.46216846 -0.057352718 -0.16632353 1.51529479 -0.019551961
 		 -0.16481079 1.50921941 -0.044814393 -0.16272956 1.51063371 0.0038721 -0.17829436 1.49627781 0.019785339
@@ -4822,7 +5157,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.072832048 1.45547628 -0.11696896 -0.10063417 1.43414021 -0.11826193 -0.049014531 1.47572315 -0.11452784
 		 -0.034688089 1.45608377 -0.1204456 -0.058031842 1.43529749 -0.1235362 -0.061276969 1.49557757 -0.10562015
 		 -0.029384781 1.495296 -0.11182812 -0.016033201 1.36859179 0.13686159 -0.033894449 1.34856367 0.14665025
-		 -0.01724924 1.33020818 0.14832582 -0.050270882 1.36849225 0.14025459 -0.071270488 1.34887421 0.14452662
+		 -0.01724924 1.33020818 0.14832583 -0.050270882 1.36849225 0.14025459 -0.071270488 1.34887421 0.14452663
 		 -0.053446461 1.32877123 0.15069708 -0.03120126 1.38973927 0.12981141 -0.066533558 1.39076996 0.12918641
 		 -0.07346341 1.30950534 0.14551781 -0.055553231 1.29086649 0.15141964 -0.035880599 1.31093872 0.1521035
 		 -0.018328261 1.29284942 0.15363678 -0.075656839 1.27157509 0.14634578 -0.057910398 1.25191796 0.15785921
@@ -4841,8 +5176,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.2229884 1.45175564 -0.044477321 -0.20019765 1.43362808 -0.071340792 -0.20624596 1.28851962 -0.04084469
 		 -0.20963973 1.30856109 -0.061361171 -0.19359927 1.31685877 -0.044709399 -0.19571985 1.30451906 -0.019723851
 		 -0.19672255 1.33690846 -0.066526048 -0.18171233 1.33567655 -0.048577871 -0.1831121 1.3314594 -0.02103119
-		 -0.23006625 1.30320215 -0.070042685 -0.2383927 1.32932007 -0.073158354 -0.21713272 1.33349001 -0.072664589
-		 -0.22633123 1.36148334 -0.073070452 -0.20457 1.36504436 -0.076454692 -0.25851882 1.32446051 -0.065045565
+		 -0.23006624 1.30320215 -0.070042685 -0.2383927 1.32932007 -0.073158354 -0.21713272 1.33349001 -0.072664589
+		 -0.22633123 1.36148334 -0.073070452 -0.20457001 1.36504436 -0.076454692 -0.25851882 1.32446051 -0.065045565
 		 -0.26169702 1.3486886 -0.051108297 -0.24536966 1.35597134 -0.065000325 -0.25139722 1.38074863 -0.050356861
 		 -0.27485222 1.33997822 -0.034844611 -0.27055323 1.35767293 -0.01534603 -0.26323614 1.37053788 -0.03298299
 		 -0.26121312 1.38923037 -0.01357659 -0.17065674 1.34556293 -0.077118427 -0.181596 1.37470698 -0.087067202
@@ -4852,11 +5187,11 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.29076841 1.26625025 -0.062197398 -0.28341448 1.32696748 -0.016791919 -0.27620906 1.31889009 -0.05122764
 		 -0.2526755 1.29927289 -0.070934795 -0.24478891 1.27472878 -0.06718497 -0.23882703 1.25223088 -0.055757698
 		 -0.26246801 1.24751627 -0.065139368 -0.22145543 1.26016665 -0.037685689 -0.22673689 1.2453624 -0.015743271
-		 -0.23872592 1.23289919 -0.03713892 -0.22304325 1.27970791 -0.05746226 -0.21057722 1.27468979 -0.01694628
+		 -0.23872593 1.23289919 -0.03713892 -0.22304325 1.27970791 -0.05746226 -0.21057722 1.27468979 -0.01694628
 		 -0.22254249 1.3132242 0.0297172 -0.2022021 1.31988978 0.02120024 -0.20831597 1.34630704 0.032288522
 		 -0.23004973 1.33944249 0.031733468 -0.1884308 1.35238707 0.02372006 -0.19343582 1.3719238 0.038489129
 		 -0.21780881 1.37070632 0.03631844 -0.20339815 1.29504931 0.0036529601 -0.18819207 1.32679021 0.00312635
-		 -0.17632388 1.35064816 0.0044356002 -0.27183679 1.3413527 0.00043386995 -0.25711149 1.35367477 0.015369491
+		 -0.17632388 1.35064816 0.0044356002 -0.27183679 1.3413527 0.00043386995 -0.25711149 1.35367477 0.015369492
 		 -0.26164189 1.37283325 0.00245972 -0.24822512 1.3849293 0.0182647 -0.25083813 1.33129001 0.02541741
 		 -0.23916584 1.36340761 0.027387131 -0.30231917 1.27758336 -0.0011215 -0.28516579 1.28878355 0.01374565
 		 -0.28623205 1.30984509 -0.00017400995 -0.26946765 1.32141459 0.01429437 -0.28283393 1.26599979 0.02395737
@@ -4890,10 +5225,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.077422969 1.1916815 0.14933431 -0.057810977 1.17013836 0.15784624 -0.03919949 1.18965304 0.1657937
 		 -0.019394601 1.16848409 0.16840619 -0.14170335 1.25309873 0.076207079 -0.12950514 1.22296512 0.10098091
 		 -0.11403789 1.23731184 0.12037443 -0.097013623 1.21362042 0.13864829 -0.1405136 1.20961332 0.079702117
-		 -0.12666576 1.18314183 0.10442096 -0.11331657 1.19751811 0.12234142 -0.094022103 1.1746043 0.13524155
+		 -0.12666577 1.18314183 0.10442096 -0.11331657 1.19751811 0.12234142 -0.094022103 1.1746043 0.13524155
 		 -0.15032028 1.17942655 0.0367992 -0.15516327 1.20500898 0.0087563302 -0.14589548 1.18620634 -0.0077298498
 		 -0.14704348 1.16286838 0.01743694 -0.13886875 1.21076584 -0.033328969 -0.11936941 1.19317508 -0.043260287
-		 -0.13099799 1.16987169 -0.022130029 -0.15611446 1.22364211 0.029204112 -0.15439279 1.22840798 -0.017567599
+		 -0.13099799 1.16987169 -0.022130029 -0.15611446 1.22364211 0.029204112 -0.15439278 1.22840798 -0.017567599
 		 -0.12878396 1.23366725 -0.05924337 -0.10401474 1.21739995 -0.065654248 -0.079884075 1.19961667 -0.065475672
 		 -0.09731321 1.17659044 -0.048719969 -0.061525002 1.22259474 -0.07902205 -0.039357759 1.202039 -0.071008831
 		 -0.057985168 1.18048441 -0.062712938 -0.086349078 1.24181759 -0.085550472 -0.041894004 1.24543536 -0.088789679
@@ -4927,16 +5262,16 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.15034847 1.03296268 0.087095089 -0.10701458 0.95163512 0.1153373 -0.10299321 0.98914587 0.12122812
 		 -0.11745306 1.0036760569 -0.072357327 -0.13278604 0.98045176 -0.055271503 -0.1423039 1.007294178 -0.020792469
 		 -0.15504257 0.98271197 0.0045519001 -0.16202098 1.0031764507 0.037231401 -0.11745542 0.94941741 -0.085229389
-		 -0.13461398 0.92739111 -0.068578959 -0.14683163 0.95766807 -0.03187979 -0.16015586 0.92791265 -0.015261349
+		 -0.13461398 0.92739111 -0.068578959 -0.14683163 0.95766807 -0.03187979 -0.16015586 0.92791265 -0.015261348
 		 -0.1677973 0.95280492 0.025649659 -0.028737599 0.99936867 -0.08791361 -0.046973739 0.97483563 -0.099804603
 		 -0.072220348 1.0021739006 -0.093197472 -0.096480601 0.97456735 -0.095693342;
 	setAttr ".vt[7138:7303]" -0.024249809 0.94980973 -0.095011503 -0.043132164 0.92352176 -0.099757023
-		 -0.069865339 0.94750822 -0.10563403 -0.092991665 0.9218033 -0.10089192 -0.1076311 0.86439627 -0.083368391
+		 -0.069865339 0.94750822 -0.10563403 -0.092991665 0.9218033 -0.10089193 -0.1076311 0.86439627 -0.083368391
 		 -0.085552044 0.87868398 -0.092052504 -0.05787044 0.86395866 -0.073757283 -0.080662183 0.84956336 -0.076266639
 		 -0.038246181 0.88062859 -0.076207303 -0.01651682 0.86759728 -0.034341749 -0.030434288 0.85375297 -0.033076219
 		 -0.11283287 0.90006316 -0.090668485 -0.064664319 0.89868492 -0.099374123 -0.02139616 0.90231353 -0.081084818
 		 -0.10688062 0.80611724 -0.072425812 -0.076458201 0.82091463 -0.06985075 -0.045793008 0.80636096 -0.05286077
-		 -0.075950377 0.78854102 -0.071320631 -0.02458722 0.82381576 -0.02342472 -0.012413451 0.80598402 0.0081822397
+		 -0.075950377 0.78854102 -0.071320631 -0.024587221 0.82381576 -0.02342472 -0.012413451 0.80598402 0.0081822397
 		 -0.025727831 0.78896558 -0.025834179 -0.10695287 0.8364681 -0.073405989 -0.050176576 0.83773893 -0.054056969
 		 -0.012192491 0.83921456 0.0076455097 -0.17626175 0.83669955 0.017890329 -0.16709727 0.84954214 -0.0095738601
 		 -0.15329951 0.81783265 -0.03399713 -0.16855089 0.80471712 -0.0088016 -0.13298494 0.82667506 -0.0583928
@@ -4953,7 +5288,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.31213722 1.14625001 0.023240099 -0.33276051 1.20077038 0.0090027899 -0.32776234 1.18276155 0.017648371
 		 -0.34589395 1.17764354 0.0131749 -0.33954746 1.15982544 0.022629969 -0.34847564 1.19300973 -0.0019148199
 		 -0.36131781 1.16900587 0.0031465699 -0.1812311 0.81530172 0.043292709 -0.17463344 0.84613436 0.070065476
-		 -0.17749032 0.87047529 0.04565952 -0.17086388 0.901191 0.071821801 -0.17393044 0.92581064 0.04814015
+		 -0.17749031 0.87047529 0.04565952 -0.17086388 0.901191 0.071821801 -0.17393044 0.92581064 0.04814015
 		 -0.16411828 0.81805807 0.092344195 -0.14402951 0.8436926 0.11042218 -0.15987301 0.87347358 0.092956655
 		 -0.13821426 0.89624357 0.10881928 -0.15458807 0.92646527 0.093575023 -0.0511094 0.81255454 0.10440369
 		 -0.070194982 0.84253716 0.11547647 -0.097682692 0.82965243 0.12086357 -0.076701149 0.7976436 0.11462566
@@ -4963,10 +5298,10 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.080586948 0.74858832 0.10643192 -0.057164311 0.76946241 0.098490328 -0.14904997 0.72515941 0.097371705
 		 -0.12745358 0.69704455 0.099707566 -0.10444689 0.72418559 0.10747144 -0.084086888 0.69715667 0.09400589
 		 -0.06195078 0.72303933 0.08768142 -0.18313877 0.70125777 0.033588339 -0.17779876 0.72727257 0.06158895
-		 -0.18345004 0.75719553 0.040220272 -0.18253203 0.73024064 0.01112586 -0.17620476 0.7871176 0.06709116
+		 -0.18345003 0.75719553 0.040220272 -0.18253203 0.73024064 0.01112586 -0.17620476 0.7871176 0.06709116
 		 -0.18074934 0.78431016 0.01544763 -0.16511795 0.69772911 0.076754987 -0.16615991 0.75544161 0.0865677
 		 -0.11131566 0.73027182 -0.078881577 -0.079381481 0.75055641 -0.075853311 -0.054406427 0.72843504 -0.062565848
-		 -0.084578209 0.70675743 -0.078892782 -0.031148519 0.7492134 -0.032338291 -0.027586211 0.72765976 -0.0050472897
+		 -0.084578209 0.70675743 -0.078892782 -0.031148519 0.7492134 -0.032338291 -0.027586212 0.72765976 -0.0050472897
 		 -0.041776419 0.70639807 -0.039379559 -0.10844576 0.77130133 -0.075492047 -0.048023328 0.77015746 -0.056912798
 		 -0.0179534 0.76832908 0.0029736999 -0.17192316 0.75630212 -0.01238338 -0.15625393 0.73106354 -0.040279817
 		 -0.17201589 0.70564848 -0.018113689 -0.13540894 0.75290215 -0.062130898 -0.13668074 0.70796865 -0.06535504
@@ -4985,7 +5320,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.10236896 0.61099899 -0.077308401 -0.053656057 0.65775681 -0.04621084 -0.050240487 0.63098025 -0.02761581
 		 -0.066819027 0.60823148 -0.053910188 -0.11498733 0.68500102 -0.079750262 -0.063828781 0.68213594 -0.066302612
 		 -0.038662788 0.68260545 -0.0148369 -0.13807307 0.66080892 -0.067459568 -0.15547103 0.68334419 -0.04562686
-		 -0.16833787 0.6555618 -0.024950212 -0.17964555 0.67759967 0.00382557;
+		 -0.16833788 0.6555618 -0.024950212 -0.17964555 0.67759967 0.00382557;
 	setAttr ".vt[7304:7469]" -0.1403022 0.60961956 -0.065757461 -0.15439336 0.63264501 -0.04865187
 		 -0.16630302 0.60371423 -0.029488949 -0.17459126 0.62565947 -0.0043652598 -0.14745417 0.6685344 0.084272258
 		 -0.12757155 0.63955885 0.082947396 -0.10651682 0.66846061 0.092971802 -0.086851016 0.63982373 0.077954441
@@ -4996,21 +5331,21 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.12811354 0.54937899 -0.074728072 -0.10788562 0.56719708 -0.077100493 -0.09358824 0.54817313 -0.074645229
 		 -0.11370283 0.53306705 -0.079420201 -0.074579678 0.56387043 -0.061243411 -0.065538213 0.54249883 -0.047704101
 		 -0.081849821 0.52963001 -0.065974623 -0.12445994 0.58783174 -0.074665658 -0.086833775 0.5869959 -0.071308583
-		 -0.059078149 0.58163261 -0.03985469 -0.17538956 0.53577787 -0.017516799 -0.16830041 0.5592283 -0.033947337
+		 -0.059078149 0.58163261 -0.03985469 -0.17538956 0.53577787 -0.017516799 -0.16830042 0.5592283 -0.033947337
 		 -0.15827663 0.54538149 -0.052396268 -0.1707581 0.52497697 -0.03847013 -0.14266382 0.56585461 -0.064716607
-		 -0.14730535 0.53201884 -0.068217099 -0.17345414 0.57571119 -0.01167048 -0.15559031 0.58390063 -0.049768928
+		 -0.14730534 0.53201884 -0.068217099 -0.17345414 0.57571119 -0.01167048 -0.15559031 0.58390063 -0.049768928
 		 -0.397504 1.095729947 0.0083203102 -0.39742264 1.078643322 0.0233496 -0.38258353 1.092152238 0.029936431
 		 -0.37834585 1.071280003 0.03790665 -0.35951263 1.081555128 0.039079841 -0.40712202 1.063729286 0.01565728
 		 -0.40701663 1.04824996 0.028758509 -0.39437419 1.060248613 0.033849262 -0.39073634 1.042041063 0.041603941
 		 -0.37460935 1.050934553 0.04234948 -0.3947522 1.089502454 -0.02087377 -0.40361455 1.077780247 -0.00150627
 		 -0.4057416 1.058483243 -0.01074321 -0.41269794 1.047389984 0.00726372 -0.37572044 1.076729536 -0.040668678
 		 -0.39430037 1.06774807 -0.02871727 -0.39072645 1.045655608 -0.029945942 -0.40587047 1.038154483 -0.017855901
-		 -0.34864327 1.064567447 -0.032025322 -0.37040401 1.053981423 -0.034422182 -0.36599612 1.033741593 -0.021737181
+		 -0.34864327 1.064567447 -0.032025322 -0.37040401 1.053981423 -0.034422182 -0.36599612 1.033741593 -0.021737183
 		 -0.38521358 1.024918437 -0.02392965 -0.33225945 1.060823321 -9.3639996e-05 -0.34788203 1.045632362 -0.01306283
 		 -0.35205069 1.031464219 0.00721164 -0.36504832 1.017858028 -0.0043487502 -0.3382037 1.068624139 0.03058601
 		 -0.34280583 1.0483284 0.019486099 -0.35695416 1.039168358 0.033709038 -0.36091888 1.021447778 0.024540979
 		 -0.3567107 1.0595541 0.038873319 -0.37226906 1.031593561 0.042454928 -0.37241745 1.01372385 0.0379574
-		 -0.37569195 0.99735117 0.029729281 -0.36832893 1.0061875582 0.01369389 -0.38544738 0.99018532 0.042518221
+		 -0.37569195 0.99735117 0.029729281 -0.36832893 1.0061875582 0.013693891 -0.38544738 0.99018532 0.042518221
 		 -0.38884786 0.97512007 0.03358493 -0.38312343 0.98245358 0.01869363 -0.38715839 1.024298906 0.046203151
 		 -0.38492298 1.0068813562 0.046966583 -0.39797229 0.99966222 0.051299948 -0.39587241 0.98398894 0.051367961
 		 -0.41630191 1.034700751 0.02264292 -0.41662258 1.021033883 0.035240188 -0.40471876 1.032379627 0.038972031
@@ -5018,19 +5353,19 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.41443896 1.006739378 0.045361329 -0.41099319 0.99222201 0.05244432 -0.38062683 1.0069595575 -0.01251389
 		 -0.39847201 0.99845988 -0.01468768 -0.40342408 1.0179075 -0.01972696 -0.3946062 0.98113436 -0.0056753303
 		 -0.41219878 0.97281969 -0.0077915699 -0.41679209 0.99106306 -0.01025849 -0.37967736 0.9928726 0.00254394
-		 -0.39366663 0.969338 0.00766487 -0.41616118 1.029862165 -0.0011058201 -0.42298999 1.019505143 0.0156822
+		 -0.39366665 0.969338 0.00766487 -0.41616118 1.029862165 -0.0011058201 -0.42298999 1.019505143 0.0156822
 		 -0.42780676 1.0027850866 0.0085637802 -0.43331468 0.99405563 0.02460306 -0.41793004 1.010910034 -0.00807836
 		 -0.42991123 0.98492312 0.00141596 -0.14124671 0.4822028 -0.083901808 -0.1204314 0.50017977 -0.083871424
 		 -0.10798703 0.48080122 -0.083406582 -0.12758774 0.46323365 -0.089925893 -0.090620652 0.49655136 -0.070171684
 		 -0.084328964 0.4759275 -0.06086234 -0.099457137 0.46036336 -0.076843187 -0.13400915 0.51711339 -0.07835041
-		 -0.10047009 0.51563942 -0.078219838 -0.073710062 0.5101279 -0.053951848 -0.16384944 0.51361728 -0.057669703
+		 -0.1004701 0.51563942 -0.078219838 -0.073710062 0.5101279 -0.053951848 -0.16384944 0.51361728 -0.057669703
 		 -0.17576654 0.49302635 -0.043095369 -0.17778198 0.50385642 -0.0217485 -0.16996147 0.47916546 -0.062532529
 		 -0.18170191 0.45664471 -0.048564482 -0.1810213 0.47014779 -0.02685296 -0.15335463 0.4995366 -0.072630413
 		 -0.16056417 0.46248084 -0.07892292 -0.17428751 0.51329088 0.00014178999 -0.16737446 0.52363282 0.020972468
 		 -0.1735771 0.5476234 0.0052876798 -0.16758475 0.56544614 0.02925786 -0.15744238 0.50497568 0.033021919
 		 -0.14518325 0.51958025 0.046912607 -0.15801311 0.53898066 0.040151108 -0.14346121 0.56074136 0.054908209
 		 -0.14517082 0.45659688 0.028037529 -0.157511 0.47300589 0.02711333 -0.16742188 0.46100777 0.0086571602
-		 -0.1580402 0.44256514 0.014619309 -0.1759439 0.48181716 -0.00412822 -0.17951122 0.4471589 -0.01176026
+		 -0.1580402 0.44256514 0.014619309 -0.17594391 0.48181716 -0.00412822 -0.17951122 0.4471589 -0.01176026
 		 -0.14610948 0.48648742 0.039834868 -0.16690275 0.49224141 0.016297359 -0.080113515 0.52414179 0.022491628
 		 -0.092632815 0.53963602 0.04113768 -0.10951041 0.51960105 0.046575241 -0.097739249 0.50588065 0.030524991
 		 -0.1268004 0.53787553 0.05204143 -0.12854947 0.50266719 0.046248969 -0.072605029 0.56403059 0.03652725
@@ -5039,7 +5374,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.18220171 0.40170985 -0.075372212 -0.16611721 0.42448044 -0.086336285 -0.15109716 0.40518162 -0.099771172
 		 -0.16996504 0.38294274 -0.093537681 -0.17676015 0.4415853 -0.068757929 -0.14733852 0.44470391 -0.091446541
 		 -0.18797331 0.41863564 -0.05444447 -0.19184636 0.37733543 -0.060495064 -0.19218662 0.39407653 -0.039049499
-		 -0.11208787 0.48667338 0.036604431 -0.10235603 0.47297096 0.023127042 -0.086676843 0.49236166 0.01619591
+		 -0.11208787 0.48667338 0.036604431 -0.10235603 0.47297096 0.023127042 -0.086676843 0.49236163 0.01619591
 		 -0.11659203 0.45616862 0.023307331 -0.10978881 0.44174919 0.0098221395 -0.096825801 0.46045649 0.00604488
 		 -0.12986873 0.46996251 0.03478615 -0.13227823 0.44101751 0.02141232;
 	setAttr ".vt[7470:7635]" -0.13870007 0.40288132 0.01253688 -0.1222388 0.42298096 0.01196772
@@ -5047,26 +5382,26 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.1697979 0.29648927 -0.0068803402 -0.18001449 0.2797001 -0.01838118 -0.16934581 0.26215592 -0.0097844098
 		 -0.1880064 0.29813927 -0.030988209 -0.19299166 0.282805 -0.046886321 -0.18804938 0.26356471 -0.031760391
 		 -0.15780407 0.31299219 0.0016209499 -0.16966903 0.32904738 -0.0037649199 -0.180099 0.31322217 -0.01670891
-		 -0.18871592 0.33164689 -0.029715171 -0.19307107 0.31684998 -0.047029518 -0.18759514 0.28704256 -0.082387656
+		 -0.18871592 0.33164689 -0.029715171 -0.19307108 0.31684998 -0.047029518 -0.18759514 0.28704256 -0.082387656
 		 -0.17432036 0.30657458 -0.097667754 -0.15824084 0.28934589 -0.10403235 -0.17452234 0.2704607 -0.092801295
 		 -0.18688959 0.32224628 -0.083951108 -0.172391 0.34215564 -0.098285034 -0.15621133 0.32524678 -0.10852838
 		 -0.19307157 0.30265456 -0.06576553 -0.19276878 0.26741394 -0.063861854 -0.19290455 0.33717656 -0.064916417
 		 -0.14530899 0.29778549 0.00138328 -0.13192345 0.31531945 -0.00089148997 -0.14373535 0.33013743 0.0045038103
 		 -0.12303358 0.30019704 -0.01015344 -0.11028948 0.31807587 -0.020118529 -0.1195802 0.33284897 -0.0070943199
-		 -0.13984828 0.30816606 -0.1107557 -0.12428815 0.29002249 -0.10554069 -0.14187038 0.27172542 -0.10369244
+		 -0.13984828 0.30816606 -0.1107557 -0.12428815 0.29002249 -0.10554069 -0.14187038 0.27172542 -0.10369243
 		 -0.10669282 0.30780122 -0.10076962 -0.097222999 0.28912562 -0.085472792 -0.11150125 0.27178955 -0.094188988
-		 -0.13747168 0.3441509 -0.11185739 -0.12143228 0.32606888 -0.1098716 -0.10426794 0.34410799 -0.10067593
+		 -0.13747168 0.3441509 -0.11185738 -0.12143227 0.32606888 -0.1098716 -0.10426794 0.34410799 -0.10067593
 		 -0.092586964 0.32510224 -0.088455431 -0.13178435 0.4257206 -0.098228551 -0.11689696 0.40485337 -0.098832294
 		 -0.13494281 0.38466182 -0.10644739 -0.10199767 0.42323375 -0.085457668 -0.092838667 0.40121335 -0.075973243
 		 -0.10368483 0.38307697 -0.093330495 -0.11359973 0.44381219 -0.090508975 -0.092589386 0.43987244 -0.068161301
 		 -0.14333922 0.19785458 -0.095046453 -0.13435945 0.17842509 -0.089646585 -0.14430815 0.15923692 -0.09096504
 		 -0.15492465 0.17810966 -0.090616986 -0.12348285 0.19689146 -0.083568856 -0.11964188 0.17695139 -0.068055727
-		 -0.12720498 0.15887529 -0.078030497 -0.16467971 0.10667347 -0.0060953703 -0.15609771 0.097581089 0.0058512702
+		 -0.12720498 0.15887529 -0.078030497 -0.16467972 0.10667347 -0.0060953703 -0.15609771 0.097581089 0.0058512702
 		 -0.14433409 0.10831463 -0.00308248 -0.15346991 0.12170579 -0.0087716104 -0.13510188 0.089628898 0.0044029099
 		 -0.12683499 0.10117974 -0.011776119 -0.13685033 0.12124518 -0.01264458 -0.17003618 0.081915781 0.016135041
 		 -0.16143103 0.074483588 0.034391571 -0.14661735 0.084708795 0.01977315 -0.13945118 0.066421911 0.037686151
 		 -0.13015552 0.065558493 0.020340759 -0.14799079 0.099390678 -0.089599654 -0.15686083 0.079620369 -0.087141551
-		 -0.1679545 0.098363817 -0.071866222 -0.15938456 0.11790695 -0.079911597 -0.17911816 0.079540536 -0.063100316
+		 -0.1679545 0.098363817 -0.071866222 -0.15938455 0.11790695 -0.079911597 -0.17911816 0.079540536 -0.063100316
 		 -0.18424915 0.09635374 -0.046153821 -0.17739302 0.11551288 -0.058089927 -0.14642601 0.058075279 -0.10096139
 		 -0.16058022 0.03780891 -0.10135686 -0.16885301 0.059850331 -0.083581239 -0.1761608 0.041530319 -0.071628816
 		 -0.18365617 0.060634419 -0.048679728 -0.13621178 0.078776442 -0.093612902 -0.12272543 0.05601614 -0.091748647
@@ -5074,7 +5409,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.11659759 0.035084181 -0.082886457 -0.1409561 0.11957411 -0.089546777 -0.131963 0.099048071 -0.084775835
 		 -0.12737389 0.11908866 -0.074897602 -0.12281762 0.098520234 -0.059695709 -0.12014077 0.045070246 -0.01019351
 		 -0.11025143 0.062015992 -0.02744695 -0.11580563 0.080987491 -0.01386451 -0.12269957 0.05826924 0.0054709204
-		 -0.1143302 0.10097398 -0.030260351 -0.12223055 0.12000205 -0.025344301 -0.11390977 0.041553751 -0.048489198
+		 -0.11433019 0.10097398 -0.030260351 -0.12223055 0.12000205 -0.025344301 -0.11390977 0.041553751 -0.048489198
 		 -0.11384067 0.079925053 -0.043799531 -0.11847483 0.11929284 -0.047069587 -0.17748685 0.058320232 0.04808617
 		 -0.17003338 0.05050147 0.069599181 -0.15403442 0.060491189 0.054324962 -0.14588562 0.046893422 0.075554311
 		 -0.13378331 0.047216319 0.058426999 -0.18594564 0.03948693 0.080370359 -0.17695555 0.033598028 0.10193815
@@ -5085,29 +5420,29 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.2133528 0.02164722 0.03079243 -0.19247653 0.02895355 0.10867521 -0.18391725 0.028546929 0.12878412
 		 -0.1675449 0.02951875 0.12220538 -0.15917306 0.02897682 0.13863251 -0.14540231 0.027768942 0.12726557
 		 -0.19981022 0.02612949 0.13251491 -0.19067819 0.024184421 0.1491764 -0.17532818 0.02847245 0.14552541
-		 -0.16652405 0.026035391 0.15772602 -0.15564837 0.02627342 0.1517873 -0.21345665 0.02388042 0.093755201
-		 -0.20790644 0.02575485 0.11295052 -0.21871749 0.021792222 0.11662105 -0.21223861 0.02097162 0.13248536
+		 -0.16652405 0.026035391 0.15772602 -0.15564838 0.02627342 0.1517873 -0.21345665 0.02388042 0.093755201
+		 -0.20790644 0.02575485 0.11295052 -0.2187175 0.021792222 0.11662105 -0.21223861 0.02097162 0.13248536
 		 -0.22591937 0.01374362 0.084282905 -0.22364764 0.0184616 0.099431247 -0.22637121 0.01034804 0.10910304
 		 -0.22163507 0.01513563 0.12501688 -0.15127766 0.00039876997 0.14782639 -0.13963455 0.0064789997 0.13845591
 		 -0.14466527 0.01248281 0.15458012 -0.15286474 0.0057533504 0.15978557 -0.14072832 0.020661769 0.1421134
-		 -0.1551923 0.02047885 0.16195947 -0.14231379 0.00167209 0.12022554 -0.12966463 0.0077954801 0.10716813
+		 -0.1551923 0.02047885 0.16195947 -0.14231378 0.00167209 0.12022554 -0.12966463 0.0077954801 0.10716813
 		 -0.13367581 0.0146196 0.12512502 -0.13030972 0.024346359 0.11138231 -0.13570097 0.00219746 0.088283278
 		 -0.12761272 0.01121065 0.076203316 -0.12374914 0.01722811 0.094374701 -0.12683217 0.032087769 0.078107901
 		 -0.1342115 0.01035159 0.05615098 -0.12756006 0.02382442 0.042612899 -0.12525196 0.025991021 0.061401602
-		 -0.12651771 0.043615088 0.0421452 -0.18721715 -0.0012862299 0.06902077 -0.1702376 0.00064313004 0.059824251
+		 -0.12651771 0.043615088 0.0421452 -0.18721716 -0.0012862299 0.06902077 -0.1702376 0.00064313004 0.059824251
 		 -0.15912637 -0.0013586 0.080160044 -0.17520843 -0.00389233 0.089976899 -0.14483325 0.00218707 0.068634346
 		 -0.14826176 -0.0022801801 0.10054218 -0.18162112 0.0025075001 0.039931718 -0.16443114 0.0059903003 0.029118659
 		 -0.15409677 0.0052281795 0.04849977 -0.14123432 0.013087699 0.03603065;
 	setAttr ".vt[7636:7801]" -0.17401703 0.0055478499 0.0095193395 -0.15871127 0.0080561098 -0.0031550301
-		 -0.14989901 0.01199612 0.0168189 -0.13875945 0.01671244 0.00372502 -0.1326282 0.021947801 0.023355938
+		 -0.14989901 0.01199612 0.0168189 -0.13875945 0.01671244 0.00372502 -0.1326282 0.021947801 0.023355937
 		 -0.16612761 0.0051444699 -0.024724491 -0.15074402 0.0036367802 -0.042963672 -0.14461863 0.0091538904 -0.01848536
 		 -0.13131899 0.00902336 -0.034515459 -0.12849623 0.019961471 -0.01162721 -0.19509372 -0.0024844198 0.12182901
 		 -0.18008806 -0.0015809999 0.11890026 -0.17028725 -0.00181859 0.13950354 -0.18590234 -0.0010940899 0.14279607
 		 -0.1547845 -0.00097985996 0.13145338 -0.16206533 0.00029297994 0.15446492 -0.19168137 -0.0029528099 0.097303174
 		 -0.16418989 -0.0033253499 0.11188759 -0.20484337 0.01607842 0.14681099 -0.19248916 0.0093314396 0.156698
 		 -0.17936592 0.018820191 0.16092682 -0.16541681 0.01193451 0.16468111 -0.20191735 0.0019359 0.14145571
-		 -0.17638133 0.0034858701 0.15838224 -0.45941907 0.91376626 0.02397676 -0.45650867 0.90049928 0.013061251
-		 -0.46337587 0.8874948 0.02308248 -0.46345627 0.90147704 0.03204152 -0.46082371 0.87345177 0.013153071
+		 -0.17638132 0.0034858701 0.15838224 -0.45941907 0.91376626 0.02397676 -0.45650867 0.90049928 0.013061251
+		 -0.46337587 0.8874948 0.02308248 -0.46345627 0.90147704 0.03204152 -0.46082371 0.87345177 0.013153072
 		 -0.46841282 0.86113352 0.025359539 -0.46949002 0.87554032 0.03558661 -0.44851103 0.91346669 0.00425791
 		 -0.44201526 0.89610171 -0.00368348 -0.45209819 0.8852194 0.0025036002 -0.44511777 0.87152243 -0.0037754697
 		 -0.45459557 0.86164665 0.00414926 -0.46677247 0.89165199 0.044894502 -0.46201447 0.90913391 0.05181174
@@ -5144,7 +5479,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.41660005 0.85233748 0.10220171 -0.40795907 0.85131729 0.097157419 -0.40896159 0.833197 0.11834639
 		 -0.41294587 0.83972549 0.11942016 -0.41604865 0.84555745 0.11056341 -0.41866016 0.85520482 0.11182407
 		 -0.39126697 0.83339667 0.11440977 -0.39406031 0.83750755 0.10695641 -0.39191136 0.84491861 0.10501593
-		 -0.38899761 0.83949387 0.11379168 -0.39761922 0.85227036 0.097921021 -0.39039201 0.85461009 0.10482727
+		 -0.38899761 0.83949387 0.11379167 -0.39761922 0.85227036 0.097921021 -0.39039201 0.85461009 0.10482727
 		 -0.39640868 0.83229637 0.11158749 -0.40075234 0.84345078 0.10041481 -0.41293636 0.8599357 0.1199714
 		 -0.40609193 0.85282207 0.12245839 -0.40117142 0.86172235 0.12024494 -0.40850827 0.84361899 0.1245257
 		 -0.40231022 0.83827019 0.12683573 -0.39880589 0.84549195 0.12425052 -0.41456431 0.84943312 0.1193988
@@ -5192,9 +5527,9 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.45587966 0.7678417 0.044794641 -0.45901477 0.77734154 0.049983412 -0.46110961 0.78276515 0.04063879
 		 -0.46311074 0.79177046 0.046261702 -0.44471541 0.78671724 0.046385881 -0.44808838 0.78122854 0.054329883
 		 -0.4413707 0.77309752 0.050192371 -0.45608464 0.78682375 0.052566253 -0.45214409 0.77268839 0.05632266
-		 -0.45026168 0.79431933 0.051368281 -0.44205558 0.77258569 0.10209141 -0.44056308 0.78245085 0.10575665
-		 -0.43795338 0.77778262 0.11575755 -0.43813533 0.76991737 0.11094025 -0.44561613 0.78478849 0.11829224
-		 -0.44989461 0.77602541 0.11923656 -0.44212654 0.77151161 0.11879873 -0.44764188 0.78609544 0.096795671
+		 -0.45026168 0.79431933 0.051368281 -0.44205558 0.77258569 0.10209141 -0.44056308 0.78245085 0.10575666
+		 -0.43795338 0.77778262 0.11575755 -0.43813533 0.76991737 0.11094025 -0.44561613 0.78478849 0.11829223
+		 -0.44989461 0.77602541 0.11923657 -0.44212654 0.77151161 0.11879873 -0.44764188 0.78609544 0.096795671
 		 -0.4428581 0.79188842 0.11172368 -0.4551495 0.78972816 0.11604996 -0.44568843 0.76667905 0.10549116
 		 -0.45373571 0.77126634 0.10460278 -0.45155078 0.77792048 0.098250113 -0.45968243 0.78492302 0.10042252
 		 -0.44972202 0.76837355 0.11333285 -0.45668846 0.78046584 0.11064836 -0.4246732 0.7603898 0.018046401
@@ -5206,7 +5541,7 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.44162732 0.74209672 0.056131721 -0.4472802 0.74899703 0.060249273 -0.44916603 0.75405866 0.04987473
 		 -0.45329103 0.76305068 0.054124907 -0.43448943 0.75992942 0.055612851 -0.43624672 0.75395674 0.064989239
 		 -0.43052879 0.74650878 0.06073112 -0.44618428 0.75920427 0.061854459 -0.43923527 0.74596953 0.065147892
-		 -0.44291195 0.76785302 0.059137538 -0.20571053 0.01583709 0.013550989 -0.19851094 0.032976851 0.00145362
+		 -0.44291195 0.76785302 0.059137538 -0.20571053 0.01583709 0.013550988 -0.19851093 0.032976851 0.00145362
 		 -0.1934102 0.024193991 -0.01483773 -0.19463095 0.010062161 5.8259964e-05 -0.18600401 0.041903008 -0.03059366
 		 -0.18096107 0.02579557 -0.050565638 -0.18422659 0.012789201 -0.030376069 -0.18904139 0.06172635 0.00799408
 		 -0.18879929 0.054543983 -0.01175353 -0.18739986 0.07693667 -0.030015171;
@@ -5223,29 +5558,29 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.16432787 0.95227057 0.075512692 -0.12980175 0.8851558 -0.076401837 -0.015677691 1.47604656 -0.11853784
 		 -0.018404979 1.43574297 -0.12179037 -0.020846691 0.74693567 0.028370481 -0.01415131 0.78592801 0.035943598
 		 -0.023829861 0.76595795 0.05885078 -0.05003418 0.5720402 -0.00126032 -0.054693919 0.5923121 0.028622311
-		 -0.06281285 0.54551774 0.011238131 -0.053553298 0.55528384 -0.025941821 -0.048634939 0.60146856 -0.01405493
+		 -0.06281285 0.54551774 0.011238132 -0.053553298 0.55528384 -0.025941821 -0.048634939 0.60146856 -0.01405493
 		 -0.040742267 0.74574065 0.076049238 -0.03502382 0.7869702 0.084832996 -0.084995657 0.91791707 0.1169948
 		 -0.0320035 0.70395082 0.017770531 -0.031955671 0.72438467 0.048726037 -0.046061341 0.62261617 0.0165135
 		 -0.053648729 0.64456499 0.048423592 -0.011406911 0.97442085 -0.086622447 -0.040995568 0.65365571 0.0033573499
 		 -0.095434219 0.33689293 -0.033151671 -0.099476464 0.30373442 -0.035856701 -0.087511852 0.32254115 -0.051467799
 		 -0.085208103 0.43467021 -0.0378826 -0.089728653 0.44840667 -0.01654618 -0.094616354 0.41153255 -0.02575089
 		 -0.071015909 0.48968422 -0.041273668 -0.07646399 0.46941844 -0.028591001 -0.081797861 0.45562258 -0.05045937
-		 -0.086789936 0.41858402 -0.0573522 -0.12410232 0.039054587 0.026142079 -0.16839015 1.36623442 0.051586889
+		 -0.086789936 0.41858402 -0.0573522 -0.12410232 0.039054587 0.026142079 -0.16839014 1.36623442 0.051586889
 		 -0.17316963 1.3650955 0.02573733 -0.020689439 1.39441609 -0.12125154 -0.1751041 1.33714902 -0.02182663
 		 -0.18013203 0.095965929 -0.020716 -0.18033758 0.11339745 -0.03559956 -0.16986942 0.11612187 -0.018390991
 		 -0.17734793 0.08556775 -0.00207665 -0.0085177394 0.84672403 0.037312601 -0.0055010198 0.85747939 0.0052633099
 		 -0.01440548 0.83569229 0.065521985 -0.0093091996 0.82095218 0.039075531 -0.040896058 0.67571753 0.035323869
 		 -0.048350822 0.69900411 0.063731991 -0.11123124 0.21515644 -0.047725111 -0.1141008 0.23390871 -0.036197651
-		 -0.12400273 0.2132297 -0.023723358 -0.11907677 0.19414195 -0.03366857 -0.088579834 0.30652517 -0.070380323
+		 -0.12400273 0.2132297 -0.023723358 -0.11907677 0.19414194 -0.03366857 -0.088579834 0.30652517 -0.070380323
 		 -0.085300267 0.34172475 -0.069739297 -0.10615471 0.23590702 -0.064195015 -0.11375359 0.19533022 -0.058444418
-		 -0.11378809 0.21649665 -0.07471364 -0.17185192 0.00494741 -0.046889171 -0.17513764 0.0096737603 -0.067656808
+		 -0.11378809 0.21649666 -0.07471364 -0.17185192 0.00494741 -0.046889171 -0.17513764 0.0096737603 -0.067656808
 		 -0.16426229 0.00829814 -0.087909222 -0.15684432 0.0035262001 -0.070107959 -0.19032805 0.0042149299 0.019074161
 		 -0.18110451 0.0069088102 -0.01113636 -0.07938759 0.48066238 -0.00394519 -0.02832789 0.82493418 0.087690145
 		 -0.1344063 0.0050645797 -0.062502176 -0.12144282 0.0097716805 -0.071676344 -0.12035587 0.01269874 -0.048929319
 		 -0.17194709 0.02099268 -0.088481806 -0.14972121 0.019438371 -0.10348873 -0.11463497 0.021611782 -0.065142401
 		 -0.12515062 0.01869439 -0.092838384 -0.12019978 0.0285013 -0.029767631 -0.1255849 0.031405799 0.0085342899
 		 -0.21645235 -9.2429967e-05 0.10643923 -0.21923353 0.0024258599 0.11903527 -0.22460058 0.0056060599 0.093594678
-		 -0.21767166 0.00084776001 0.084113009 -0.22407381 0.00760363 0.07164146 -0.21533065 0.00179735 0.059517458
+		 -0.21767166 0.00084776001 0.084113009 -0.22407381 0.00760363 0.07164146 -0.21533066 0.00179735 0.059517458
 		 -0.21936327 0.0098114703 0.04468238 -0.20756271 0.0044611199 0.02921083 -0.064457968 0.5015803 -0.01759395
 		 -0.060789607 0.52216792 -0.032016758 -0.02228466 1.35323024 -0.11690687 -0.15127867 1.33433533 0.059876259
 		 -0.39735466 0.83414674 0.12542029 -0.39323142 0.8320542 0.12087399 -0.41447753 0.90920991 0.020635091
@@ -5297,18 +5632,18 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 		 -0.12694491 0.25446457 -0.098477304 -0.14183486 0.23667793 -0.098251387 -0.10537356 0.25433314 -0.080109596
 		 -0.11736922 0.23658952 -0.088661611 -0.10270743 0.25325546 -0.051658813 -0.11978213 0.25059226 -0.024358271
 		 -0.12918264 0.23128454 -0.01448838 -0.15951094 0.20951015 -0.0097779101 -0.14928068 0.19111928 -0.0089662494
-		 -0.13871685 0.21116889 -0.0089007597 -0.17744908 0.20968685 -0.024134532 -0.16879277 0.19050565 -0.017158519
+		 -0.13871685 0.2111689 -0.0089007597 -0.17744908 0.20968685 -0.024134532 -0.16879277 0.19050565 -0.017158519
 		 -0.18812388 0.21341515 -0.04560174 -0.183211 0.19267845 -0.034489859 -0.18426405 0.19550255 -0.05877275
 		 -0.17984752 0.21626595 -0.073931798 -0.15569763 0.21749392 -0.093750961 -0.16731271 0.19715922 -0.084102117
-		 -0.13036744 0.21736282 -0.09414959 -0.13214156 0.19277091 -0.015675491 -0.16006999 0.17203993 -0.01330268
-		 -0.15128617 0.1547125 -0.01175387 -0.14056806 0.17346825 -0.01140809 -0.17603596 0.17205076 -0.026310649
-		 -0.16872554 0.15279518 -0.02005866 -0.18445271 0.17456608 -0.045703739 -0.18065727 0.15327184 -0.03584075
+		 -0.13036744 0.21736282 -0.09414959 -0.13214156 0.1927709 -0.015675491 -0.16006999 0.17203993 -0.01330268
+		 -0.15128617 0.1547125 -0.01175387 -0.14056806 0.17346825 -0.011408091 -0.17603596 0.17205076 -0.026310649
+		 -0.16872555 0.15279518 -0.02005866 -0.18445271 0.17456608 -0.045703739 -0.18065727 0.15327184 -0.03584075
 		 -0.17569891 0.17589861 -0.071251363 -0.17968391 0.15481527 -0.058157731 -0.1641922 0.15701197 -0.080753013
 		 -0.11624065 0.17535059 -0.042498339 -0.11799411 0.15751907 -0.051807869 -0.12690526 0.17469436 -0.02382406
 		 -0.122338 0.15678272 -0.031026982 -0.13505286 0.15622477 -0.01699454 -0.160952 0.13558102 -0.01464311
 		 -0.14407225 0.13794556 -0.01152867 -0.17513753 0.13251764 -0.028087741 -0.18115509 0.13394675 -0.046435479
 		 -0.1716602 0.13572326 -0.069695681 -0.15219539 0.13859853 -0.088148467 -0.13440859 0.13967022 -0.086208493
-		 -0.12255452 0.13866816 -0.063404731 -0.11867381 0.13847955 -0.037217159 -0.13000534 0.13857017 -0.02262372
+		 -0.12255452 0.13866815 -0.063404731 -0.11867381 0.13847955 -0.037217159 -0.13000534 0.13857016 -0.02262372
 		 -0.42165715 0.87673831 0.066260748 -0.42971435 0.88318855 0.087217264 -0.427257 0.87750363 0.07811749
 		 -0.39436167 0.90168679 0.07462059 -0.39883468 0.91493219 0.085694507 -0.41022977 0.92068624 0.09280511
 		 -0.4252668 0.91526031 0.092484474 -0.43213665 0.89815575 0.090651967 -0.43717986 0.91196287 0.084685735
@@ -26055,25 +26390,8 @@ createNode mesh -n "HumanBody2:humanBodyShape" -p "HumanBody2:humanBody";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube1";
-	rename -uid "398A6B24-440C-76F7-64B9-D6BF842A82A1";
-	setAttr ".t" -type "double3" 0 1 0 ;
-	setAttr ".s" -type "double3" 0.06086557838397727 2 0.06086557838397727 ;
-	setAttr ".rp" -type "double3" 0 -1 0 ;
-	setAttr ".sp" -type "double3" 0 -0.5 0 ;
-	setAttr ".spt" -type "double3" 0 -0.5 0 ;
-createNode mesh -n "pCubeShape1" -p "pCube1";
-	rename -uid "2F421306-4D18-D776-DDF8-87AEF82042C4";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "FPSArms_ModelRNfosterParent1";
-	rename -uid "E78D15FE-4A2A-F413-8597-E594EE314BA9";
+	rename -uid "B4F18A7B-4757-5DA2-DC5F-759C23F0905E";
 createNode mesh -n "Arm_R_lowShapeDeformed" -p "FPSArms_ModelRNfosterParent1";
 	rename -uid "DA59E9DB-4B21-5E08-0326-3682E2C70C51";
 	setAttr -k off ".v";
@@ -26095,72 +26413,72 @@ createNode mesh -n "Arm_L_lowShapeDeformed" -p "FPSArms_ModelRNfosterParent1";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D00B454C-440F-A23B-BEF8-7388AFBA6956";
+	rename -uid "B92F59F5-4E22-C543-8F9E-758A40D9766C";
 	setAttr -s 24 ".lnk";
 	setAttr -s 24 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B53F76C6-4D26-E2EC-9917-B6AB5FBD2739";
-	setAttr ".cdl" 4;
+	rename -uid "37A62833-41CF-0894-283A-AAAC726FBD20";
+	setAttr ".cdl" 3;
 	setAttr -s 5 ".dli[1:4]"  3 2 1 4;
-	setAttr -s 5 ".dli";
+	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A7A812AD-4695-DA00-F3AB-40941534CA40";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "9EA1B8F2-4C6F-73AD-8D6E-73B3C718C99F";
+	rename -uid "98110A97-4445-065D-5BDE-74BBC15ABEEF";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D19290CF-4A5C-2F1A-A3DA-CEA3790A46D2";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "681ACE90-43E3-8BB7-B6D5-1B9E9C9BE499";
+	rename -uid "BE7CD67A-4310-2CD1-B98B-C29B042E78BC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C2E47357-4B0D-C78D-1F1C-649984C63963";
+	rename -uid "030F5953-4CDA-DC89-3F0D-8AA4D1D3B6AC";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "ED3620A8-42CF-9E76-2101-30A52B0B921A";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 656\n            -height 343\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n"
 		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 656\n            -height 343\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n"
+		+ "            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n"
 		+ "            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n"
 		+ "            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n"
-		+ "            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 656\n            -height 343\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n"
+		+ "            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n"
 		+ "            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n"
 		+ "            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n"
-		+ "            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 731\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
-		+ "            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n"
-		+ "            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n"
-		+ "            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n"
-		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n"
-		+ "                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n"
-		+ "                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n"
-		+ "                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n"
-		+ "                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n"
-		+ "                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n"
-		+ "                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n"
-		+ "            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
-		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n"
-		+ "                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n"
-		+ "                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
-		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n"
-		+ "\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 731\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 731\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 0.05 -size 0.12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
+		+ "            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1254\n            -height 724\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
+		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
+		+ "            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n"
+		+ "            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
+		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n"
+		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n"
+		+ "                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n"
+		+ "            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n"
+		+ "                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n"
+		+ "                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n"
+		+ "                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n"
+		+ "                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
+		+ "                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n"
+		+ "                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
+		+ "                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n"
+		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
+		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
+		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n"
+		+ "        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1254\\n    -height 724\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1254\\n    -height 724\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 0.5 -size 1.1 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "EA409F54-4E1E-03A5-E109-879D38A31418";
@@ -26317,7 +26635,7 @@ createNode reference -n "FPSArms_ModelRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"FPSArms_ModelRN"
 		"FPSArms_ModelRN" 0
-		"FPSArms_ModelRN" 27
+		"FPSArms_ModelRN" 45
 		0 "|FPSArms_ModelRNfosterParent1|Arm_L_lowShapeDeformed" "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" 
 		"-s -r "
 		0 "|FPSArms_ModelRNfosterParent1|Arm_R_lowShapeDeformed" "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" 
@@ -26379,7 +26697,25 @@ createNode reference -n "FPSArms_ModelRN";
 		5 4 "FPSArms_ModelRN" "FPSArms_Model:RightArm1.dagSetMembers" "FPSArms_ModelRN.placeHolderList[4]" 
 		""
 		5 4 "FPSArms_ModelRN" "FPSArms_Model:LeftArm1.dagSetMembers" "FPSArms_ModelRN.placeHolderList[5]" 
-		"";
+		""
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "translateX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "translateY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "translateZ"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "rotateX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "rotateY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "rotateZ"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "scaleX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "scaleY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_L_low" "scaleZ"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "translateX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "translateY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "translateZ"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "rotateX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "rotateY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "rotateZ"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "scaleX"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "scaleY"
+		9 "|FPSArms_Model:Arm_GEO_GRP|FPSArms_Model:Arm_R_low" "scaleZ";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode displayLayer -n "Mesh";
@@ -26387,18 +26723,6 @@ createNode displayLayer -n "Mesh";
 	setAttr ".dt" 2;
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 1;
-createNode displayLayer -n "FK";
-	rename -uid "E6088977-447B-B9FD-A39D-708EE00750C3";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 2;
-createNode displayLayer -n "IK";
-	rename -uid "25BCE7E8-4E0D-8695-B659-9597474428BD";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 3;
-createNode displayLayer -n "JNT";
-	rename -uid "004308E9-4F0B-DC06-E00E-5AAA02A3E817";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 4;
 createNode shadingEngine -n "HumanBody2:humanBodySG";
 	rename -uid "E41B8422-422B-8C64-31EC-3981E5CD7A0C";
 	setAttr ".ihi" 0;
@@ -26420,13 +26744,6 @@ createNode shadingEngine -n "HumanBody2:blinn1SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "HumanBody2:materialInfo2";
 	rename -uid "A0DC892D-484A-B70D-D3D7-3D906E24D609";
-createNode polyCube -n "polyCube1";
-	rename -uid "F4408A86-4419-EE1A-A84A-DA829C8E3C31";
-	setAttr ".ax" -type "double3" 0 1 0 ;
-	setAttr ".w" 1;
-	setAttr ".h" 1;
-	setAttr ".d" 1;
-	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 79;
 	setAttr ".unw" 79;
@@ -26487,14 +26804,108 @@ connectAttr "Root_JNT.s" "Clavical_R_JNT.is";
 connectAttr "Clavical_R_JNT.s" "Shoulder_R_JNT.is";
 connectAttr "Shoulder_R_JNT.s" "Elbow_R_JNT.is";
 connectAttr "Elbow_R_JNT.s" "Wrist_R_JNT.is";
+connectAttr "Wrist_R_JNT.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4|Middle_L_JNT_END.is"
+		;
+connectAttr "Wrist_R_JNT.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4|Index_L_JNT_END.is"
+		;
+connectAttr "Wrist_R_JNT.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4|Ring_L_JNT_END.is"
+		;
+connectAttr "Wrist_R_JNT.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4|Pinky_L_JNT_END.is"
+		;
+connectAttr "Wrist_R_JNT.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3.s" "|Root_JNT|Clavical_R_JNT|Shoulder_R_JNT|Elbow_R_JNT|Wrist_R_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3|Thumb_L_JNT_END.is"
+		;
 connectAttr "Shoulder_R_JNT.s" "ShoulderPlate_1_R_JNT.is";
 connectAttr "Shoulder_R_JNT.s" "ShoulderPlate_2_R_JNT.is";
 connectAttr "Root_JNT.s" "Clavical_L_JNT.is";
-connectAttr "JNT.di" "Shoulder_L_JNT.do";
 connectAttr "Clavical_L_JNT.s" "Shoulder_L_JNT.is";
 connectAttr "Shoulder_L_JNT.s" "Elbow_L_JNT.is";
 connectAttr "Elbow_L_JNT.s" "Wrist_L_JNT.is";
-connectAttr "polyCube1.out" "pCubeShape1.i";
+connectAttr "Wrist_L_JNT.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Middle_L_JNT_1|Middle_L_JNT_2|Middle_L_JNT_3|Middle_L_JNT_4|Middle_L_JNT_END.is"
+		;
+connectAttr "Wrist_L_JNT.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Index_L_JNT_1|Index_L_JNT_2|Index_L_JNT_3|Index_L_JNT_4|Index_L_JNT_END.is"
+		;
+connectAttr "Wrist_L_JNT.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Ring_L_JNT_1|Ring_L_JNT_2|Ring_L_JNT_3|Ring_L_JNT_4|Ring_L_JNT_END.is"
+		;
+connectAttr "Wrist_L_JNT.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Pinky_L_JNT_1|Pinky_L_JNT_2|Pinky_L_JNT_3|Pinky_L_JNT_4|Pinky_L_JNT_END.is"
+		;
+connectAttr "Wrist_L_JNT.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3.is"
+		;
+connectAttr "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3.s" "|Root_JNT|Clavical_L_JNT|Shoulder_L_JNT|Elbow_L_JNT|Wrist_L_JNT|Thumb_L_JNT_1|Thumb_L_JNT_2|Thumb_L_JNT_3|Thumb_L_JNT_END.is"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Eyes_LowPoly:lambert1SGExtras.message" ":defaultLightSet.message";
@@ -26592,9 +27003,6 @@ connectAttr "HumanBody1:blinn1SG.msg" "HumanBody1:materialInfo2.sg";
 connectAttr "HumanBody1:blinn1.msg" "HumanBody1:materialInfo2.m";
 connectAttr "FPSArms_ModelRNfosterParent1.msg" "FPSArms_ModelRN.fp";
 connectAttr "layerManager.dli[2]" "Mesh.id";
-connectAttr "layerManager.dli[1]" "FK.id";
-connectAttr "layerManager.dli[3]" "IK.id";
-connectAttr "layerManager.dli[4]" "JNT.id";
 connectAttr "HumanBody2:humanBodySG.msg" "HumanBody2:materialInfo1.sg";
 connectAttr "HumanBody2:place2dTexture1.o" "HumanBody2:ReflectionMap.uv";
 connectAttr "HumanBody2:place2dTexture1.ofu" "HumanBody2:ReflectionMap.ofu";
@@ -26640,5 +27048,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "HumanBody:ReflectionMap.msg" ":defaultTextureList1.tx" -na;
 connectAttr "HumanBody1:ReflectionMap.msg" ":defaultTextureList1.tx" -na;
 connectAttr "HumanBody2:ReflectionMap.msg" ":defaultTextureList1.tx" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of FPSArms_Bind.ma
