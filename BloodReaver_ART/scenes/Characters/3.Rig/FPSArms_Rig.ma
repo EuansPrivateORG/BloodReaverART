@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: FPSArms_Rig.ma
-//Last modified: Sat, Sep 09, 2023 03:14:17 PM
+//Last modified: Sat, Sep 09, 2023 03:15:41 PM
 //Codeset: 1252
 file -rdi 1 -ns "FPSArms_Bind" -rfn "FPSArms_BindRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/Ben Rushby/Documents/BloodReaverART/BloodReaver_ART//scenes/Characters/2.Bind/FPSArms_Bind.ma";
@@ -17,12 +17,12 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "3657B284-49B6-2C5E-C1CA-448337893B72";
+fileInfo "UUID" "5FF9C832-4D67-5F22-59B1-1FA1D9D49CE1";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "F7A8AB51-4093-FDF2-F7C1-EE92A0C13BF0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.36108757477363279 0.75010574479824954 1.4442006596022454 ;
+	setAttr ".t" -type "double3" -0.25114861377736608 0.90266461863391856 1.7000022553122673 ;
 	setAttr ".r" -type "double3" -28.800000000321752 5384.8000000003494 2.4718914389106487e-15 ;
 	setAttr ".rpt" -type "double3" -8.5776557956076692e-17 -1.2108697400483724e-16 -4.6890487845039817e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -32,7 +32,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.001;
 	setAttr ".fcp" 100;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 1.2542398899857734;
+	setAttr ".coi" 1.518795039876814;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -12052,7 +12052,7 @@ createNode nurbsCurve -n "Arm_R_PV_CTRLShape" -p "Arm_R_PV_CTRL";
 		0 0 -1
 		;
 createNode fosterParent -n "FPSArms_BindRNfosterParent1";
-	rename -uid "22918910-4C82-2EFB-7BB4-DB8C6FC23F28";
+	rename -uid "33127883-4B06-3F57-E83A-71926A12B4F1";
 createNode parentConstraint -n "Root_JNT_parentConstraint1" -p "FPSArms_BindRNfosterParent1";
 	rename -uid "666FD403-4E12-76FB-5C70-F5AD8954A042";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Root_CTRLW0" -dv 1 -min 0 -at "double";
