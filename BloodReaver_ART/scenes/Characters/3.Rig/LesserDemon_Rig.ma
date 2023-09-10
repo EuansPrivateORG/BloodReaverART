@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: LesserDemon_Rig.ma
-//Last modified: Mon, Sep 11, 2023 09:01:37 AM
+//Last modified: Mon, Sep 11, 2023 09:25:33 AM
 //Codeset: 1252
 file -rdi 1 -ns "LesserDemon_Bind" -rfn "LesserDemon_BindRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/Ben Rushby/Documents/BloodReaverART/BloodReaver_ART//scenes/Characters/2.Bind/LesserDemon_Bind.ma";
@@ -19,13 +19,13 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202208031415-1dee56799d";
 fileInfo "osv" "Windows 10 Education v2009 (Build: 19045)";
-fileInfo "UUID" "B24663D5-4D8B-88F7-DD44-5BA8B67A9582";
+fileInfo "UUID" "36847B1C-4A47-5AD1-C65D-FCA4397F397A";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "CCB07F2A-4FE1-CC08-9899-C18F5CE08E5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.040085857308983466 2.6679478042463369 5.7878490831195872 ;
-	setAttr ".r" -type "double3" -12.464389680718797 3240.2000000003268 -5.9014557728099798e-17 ;
+	setAttr ".t" -type "double3" 0.61626058761315872 1.1462103071009642 4.67188864231992 ;
+	setAttr ".r" -type "double3" -4.064389680721364 3246.2000000002781 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8D16095E-4D01-E559-AF22-F69C93D8C3F4";
 	setAttr -k off ".v" no;
@@ -33,7 +33,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.001;
 	setAttr ".fcp" 100;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 6.3514925288464559;
+	setAttr ".coi" 4.7368682530227018;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -2881,7 +2881,7 @@ createNode nurbsCurve -n "Leg_R_PV_CTRLShape" -p "Leg_R_PV_CTRL";
 		0 0 -1
 		;
 createNode fosterParent -n "LesserDemon_BindRNfosterParent1";
-	rename -uid "E273023D-4BCC-93AE-B3B0-9B916A16828E";
+	rename -uid "218A8013-47DA-55E8-7EDD-7D988D8A8DB3";
 createNode parentConstraint -n "Root_JNT_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
 	rename -uid "AA5C2044-4660-34D7-9227-0C9EB385DCEA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Root_CTRLW0" -dv 1 -min 0 -at "double";
@@ -3174,6 +3174,24 @@ createNode orientConstraint -n "Middle_L_JNT_3_orientConstraint1" -p "LesserDemo
 	setAttr ".lr" -type "double3" 0 0 -2.3854160110976376e-15 ;
 	setAttr ".rsrr" -type "double3" 0 0 -2.3854160110976376e-15 ;
 	setAttr -k on ".w0";
+createNode orientConstraint -n "Middle_L_JNT_4_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
+	rename -uid "1E7ED312-4147-0506-B79E-03BA6B7CA406";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Middle_4_L_CTRLW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" 0 0 -1.2722218725854067e-14 ;
+	setAttr ".rsrr" -type "double3" 0 0 -1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
 createNode parentConstraint -n "Ring_L_JNT_1_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
 	rename -uid "F10A21AE-4E49-C65B-A4E9-498879BF031C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Ring_1_L_CTRLW0" -dv 1 -min 0 -at "double";
@@ -3402,7 +3420,7 @@ createNode parentConstraint -n "Clavical_R_JNT_parentConstraint1" -p "LesserDemo
 		0.00014707855838423713 ;
 	setAttr ".tg[0].tor" -type "double3" -6.1229062071139427e-15 2.4280139632101806e-14 
 		3.9359364183111027e-14 ;
-	setAttr ".lr" -type "double3" -1.565429257282824e-14 -1.9083328088781107e-14 -3.8961794847928081e-14 ;
+	setAttr ".lr" -type "double3" -4.7658624055054878e-14 -1.9083328088781116e-14 -3.8961794847928075e-14 ;
 	setAttr ".rst" -type "double3" -0.086349899999999494 0.017016413994827815 0.006882595428013092 ;
 	setAttr ".rsrr" -type "double3" 3.6278201835443306e-15 -2.0673605429512861e-14 -3.8961794847928081e-14 ;
 	setAttr -k on ".w0";
@@ -3421,7 +3439,7 @@ createNode orientConstraint -n "Shoulder_R_JNT_orientConstraint1" -p "LesserDemo
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 1.5587202747516123e-13 1.0909861639297458e-14 2.8823776800763264e-15 ;
+	setAttr ".lr" -type "double3" 1.3860260947815226e-13 1.0780185703798325e-14 1.1517086678580792e-14 ;
 	setAttr ".rsrr" -type "double3" 1.6832091728307703e-13 7.8279227890219023e-15 -1.1057397134775388e-15 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Elbow_R_JNT_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3439,7 +3457,7 @@ createNode orientConstraint -n "Elbow_R_JNT_orientConstraint1" -p "LesserDemon_B
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 8.7047805938304626e-13 -3.1060104311174553e-16 9.7404487119820171e-15 ;
+	setAttr ".lr" -type "double3" 8.5179230062944806e-13 2.8202574714538733e-15 1.4064015232096508e-14 ;
 	setAttr ".rsrr" -type "double3" 8.8260392410612587e-13 -2.8823776800763847e-15 9.467119794043727e-15 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Wrist_R_JNT_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3457,7 +3475,7 @@ createNode orientConstraint -n "Wrist_R_JNT_orientConstraint1" -p "LesserDemon_B
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 1.2722218725854067e-14 0 0 ;
+	setAttr ".lr" -type "double3" -1.2722218725854067e-14 0 0 ;
 	setAttr ".rsrr" -type "double3" 3.1805546814635168e-14 0 0 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "Pinky_R_JNT_1_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3479,7 +3497,7 @@ createNode parentConstraint -n "Pinky_R_JNT_1_parentConstraint1" -p "LesserDemon
 		-0.00013716623720029021 ;
 	setAttr ".tg[0].tor" -type "double3" -6.3611093629270335e-14 2.1866313435061676e-15 
 		2.3257806108201967e-14 ;
-	setAttr ".lr" -type "double3" 1.5107634736951704e-14 -9.5416640443905503e-15 -3.1805546814635183e-15 ;
+	setAttr ".lr" -type "double3" 4.7708320221952744e-15 -1.2722218725854067e-14 7.9513867036587919e-15 ;
 	setAttr ".rst" -type "double3" -0.054076159643059042 0.033506271518085814 -0.0067803379579954998 ;
 	setAttr ".rsrr" -type "double3" 4.5322904210855134e-14 -3.1805546814635116e-15 -1.5902773407317587e-14 ;
 	setAttr -k on ".w0";
@@ -3498,7 +3516,7 @@ createNode orientConstraint -n "Pinky_R_JNT_2_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 2.8624992133171654e-14 ;
+	setAttr ".lr" -type "double3" 0 0 4.1347210859025721e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 2.5444437451708134e-14 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Pinky_R_JNT_3_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3516,7 +3534,7 @@ createNode orientConstraint -n "Pinky_R_JNT_3_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 2.2263882770244617e-14 ;
+	setAttr ".lr" -type "double3" 0 0 2.8624992133171654e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 9.5416640443905503e-15 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Pinky_R_JNT_4_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3534,7 +3552,7 @@ createNode orientConstraint -n "Pinky_R_JNT_4_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 3.5781240166464561e-14 ;
+	setAttr ".lr" -type "double3" 0 0 3.9756933518293961e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 1.2722218725854067e-14 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "Middle_R_JNT_1_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3556,7 +3574,7 @@ createNode parentConstraint -n "Middle_R_JNT_1_parentConstraint1" -p "LesserDemo
 		0.00031317788307205774 ;
 	setAttr ".tg[0].tor" -type "double3" -2.4649298781342248e-14 -6.6990432978325351e-14 
 		2.7034714792439897e-14 ;
-	setAttr ".lr" -type "double3" 1.6113982116633498e-14 6.758678698109971e-14 -3.0215269473903395e-14 ;
+	setAttr ".lr" -type "double3" 1.5977317657664358e-14 7.036977232738029e-14 -3.2203116149818082e-14 ;
 	setAttr ".rst" -type "double3" -0.072811987148958798 -0.0056955990781469273 0.0082430367369856587 ;
 	setAttr ".rsrr" -type "double3" 3.5321550622659272e-14 6.5996509640367988e-14 -2.8028638130397219e-14 ;
 	setAttr -k on ".w0";
@@ -3593,7 +3611,7 @@ createNode orientConstraint -n "Middle_R_JNT_3_orientConstraint1" -p "LesserDemo
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -1.2074182729383008e-06 4.0249985652130876e-22 1.9083328088781101e-14 ;
+	setAttr ".lr" -type "double3" -1.2074182729383008e-06 3.7389507243560957e-22 1.7493050748049344e-14 ;
 	setAttr ".o" -type "double3" 1.2074182729383008e-06 0 0 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Middle_R_JNT_4_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3611,6 +3629,7 @@ createNode orientConstraint -n "Middle_R_JNT_4_orientConstraint1" -p "LesserDemo
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" 0 0 1.2722218725854067e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 6.3611093629270335e-15 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "Ring_R_JNT_1_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3632,7 +3651,7 @@ createNode parentConstraint -n "Ring_R_JNT_1_parentConstraint1" -p "LesserDemon_
 		0.00028573426774528346 ;
 	setAttr ".tg[0].tor" -type "double3" -3.8166656177562195e-14 -2.3357198441997705e-15 
 		5.1684013573782151e-15 ;
-	setAttr ".lr" -type "double3" 3.8961794847928075e-14 3.1805546814635168e-15 -1.590277340731757e-15 ;
+	setAttr ".lr" -type "double3" 7.1562480332929119e-15 8.7465253740246687e-15 3.1805546814635168e-15 ;
 	setAttr ".rst" -type "double3" -0.06843586125927402 0.015729336851091062 0.00889463238005277 ;
 	setAttr ".rsrr" -type "double3" 4.4527765540489222e-14 -2.3854160110976348e-15 -6.3611093629270335e-15 ;
 	setAttr -k on ".w0";
@@ -3651,7 +3670,7 @@ createNode orientConstraint -n "Ring_R_JNT_2_orientConstraint1" -p "LesserDemon_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 -2.2263882770244617e-14 ;
+	setAttr ".lr" -type "double3" 0 0 -1.5902773407317584e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 -2.5444437451708134e-14 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Ring_R_JNT_3_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3669,7 +3688,7 @@ createNode orientConstraint -n "Ring_R_JNT_3_orientConstraint1" -p "LesserDemon_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 1.9391133722504766e-13 9.5665121278394588e-15 1.5103752223912826e-14 ;
+	setAttr ".lr" -type "double3" 1.7470687472945303e-13 2.2686300188876467e-14 1.4943404435406441e-14 ;
 	setAttr ".rsrr" -type "double3" 1.9881572769578097e-13 -6.1871727787845131e-15 8.9938414546023304e-15 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Ring_R_JNT_4_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3709,7 +3728,7 @@ createNode parentConstraint -n "Index_R_JNT_1_parentConstraint1" -p "LesserDemon
 		5.8903491953969933e-05 ;
 	setAttr ".tg[0].tor" -type "double3" 3.8564225512745154e-14 -9.8398410457777521e-15 
 		-2.7829853462805765e-14 ;
-	setAttr ".lr" -type "double3" -4.9298597562684508e-14 1.5902773407317673e-15 2.0673605429512861e-14 ;
+	setAttr ".lr" -type "double3" -8.647133040228936e-14 7.9513867036587982e-15 7.9513867036587856e-15 ;
 	setAttr ".rst" -type "double3" -0.07154148289791934 -0.021429555219054493 0.0074144953520183781 ;
 	setAttr ".rsrr" -type "double3" -5.0491305568233328e-14 4.7708320221952878e-15 2.8624992133171654e-14 ;
 	setAttr -k on ".w0";
@@ -3728,6 +3747,7 @@ createNode orientConstraint -n "Index_R_JNT_2_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" 0 0 -6.3611093629270335e-15 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Index_R_JNT_3_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
 	rename -uid "C26BB4D3-4B93-2477-3333-B2A3D8E2F0FC";
@@ -3744,7 +3764,7 @@ createNode orientConstraint -n "Index_R_JNT_3_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 4.4527765540489235e-14 ;
+	setAttr ".lr" -type "double3" 0 0 3.4986101496098681e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 4.9298597562684508e-14 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Index_R_JNT_4_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3762,7 +3782,7 @@ createNode orientConstraint -n "Index_R_JNT_4_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 1.9083328088781101e-14 ;
+	setAttr ".lr" -type "double3" 0 0 9.5416640443905503e-15 ;
 	setAttr ".rsrr" -type "double3" 0 0 1.9083328088781101e-14 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "Thumb_R_JNT_1_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3784,7 +3804,7 @@ createNode parentConstraint -n "Thumb_R_JNT_1_parentConstraint1" -p "LesserDemon
 		-3.4419479688949651e-05 ;
 	setAttr ".tg[0].tor" -type "double3" -3.8166656177562201e-14 -4.1347210859025721e-14 
 		2.1468744099878741e-14 ;
-	setAttr ".lr" -type "double3" 3.6576378836830422e-14 3.8166656177562208e-14 -3.8166656177562182e-14 ;
+	setAttr ".lr" -type "double3" 3.3395824155366909e-14 1.9083328088781107e-14 -3.1805546814635155e-14 ;
 	setAttr ".rst" -type "double3" -0.0373831448466359 -0.029006508516059314 -0.0050425884308796754 ;
 	setAttr ".rsrr" -type "double3" 3.6576378836830429e-14 3.8166656177562208e-14 -2.5444437451708122e-14 ;
 	setAttr -k on ".w0";
@@ -3803,7 +3823,7 @@ createNode orientConstraint -n "Thumb_R_JNT_2_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0 0 -3.1805546814635168e-15 ;
+	setAttr ".lr" -type "double3" 0 0 -1.9083328088781101e-14 ;
 	setAttr ".rsrr" -type "double3" 0 0 1.2722218725854067e-14 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "Thumb_R_JNT_3_orientConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3821,7 +3841,7 @@ createNode orientConstraint -n "Thumb_R_JNT_3_orientConstraint1" -p "LesserDemon
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 3.6004872917504957e-14 1.0138018047164962e-14 -1.0237410380960691e-14 ;
+	setAttr ".lr" -type "double3" 2.2686300188876486e-14 3.3793393490549899e-15 -2.1717224934368072e-14 ;
 	setAttr ".rsrr" -type "double3" 4.5521688878446572e-14 9.3428793767990756e-15 3.0314661807699174e-15 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "Spine_JNT_5_parentConstraint1" -p "LesserDemon_BindRNfosterParent1";
@@ -3932,22 +3952,22 @@ createNode poleVectorConstraint -n "Leg_L_IKH_poleVectorConstraint1" -p "LesserD
 	setAttr ".rst" -type "double3" 0.32483371765346386 -0.44751269773405306 5.1597550730697609e-06 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "69DDA4AE-49B0-ED8D-5F11-91AA3E4C20CD";
+	rename -uid "CEF863CE-4985-867F-E182-2D96C4EDD1D4";
 	setAttr -s 21 ".lnk";
 	setAttr -s 21 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4E966752-4810-F245-BA3F-A89BDCDA2A4A";
+	rename -uid "9171247B-4419-B465-E506-389E56E2605F";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "321ADCF8-48A4-58DA-058B-1C93E6E2639F";
+	rename -uid "CC21F819-4D5E-4583-46DA-4CBA4F8A0590";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "0A9B84F5-49F8-3CEC-106A-51B6533F32BD";
+	rename -uid "74E6C164-419F-2A5C-4F9E-11996EE068C6";
 	setAttr ".cdl" 4;
 	setAttr -s 5 ".dli[1:4]"  1 2 3 4;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "5D6BE761-4DC0-E11C-AE0E-8AAA6A2847C7";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "620C8B74-46B2-0040-B9BF-AD81AF70E34B";
+	rename -uid "653C2D63-4176-C1B0-6F8B-198777226E45";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "1EA9B47E-40F2-C856-4AEE-65BC37606238";
 	setAttr ".g" yes;
@@ -3966,7 +3986,7 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	setAttr ".ai_translator" -type "string" "maya";
 createNode reference -n "LesserDemon_BindRN";
 	rename -uid "BBEE1C0A-4CDB-CC47-0310-3E97B94DDC05";
-	setAttr -s 473 ".phl";
+	setAttr -s 480 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -4440,13 +4460,20 @@ createNode reference -n "LesserDemon_BindRN";
 	setAttr ".phl[471]" 0;
 	setAttr ".phl[472]" 0;
 	setAttr ".phl[473]" 0;
+	setAttr ".phl[474]" 0;
+	setAttr ".phl[475]" 0;
+	setAttr ".phl[476]" 0;
+	setAttr ".phl[477]" 0;
+	setAttr ".phl[478]" 0;
+	setAttr ".phl[479]" 0;
+	setAttr ".phl[480]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"LesserDemon_BindRN"
 		"LesserDemon_Bind:LesserDemon_ModelRN" 0
 		"LesserDemon_BindRN" 0
 		"LesserDemon_Bind:LesserDemon_ModelRN" 1
 		2 "LesserDemon_Bind:LesserDemon_Model:MESH" "displayOrder" " 2"
-		"LesserDemon_BindRN" 541
+		"LesserDemon_BindRN" 549
 		0 "|LesserDemon_Bind:Foot_L_Offset_GRP" "|Global_GRP|Global_CTRL|Leg_L_IK_GRP|Leg_L_IK_CTRL" 
 		"-s -r "
 		0 "|LesserDemon_Bind:Foot_R_Offset_GRP" "|Global_GRP|Global_CTRL|Leg_R_IK_GRP|Leg_R_IK_CTRL" 
@@ -4531,6 +4558,8 @@ createNode reference -n "LesserDemon_BindRN";
 		0 "|LesserDemon_BindRNfosterParent1|Ring_L_JNT_2_orientConstraint1" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Ring_L_JNT_1|LesserDemon_Bind:Ring_L_JNT_2" 
 		"-s -r "
 		0 "|LesserDemon_BindRNfosterParent1|Ring_L_JNT_1_parentConstraint1" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Ring_L_JNT_1" 
+		"-s -r "
+		0 "|LesserDemon_BindRNfosterParent1|Middle_L_JNT_4_orientConstraint1" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4" 
 		"-s -r "
 		0 "|LesserDemon_BindRNfosterParent1|Middle_L_JNT_3_orientConstraint1" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3" 
 		"-s -r "
@@ -5454,79 +5483,93 @@ createNode reference -n "LesserDemon_BindRN";
 		"LesserDemon_BindRN.placeHolderList[435]" ""
 		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3.parentInverseMatrix" 
 		"LesserDemon_BindRN.placeHolderList[436]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateX" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.inverseScale" 
 		"LesserDemon_BindRN.placeHolderList[437]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateY" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.rotateX" 
 		"LesserDemon_BindRN.placeHolderList[438]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateZ" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.rotateY" 
 		"LesserDemon_BindRN.placeHolderList[439]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotatePivot" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.rotateZ" 
 		"LesserDemon_BindRN.placeHolderList[440]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotatePivotTranslate" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.rotateOrder" 
 		"LesserDemon_BindRN.placeHolderList[441]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateX" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.parentInverseMatrix" 
 		"LesserDemon_BindRN.placeHolderList[442]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateY" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Middle_L_JNT_1|LesserDemon_Bind:Middle_L_JNT_2|LesserDemon_Bind:Middle_L_JNT_3|LesserDemon_Bind:Middle_L_JNT_4.jointOrient" 
 		"LesserDemon_BindRN.placeHolderList[443]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateZ" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateX" 
 		"LesserDemon_BindRN.placeHolderList[444]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateOrder" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateY" 
 		"LesserDemon_BindRN.placeHolderList[445]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.jointOrient" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.translateZ" 
 		"LesserDemon_BindRN.placeHolderList[446]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.parentInverseMatrix" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotatePivot" 
 		"LesserDemon_BindRN.placeHolderList[447]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.inverseScale" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotatePivotTranslate" 
 		"LesserDemon_BindRN.placeHolderList[448]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateX" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateX" 
 		"LesserDemon_BindRN.placeHolderList[449]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateY" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateY" 
 		"LesserDemon_BindRN.placeHolderList[450]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateZ" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateZ" 
 		"LesserDemon_BindRN.placeHolderList[451]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateOrder" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.rotateOrder" 
 		"LesserDemon_BindRN.placeHolderList[452]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.jointOrient" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.jointOrient" 
 		"LesserDemon_BindRN.placeHolderList[453]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.parentInverseMatrix" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1.parentInverseMatrix" 
 		"LesserDemon_BindRN.placeHolderList[454]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.inverseScale" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.inverseScale" 
 		"LesserDemon_BindRN.placeHolderList[455]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateX" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateX" 
 		"LesserDemon_BindRN.placeHolderList[456]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateY" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateY" 
 		"LesserDemon_BindRN.placeHolderList[457]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateZ" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateZ" 
 		"LesserDemon_BindRN.placeHolderList[458]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateOrder" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.rotateOrder" 
 		"LesserDemon_BindRN.placeHolderList[459]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.jointOrient" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.jointOrient" 
 		"LesserDemon_BindRN.placeHolderList[460]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.parentInverseMatrix" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2.parentInverseMatrix" 
 		"LesserDemon_BindRN.placeHolderList[461]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.inverseScale" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.inverseScale" 
 		"LesserDemon_BindRN.placeHolderList[462]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateX" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateX" 
 		"LesserDemon_BindRN.placeHolderList[463]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateY" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateY" 
 		"LesserDemon_BindRN.placeHolderList[464]" ""
-		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateZ" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateZ" 
 		"LesserDemon_BindRN.placeHolderList[465]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateOrder" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.rotateOrder" 
 		"LesserDemon_BindRN.placeHolderList[466]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.jointOrient" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.jointOrient" 
 		"LesserDemon_BindRN.placeHolderList[467]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.parentInverseMatrix" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3.parentInverseMatrix" 
 		"LesserDemon_BindRN.placeHolderList[468]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_L_JNT.translate" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.inverseScale" 
 		"LesserDemon_BindRN.placeHolderList[469]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_L_JNT.parentMatrix" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateX" 
 		"LesserDemon_BindRN.placeHolderList[470]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_R_JNT.parentMatrix" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateY" 
 		"LesserDemon_BindRN.placeHolderList[471]" ""
-		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_R_JNT.translate" 
+		5 4 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateZ" 
 		"LesserDemon_BindRN.placeHolderList[472]" ""
-		5 3 "LesserDemon_BindRN" "LesserDemon_Bind:JNTS.drawInfo" "LesserDemon_BindRN.placeHolderList[473]" 
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.rotateOrder" 
+		"LesserDemon_BindRN.placeHolderList[473]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.jointOrient" 
+		"LesserDemon_BindRN.placeHolderList[474]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Spine_JNT_1|LesserDemon_Bind:Spine_JNT_2|LesserDemon_Bind:Spine_JNT_3|LesserDemon_Bind:Spine_JNT_4|LesserDemon_Bind:Clavical_L_JNT|LesserDemon_Bind:Shoulder_L_JNT|LesserDemon_Bind:Elbow_L_JNT|LesserDemon_Bind:Wrist_L_JNT|LesserDemon_Bind:Pinky_L_JNT_1|LesserDemon_Bind:Pinky_L_JNT_2|LesserDemon_Bind:Pinky_L_JNT_3|LesserDemon_Bind:Pinky_L_JNT_4.parentInverseMatrix" 
+		"LesserDemon_BindRN.placeHolderList[475]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_L_JNT.translate" 
+		"LesserDemon_BindRN.placeHolderList[476]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_L_JNT.parentMatrix" 
+		"LesserDemon_BindRN.placeHolderList[477]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_R_JNT.parentMatrix" 
+		"LesserDemon_BindRN.placeHolderList[478]" ""
+		5 3 "LesserDemon_BindRN" "|Global_GRP|Global_CTRL|LesserDemon_Bind:Root_JNT|LesserDemon_Bind:Thigh_R_JNT.translate" 
+		"LesserDemon_BindRN.placeHolderList[479]" ""
+		5 3 "LesserDemon_BindRN" "LesserDemon_Bind:JNTS.drawInfo" "LesserDemon_BindRN.placeHolderList[480]" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -7319,47 +7362,60 @@ connectAttr "LesserDemon_BindRN.phl[435]" "Middle_L_JNT_3_orientConstraint1.cjo"
 		;
 connectAttr "LesserDemon_BindRN.phl[436]" "Middle_L_JNT_3_orientConstraint1.cpim"
 		;
-connectAttr "Pinky_L_JNT_1_parentConstraint1.ctx" "LesserDemon_BindRN.phl[437]";
-connectAttr "Pinky_L_JNT_1_parentConstraint1.cty" "LesserDemon_BindRN.phl[438]";
-connectAttr "Pinky_L_JNT_1_parentConstraint1.ctz" "LesserDemon_BindRN.phl[439]";
-connectAttr "LesserDemon_BindRN.phl[440]" "Pinky_L_JNT_1_parentConstraint1.crp";
-connectAttr "LesserDemon_BindRN.phl[441]" "Pinky_L_JNT_1_parentConstraint1.crt";
-connectAttr "Pinky_L_JNT_1_parentConstraint1.crx" "LesserDemon_BindRN.phl[442]";
-connectAttr "Pinky_L_JNT_1_parentConstraint1.cry" "LesserDemon_BindRN.phl[443]";
-connectAttr "Pinky_L_JNT_1_parentConstraint1.crz" "LesserDemon_BindRN.phl[444]";
-connectAttr "LesserDemon_BindRN.phl[445]" "Pinky_L_JNT_1_parentConstraint1.cro";
-connectAttr "LesserDemon_BindRN.phl[446]" "Pinky_L_JNT_1_parentConstraint1.cjo";
-connectAttr "LesserDemon_BindRN.phl[447]" "Pinky_L_JNT_1_parentConstraint1.cpim"
+connectAttr "LesserDemon_BindRN.phl[437]" "Middle_L_JNT_4_orientConstraint1.is";
+connectAttr "Middle_L_JNT_4_orientConstraint1.crx" "LesserDemon_BindRN.phl[438]"
 		;
-connectAttr "LesserDemon_BindRN.phl[448]" "Pinky_L_JNT_2_orientConstraint1.is";
-connectAttr "Pinky_L_JNT_2_orientConstraint1.crx" "LesserDemon_BindRN.phl[449]";
-connectAttr "Pinky_L_JNT_2_orientConstraint1.cry" "LesserDemon_BindRN.phl[450]";
-connectAttr "Pinky_L_JNT_2_orientConstraint1.crz" "LesserDemon_BindRN.phl[451]";
-connectAttr "LesserDemon_BindRN.phl[452]" "Pinky_L_JNT_2_orientConstraint1.cro";
-connectAttr "LesserDemon_BindRN.phl[453]" "Pinky_L_JNT_2_orientConstraint1.cjo";
-connectAttr "LesserDemon_BindRN.phl[454]" "Pinky_L_JNT_2_orientConstraint1.cpim"
+connectAttr "Middle_L_JNT_4_orientConstraint1.cry" "LesserDemon_BindRN.phl[439]"
 		;
-connectAttr "LesserDemon_BindRN.phl[455]" "Pinky_L_JNT_3_orientConstraint1.is";
-connectAttr "Pinky_L_JNT_3_orientConstraint1.crx" "LesserDemon_BindRN.phl[456]";
-connectAttr "Pinky_L_JNT_3_orientConstraint1.cry" "LesserDemon_BindRN.phl[457]";
-connectAttr "Pinky_L_JNT_3_orientConstraint1.crz" "LesserDemon_BindRN.phl[458]";
-connectAttr "LesserDemon_BindRN.phl[459]" "Pinky_L_JNT_3_orientConstraint1.cro";
-connectAttr "LesserDemon_BindRN.phl[460]" "Pinky_L_JNT_3_orientConstraint1.cjo";
-connectAttr "LesserDemon_BindRN.phl[461]" "Pinky_L_JNT_3_orientConstraint1.cpim"
+connectAttr "Middle_L_JNT_4_orientConstraint1.crz" "LesserDemon_BindRN.phl[440]"
 		;
-connectAttr "LesserDemon_BindRN.phl[462]" "Pinky_L_JNT_4_orientConstraint1.is";
-connectAttr "Pinky_L_JNT_4_orientConstraint1.crx" "LesserDemon_BindRN.phl[463]";
-connectAttr "Pinky_L_JNT_4_orientConstraint1.cry" "LesserDemon_BindRN.phl[464]";
-connectAttr "Pinky_L_JNT_4_orientConstraint1.crz" "LesserDemon_BindRN.phl[465]";
-connectAttr "LesserDemon_BindRN.phl[466]" "Pinky_L_JNT_4_orientConstraint1.cro";
-connectAttr "LesserDemon_BindRN.phl[467]" "Pinky_L_JNT_4_orientConstraint1.cjo";
-connectAttr "LesserDemon_BindRN.phl[468]" "Pinky_L_JNT_4_orientConstraint1.cpim"
+connectAttr "LesserDemon_BindRN.phl[441]" "Middle_L_JNT_4_orientConstraint1.cro"
 		;
-connectAttr "LesserDemon_BindRN.phl[469]" "Leg_L_IKH_poleVectorConstraint1.crp";
-connectAttr "LesserDemon_BindRN.phl[470]" "Leg_L_IKH_poleVectorConstraint1.ps";
-connectAttr "LesserDemon_BindRN.phl[471]" "Leg_R_IKH_poleVectorConstraint1.ps";
-connectAttr "LesserDemon_BindRN.phl[472]" "Leg_R_IKH_poleVectorConstraint1.crp";
-connectAttr "LesserDemon_BindRN.phl[473]" "Middle_L_JNT_1.do";
+connectAttr "LesserDemon_BindRN.phl[442]" "Middle_L_JNT_4_orientConstraint1.cpim"
+		;
+connectAttr "LesserDemon_BindRN.phl[443]" "Middle_L_JNT_4_orientConstraint1.cjo"
+		;
+connectAttr "Pinky_L_JNT_1_parentConstraint1.ctx" "LesserDemon_BindRN.phl[444]";
+connectAttr "Pinky_L_JNT_1_parentConstraint1.cty" "LesserDemon_BindRN.phl[445]";
+connectAttr "Pinky_L_JNT_1_parentConstraint1.ctz" "LesserDemon_BindRN.phl[446]";
+connectAttr "LesserDemon_BindRN.phl[447]" "Pinky_L_JNT_1_parentConstraint1.crp";
+connectAttr "LesserDemon_BindRN.phl[448]" "Pinky_L_JNT_1_parentConstraint1.crt";
+connectAttr "Pinky_L_JNT_1_parentConstraint1.crx" "LesserDemon_BindRN.phl[449]";
+connectAttr "Pinky_L_JNT_1_parentConstraint1.cry" "LesserDemon_BindRN.phl[450]";
+connectAttr "Pinky_L_JNT_1_parentConstraint1.crz" "LesserDemon_BindRN.phl[451]";
+connectAttr "LesserDemon_BindRN.phl[452]" "Pinky_L_JNT_1_parentConstraint1.cro";
+connectAttr "LesserDemon_BindRN.phl[453]" "Pinky_L_JNT_1_parentConstraint1.cjo";
+connectAttr "LesserDemon_BindRN.phl[454]" "Pinky_L_JNT_1_parentConstraint1.cpim"
+		;
+connectAttr "LesserDemon_BindRN.phl[455]" "Pinky_L_JNT_2_orientConstraint1.is";
+connectAttr "Pinky_L_JNT_2_orientConstraint1.crx" "LesserDemon_BindRN.phl[456]";
+connectAttr "Pinky_L_JNT_2_orientConstraint1.cry" "LesserDemon_BindRN.phl[457]";
+connectAttr "Pinky_L_JNT_2_orientConstraint1.crz" "LesserDemon_BindRN.phl[458]";
+connectAttr "LesserDemon_BindRN.phl[459]" "Pinky_L_JNT_2_orientConstraint1.cro";
+connectAttr "LesserDemon_BindRN.phl[460]" "Pinky_L_JNT_2_orientConstraint1.cjo";
+connectAttr "LesserDemon_BindRN.phl[461]" "Pinky_L_JNT_2_orientConstraint1.cpim"
+		;
+connectAttr "LesserDemon_BindRN.phl[462]" "Pinky_L_JNT_3_orientConstraint1.is";
+connectAttr "Pinky_L_JNT_3_orientConstraint1.crx" "LesserDemon_BindRN.phl[463]";
+connectAttr "Pinky_L_JNT_3_orientConstraint1.cry" "LesserDemon_BindRN.phl[464]";
+connectAttr "Pinky_L_JNT_3_orientConstraint1.crz" "LesserDemon_BindRN.phl[465]";
+connectAttr "LesserDemon_BindRN.phl[466]" "Pinky_L_JNT_3_orientConstraint1.cro";
+connectAttr "LesserDemon_BindRN.phl[467]" "Pinky_L_JNT_3_orientConstraint1.cjo";
+connectAttr "LesserDemon_BindRN.phl[468]" "Pinky_L_JNT_3_orientConstraint1.cpim"
+		;
+connectAttr "LesserDemon_BindRN.phl[469]" "Pinky_L_JNT_4_orientConstraint1.is";
+connectAttr "Pinky_L_JNT_4_orientConstraint1.crx" "LesserDemon_BindRN.phl[470]";
+connectAttr "Pinky_L_JNT_4_orientConstraint1.cry" "LesserDemon_BindRN.phl[471]";
+connectAttr "Pinky_L_JNT_4_orientConstraint1.crz" "LesserDemon_BindRN.phl[472]";
+connectAttr "LesserDemon_BindRN.phl[473]" "Pinky_L_JNT_4_orientConstraint1.cro";
+connectAttr "LesserDemon_BindRN.phl[474]" "Pinky_L_JNT_4_orientConstraint1.cjo";
+connectAttr "LesserDemon_BindRN.phl[475]" "Pinky_L_JNT_4_orientConstraint1.cpim"
+		;
+connectAttr "LesserDemon_BindRN.phl[476]" "Leg_L_IKH_poleVectorConstraint1.crp";
+connectAttr "LesserDemon_BindRN.phl[477]" "Leg_L_IKH_poleVectorConstraint1.ps";
+connectAttr "LesserDemon_BindRN.phl[478]" "Leg_R_IKH_poleVectorConstraint1.ps";
+connectAttr "LesserDemon_BindRN.phl[479]" "Leg_R_IKH_poleVectorConstraint1.crp";
+connectAttr "LesserDemon_BindRN.phl[480]" "Middle_L_JNT_1.do";
 connectAttr "makeNurbCircle1.oc" "Spine_1_CTRLShape.cr";
 connectAttr "unitConversion8.o" "Thumb_2_L_PRNT_CTRL.rz";
 connectAttr "unitConversion9.o" "Thumb_3_L_PRNT_CTRL.rz";
@@ -7492,6 +7548,11 @@ connectAttr "Middle_3_L_CTRL.r" "Middle_L_JNT_3_orientConstraint1.tg[0].tr";
 connectAttr "Middle_3_L_CTRL.ro" "Middle_L_JNT_3_orientConstraint1.tg[0].tro";
 connectAttr "Middle_3_L_CTRL.pm" "Middle_L_JNT_3_orientConstraint1.tg[0].tpm";
 connectAttr "Middle_L_JNT_3_orientConstraint1.w0" "Middle_L_JNT_3_orientConstraint1.tg[0].tw"
+		;
+connectAttr "Middle_4_L_CTRL.r" "Middle_L_JNT_4_orientConstraint1.tg[0].tr";
+connectAttr "Middle_4_L_CTRL.ro" "Middle_L_JNT_4_orientConstraint1.tg[0].tro";
+connectAttr "Middle_4_L_CTRL.pm" "Middle_L_JNT_4_orientConstraint1.tg[0].tpm";
+connectAttr "Middle_L_JNT_4_orientConstraint1.w0" "Middle_L_JNT_4_orientConstraint1.tg[0].tw"
 		;
 connectAttr "Ring_1_L_CTRL.t" "Ring_L_JNT_1_parentConstraint1.tg[0].tt";
 connectAttr "Ring_1_L_CTRL.rp" "Ring_L_JNT_1_parentConstraint1.tg[0].trp";
